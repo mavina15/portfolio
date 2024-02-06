@@ -7,16 +7,12 @@ body {
   font-family: "Arial", sans-serif;
 }
 
-.container {
-  max-width: 800px;
-}
-
 .header {
-  max-width: 800px;
+  max-width: 900px;
   background-color: #fff; /* Dark background for header */
   border: 1px solid #ddd; /* Light gray border */
-  padding: 5px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .header .bg-gradient {

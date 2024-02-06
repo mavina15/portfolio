@@ -16,23 +16,23 @@ function App() {
 					<ul className="flex justify-between mt-3 font-bold">
 						<li>
 							<span role="img" aria-label="Location">
-								🗄️
+								🗺️
 							</span> Los Angeles, CA
 						</li>
 						<li>
-							<span role="img" aria-label="Location">
-								🗄️
+							<span role="img" aria-label="Email">
+								📫
 							</span> melavinabeltran@gmail.com</li>
 						<li><a href="https://github.com/mavina15"
 							className="text-black" target="_blank" rel="noopener noreferrer">
-							<span role="img" aria-label="Location">
+							<span role="img" aria-label="Github">
 								🗄️
-							</span> mavina15</a></li>
+							</span> github: mavina15</a></li>
 						<li><a href="https://linkedin.com/in/mavinabeltran"
 							className="text-black" target="_blank" rel="noopener noreferrer">
-							<span role="img" aria-label="Location">
-								🗄️
-							</span> mavinabeltran</a></li>
+							<span role="img" aria-label="LinkedIn">
+								🏢
+							</span> linkedin: mavinabeltran</a></li>
 					</ul>
 				</div>
 			</header>
@@ -72,6 +72,77 @@ function App() {
 				<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
 				bg-clip-text text-transparent">Projects</h2>
 
+				<div className="flex flex-row justify-evenly">
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">Music Generation</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Musical Score">🎼</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Winter 2024</h3>
+							</div>
+						</a>
+					</div>
+
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">Breast Cancer Classification</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Hospital">🏥</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Fall 2023</h3>
+							</div>
+						</a>
+					</div>
+
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">WNBA Prediction</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Basketball">🏀</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Fall 2023</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div className="flex flex-row justify-evenly">
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">Network Anamoly Detector</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Credit Card">💳</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Summer 2023</h3>
+							</div>
+						</a>
+					</div>
+
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">Coursewise</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Blue Book">📘</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Spring 2023</h3>
+							</div>
+						</a>
+					</div>
+
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">Visualizing Society</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Round Pushpin">📍</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Fall 2022</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+
+
+			</section>
+
+			<section className="project-section">
+				<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
+				bg-clip-text text-transparent">Projects</h2>
+
 				<div className="mb-6 flex justify-between items-start">
 					<div className="text-left basis-3/4">
 						<h3 className="text-xl font-bold mb-2">Machine Learning Music Generation @ <a href="https://ucdlafamilia.com/" target="_blank" class="bg-gradient-to-r
@@ -83,45 +154,6 @@ function App() {
 					</div>
 					<div>
 						<h3 className="text-xl font-bold mb-2 basis-1/4">Winter 2024</h3>
-					</div>
-				</div>
-
-				<div className="mb-6 flex justify-between items-start">
-					<div className="text-left basis-3/4">
-						<h3 className="text-xl font-bold mb-2">Breast Cancer Classification @ <a href="https://ucdlafamilia.com/" target="_blank" class="bg-gradient-to-r
-							 from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">AISC</a></h3>
-						<p className="text-lg mb-1">Implemented machine learning models to predict breast cancer
-							classification using the Breast Cancer Wisconsin dataset.</p>
-					</div>
-					<div>
-						<h3 className="text-xl font-bold mb-2 basis-1/4">Fall 2023</h3>
-					</div>
-				</div>
-
-				<div className="mb-6 flex justify-between items-start">
-					<div className="text-left basis-3/4">
-						<h3 className="text-xl font-bold mb-2">WNBA Prediction @ <a href="https://ucdlafamilia.com/" target="_blank" class="bg-gradient-to-r
-							 from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">AGGIE ANALYTICS + SWE</a></h3>
-						<p className="text-lg mb-1">Implemented a predictive modeling project for WNBA game outcomes using Python and
-							machine learning techniques. The project involved data cleaning, feature selection,
-							and model training to predict the winner of basketball games. The model achieved an
-							accuracy of approximately 70.4%.</p>
-					</div>
-					<div>
-						<h3 className="text-xl font-bold mb-2 basis-1/4">Fall 2023</h3>
-					</div>
-				</div>
-
-				<div className="mb-6 flex justify-between items-start">
-					<div className="text-left basis-3/4">
-						<h3 className="text-xl font-bold mb-2">Network Anomoly Detector @ <a href="https://ucdlafamilia.com/" target="_blank" class="bg-gradient-to-r
-							 from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">INTRO TO AI</a></h3>
-						<p className="text-lg mb-1">Spearheaded the loading and management of a 19,528-sample
-							dataset, organizing it into distinct classes of traffic and dividing it into training
-							and testing subsets.</p>
-					</div>
-					<div>
-						<h3 className="text-xl font-bold mb-2 basis-1/4">Summer 2023</h3>
 					</div>
 				</div>
 
