@@ -2,7 +2,6 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/cube-alt-2-svgrepo-com.svg'
 import './App.css'
-import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 function App() {
 	const [count, setCount] = useState(0)
@@ -58,8 +57,8 @@ function App() {
 					</div>
 				</div>
 				<div className="flex flex-row">
-					<p className="text-lg mb-1 italic font-bold basis-1/3 text-left">Relevant Coursework:</p>
-					<p className="text-sm text-gray-500 mb-4 basis-2/3">
+					<p className="text-lg mb-1 font-bold basis-1/3 text-left">Relevant Coursework:</p>
+					<p className="text-sm text-gray-500 text-justify mb-4 basis-2/3">
 						Introduction to Programming, Introduction to Data Structures, Introduction to Programming and Microcontrollers,
 						Human-Computer Interaction, Introduction to Artificial Intelligence, Theory of Computation, Visualizing Society
 						with Data, Optimization, Numerical Analysis, Applied Linear Algebra, Modern Algebra, Probability, Ordinary
@@ -156,6 +155,62 @@ function App() {
 						<h3 className="text-xl font-bold mb-2 basis-1/4">Winter 2024</h3>
 					</div>
 				</div>
+
+			</section>
+
+			<section className="project-section">
+				<div class="container mx-auto p-8 text-left">
+					<h1 class="text-3xl font-bold mb-4">Case Study: 🏀 WNBA Prediction</h1>
+
+					<div class="mb-8">
+						<h2 class="text-xl font-semibold mb-2">Aggie Analytics + SWE</h2>
+					</div>
+
+					<div class="mb-8">
+						<h2 class="text-xl font-semibold mb-2">Description</h2>
+						<p>Implemented a predictive model for WNBA game outcomes using Python and machine learning.</p>
+					</div>
+
+
+					<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+						<div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+							<img src="Screenshot 2024-02-05 at 4.14.39 PM.png" class="dark:hidden h-[156px] md:h-[278px] w-full rounded-xl" alt="" />
+							<img src="Screenshot 2024-02-05 at 4.14.39 PM.png" class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg" alt="" />
+						</div>
+					</div>
+					<div class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+						<div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"></div>
+					</div>
+
+
+
+
+					<div class="mb-8">
+						<h2 class="text-xl font-semibold mb-2">Achievements</h2>
+						<p><strong>Model Accuracy:</strong> Achieved 70.4% accuracy in predicting WNBA game outcomes.</p>
+					</div>
+
+					<div class="mb-8">
+						<h2 class="text-xl font-semibold mb-2">Process</h2>
+						<ul>
+							<li><strong>Data Cleaning:</strong> Imported and cleaned schedule and advanced statistics data, adding a win/loss column.</li>
+							<li><strong>Determining Predictors:</strong> Used Sequential Feature Selector to identify the top 10 predictors.</li>
+							<li><strong>Model Creation:</strong> Implemented a logistic regression model, tested using Monte Carlo simulation.</li>
+							<li><strong>Finals Prediction:</strong> Successfully predicted the outcome of a specific WNBA final matchup.</li>
+						</ul>
+					</div>
+
+					<div class="mb-8">
+						<h2 class="text-xl font-semibold mb-2">Technology</h2>
+						<ul>
+							<li><strong>Language:</strong> Python</li>
+							<li><strong>Libraries:</strong> Pandas, Scikit-learn</li>
+						</ul>
+					</div>
+
+					<p class="text-lg">This project showcases the application of data science in predicting sports outcomes, providing valuable insights for decision-making.</p>
+				</div>
+
 
 			</section>
 
