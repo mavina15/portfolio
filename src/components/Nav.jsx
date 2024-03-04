@@ -64,8 +64,7 @@ export default function Example() {
 												)}
 												aria-current={item.current ? 'page' : undefined}
 											>
-												{item.name}
-											</a>
+												{item.name}											</a>
 										))}
 									</div>
 								</div>
