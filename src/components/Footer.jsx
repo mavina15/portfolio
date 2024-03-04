@@ -2,7 +2,7 @@
 const Footer = () => {
 	return (
 
-		<footer class="bg-white rounded-lg shadow m-5">
+		<footer class="bg-white rounded-lg shadow m-5 absolute bottom-0 w-full">
 			<div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
 				<span class="text-sm text-gray-500 sm:text-center ">© 2024 All Rights Reserved.
 				</span>

@@ -1,35 +1,98 @@
-// Nav.jsx
-import { Link as ScrollLink } from "react-scroll";
-import { HashLink as Link } from 'react-router-hash-link';
+import { Fragment, useEffect, useState } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useLocation } from 'react-router-dom'; // Import useLocation hook
 
-const Nav = () => {
-	return (
-		<nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
-			<div className="max-w-screen-xl flex flex-wrap items-center justify-evenly mx-auto p-4">
-				<ul className="text-l lowercase flex">
-					<NavItem to="" text="Home" />
-					<NavItem to="./About" text="About" />
-					<NavItem to="./Education" text="Education" />
-					<NavItem to="./Projects" text="Projects" />
-					<NavItem to="./Experience" text="Experience" />
-					<NavItem to="./Leadership" text="Leadership" />
-				</ul>
-			</div>
-		</nav>
-	);
+const navigation = [
+	{ name: 'home', href: '/', current: false },
+	{ name: 'education', href: '/education', current: false },
+	{ name: 'projects', href: '/projects', current: false },
+	{ name: 'experience', href: '/experience', current: false },
+	{ name: 'leadership', href: '/leadership', current: false },
+];
+
+function classNames(...classes) {
+	return classes.filter(Boolean).join(' ');
 }
 
-const NavItem = ({ to, text, hashLink }) => {
+export default function Example() {
+	const location = useLocation();
+	const [currentPath, setCurrentPath] = useState(location.pathname);
+
+	// Update current path when location changes
+	useEffect(() => {
+		setCurrentPath(location.pathname);
+	}, [location.pathname]);
+
+	// Update current property based on the current path
+	useEffect(() => {
+		navigation.forEach((item) => {
+			item.current = item.href === currentPath;
+		});
+	}, [currentPath]);
+
 	return (
-		<div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-			<ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
-				<li className="ml-4 font-bold">
-					<ScrollLink to={to} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-600 md:p-0">{text}</ScrollLink>
-					{hashLink && <RouterHashLink smooth to={hashLink}>{text}</RouterHashLink>}
-				</li>
-			</ul>
-		</div>
+		<Disclosure as="nav" className="bg-white shadow">
+			{({ open }) => (
+				<>
+					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+						<div className="relative flex h-16 items-center justify-between">
+							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+								<Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900">
+									<span className="absolute -inset-0.5" />
+									<span className="sr-only">Open main menu</span>
+									{open ? (
+										<XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+									) : (
+										<Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+									)}
+								</Disclosure.Button>
+							</div>
+							<div className="flex flex-1 items-center justify-center sm:items-stretch">
+								<div className="flex flex-shrink-0 items-center">
+									<img className="h-8 w-auto" src="public/cube-alt-2-svgrepo-com.svg" alt="Logo" />
+								</div>
+								<div className="hidden sm:ml-6 sm:block">
+									<div className="flex space-x-4">
+										{navigation.map((item) => (
+											<a
+												key={item.name}
+												href={item.href}
+												className={classNames(
+													item.current ? 'text-pink-600' : 'text-gray-500 hover:text-gray-900',
+													'rounded-md px-3 py-2 text-md font-medium font-extrabold'
+												)}
+												aria-current={item.current ? 'page' : undefined}
+											>
+												{item.name}
+											</a>
+										))}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<Disclosure.Panel className="sm:hidden">
+						<div className="space-y-1 px-2 pb-3 pt-2">
+							{navigation.map((item) => (
+								<Disclosure.Button
+									key={item.name}
+									as="a"
+									href={item.href}
+									className={classNames(
+										item.current ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900',
+										'block rounded-md px-3 py-2 text-base font-medium'
+									)}
+									aria-current={item.current ? 'page' : undefined}
+								>
+									{item.name}
+								</Disclosure.Button>
+							))}
+						</div>
+					</Disclosure.Panel>
+				</>
+			)}
+		</Disclosure>
 	);
 }
-
-export default Nav;
