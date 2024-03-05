@@ -48,27 +48,30 @@ export default function Example() {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className="flex flex-1 items-center justify-center sm:items-stretch">
-								<div className="flex flex-shrink-0 items-center">
+							<div className="flex items-center justify-between">
+								<div className="flex-shrink-0">
 									<img className="h-8 w-auto" src="./img/cube-alt-2-svgrepo-com.svg" alt="Logo" />
 								</div>
 								<div className="hidden sm:ml-6 sm:block">
-									<div className="flex space-x-4">
+									<div className="flex justify-center space-x-4">
 										{navigation.map((item) => (
 											<a
 												key={item.name}
 												href={item.href}
 												className={classNames(
 													item.current ? 'text-pink-600' : 'text-gray-500 hover:text-gray-900',
-													'rounded-md px-3 py-2 text-md font-medium font-extrabold'
+													'rounded-md px-3 py-2 text-lg font-extrabold'
 												)}
 												aria-current={item.current ? 'page' : undefined}
 											>
-												{item.name}											</a>
+												{item.name}
+											</a>
 										))}
 									</div>
 								</div>
 							</div>
+
+
 						</div>
 					</div>
 
