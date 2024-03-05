@@ -7,7 +7,7 @@ const Experience = () => {
 			<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
 				bg-clip-text text-transparent">experience</h2>
 			<div class="max-w-6xl p-6 bg-white border border-gray-200 rounded-lg shadow mb-8 flex items-start">
-				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="src/media/codelablogo.jpeg" alt="Bordered avatar" />
+				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="./media/codelablogo.jpeg" alt="Bordered avatar" />
 				<div class="ml-4">
 					<a href="#">
 						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">Junior Developer and Project Manager @ <a href="https://www.codelabdavis.com/" target="_blank" class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">CODELAB</a></h5>
@@ -24,7 +24,7 @@ const Experience = () => {
 			</div>
 
 			<div class="max-w-6xl p-6 bg-white border border-gray-200 rounded-lg shadow mb-8 flex items-start">
-				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="src/media/ucd seal.svg.png" alt="Bordered avatar" />
+				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="./media/ucd seal.svg.png" alt="Bordered avatar" />
 				<div class="ml-4">
 					<a href="#">
 						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">Junior Developer @ <a href="https://www.math.ucdavis.edu/" target="_blank" class="bg-gradient-to-r
