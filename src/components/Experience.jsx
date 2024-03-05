@@ -1,12 +1,10 @@
-
+import React from "react";
 
 const Experience = () => {
 	return (
 		<div id="experience" className="container mx-auto p-4 max-w-5xl">
 			<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
 				bg-clip-text text-transparent">experience</h2>
-
-
 			<div class="max-w-6xl p-6 bg-white border border-gray-200 rounded-lg shadow mb-8 flex items-start">
 				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="./media/codelablogo.jpeg" alt="Bordered avatar" />
 				<div class="ml-4">

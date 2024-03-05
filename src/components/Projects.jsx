@@ -1,13 +1,12 @@
 import React from "react";
 
-
 const Projects = () => {
 
 	return (
 		<div id="projects" className="container mx-auto p-4 max-w-5xl">
-			<div className="mb-8 p-6 mx-auto my-20 rounded-xl bg-white border border-gray-200 shadow">
-				<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
+			<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
 				bg-clip-text text-transparent">projects</h2>
+			<div className="mb-8 p-6 mx-auto my-20 rounded-xl bg-white border border-gray-200 shadow">
 
 				<div className="flex flex-row justify-evenly">
 					<div className="mb-6">
