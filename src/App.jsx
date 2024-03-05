@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Nav from "./components/Nav";
-import About from "./components/About";
-import Education from "./components/Education";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
-import Leadership from "./components/Leadership";
-import Footer from "./components/Footer";
+import About from "./components/About.jsx";
+import Education from "./components/Education.jsx";
+import Projects from "./components/Projects.jsx";
+import Experience from "./components/Experience.jsx";
+import Leadership from "./components/Leadership.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
 	return (
