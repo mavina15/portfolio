@@ -48,33 +48,35 @@ export default function Example() {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className="flex items-center justify-between">
-								<div className="flex-shrink-0">
+
+
+							<div className="flex justify-center">
+								<div className="ml-auto">
 									<img className="h-8 w-auto" src="./img/cube-alt-2-svgrepo-com.svg" alt="Logo" />
 								</div>
-								<div className="hidden sm:ml-6 sm:block">
-									<div className="flex justify-center space-x-4">
-										{navigation.map((item) => (
-											<a
-												key={item.name}
-												href={item.href}
-												className={classNames(
-													item.current ? 'text-pink-600' : 'text-gray-500 hover:text-gray-900',
-													'rounded-md px-3 py-2 text-lg font-extrabold'
-												)}
-												aria-current={item.current ? 'page' : undefined}
-											>
-												{item.name}
-											</a>
-										))}
-									</div>
+								<div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+									{navigation.map((item) => (
+										<a
+											key={item.name}
+											href={item.href}
+											className={classNames(
+												item.current ? 'text-pink-600' : 'text-gray-500 hover:text-gray-900',
+												'rounded-md px-3 py-2 text-lg font-extrabold'
+											)}
+											aria-current={item.current ? 'page' : undefined}
+										>
+											{item.name}
+										</a>
+									))}
 								</div>
-								<div>
-									<a href="./img/Mel Avina-Beltran Portfolio Resume.pdf" class="float-right px-3 py-2 text-lg font-extrabold text-center text-white bg-pink-600 rounded-lg hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-200" target="_blank">
+								<div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+									<a href="./img/Mel Avina-Beltran Portfolio Resume.pdf" class="px-3 py-2 text-lg font-extrabold text-center text-white bg-pink-600 rounded-lg hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-200" target="_blank">
 										resume
 									</a>
 								</div>
 							</div>
+
+
 
 
 						</div>
