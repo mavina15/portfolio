@@ -49,11 +49,8 @@ export default function Example() {
 								</Disclosure.Button>
 							</div>
 
-
-							<div className="flex justify-center">
-								<div className="ml-auto">
-									<img className="h-8 w-auto" src="./img/cube-alt-2-svgrepo-com.svg" alt="Logo" />
-								</div>
+							<div className="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
+								<img className="h-8" src="./img/cube-alt-2-svgrepo-com.svg" alt="Logo" />
 								<div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
 									{navigation.map((item) => (
 										<a
@@ -70,15 +67,11 @@ export default function Example() {
 									))}
 								</div>
 								<div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-									<a href="./img/Mel Avina-Beltran Portfolio Resume.pdf" class="px-3 py-2 text-lg font-extrabold text-center text-white bg-pink-600 rounded-lg hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-200" target="_blank">
+									<a href="./img/Mel Avina-Beltran Portfolio Resume.pdf" className="px-3 py-2 text-lg font-extrabold text-center text-white bg-pink-600 rounded-lg hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-200" target="_blank">
 										resume
 									</a>
 								</div>
 							</div>
-
-
-
-
 						</div>
 					</div>
 
@@ -101,7 +94,9 @@ export default function Example() {
 						</div>
 					</Disclosure.Panel>
 				</>
-			)}
+			)
+			}
 		</Disclosure>
+
 	);
 }
