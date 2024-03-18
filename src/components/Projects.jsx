@@ -53,6 +53,16 @@ const Projects = () => {
 					<div className="mb-6">
 						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
 							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
+								<h3 className="text-xl font-bold mb-2">Seoul Bike Data</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Bicycle">🚲</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Spring 2022</h3>
+							</div>
+						</a>
+					</div>
+
+					<div className="mb-6">
+						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
 								<h3 className="text-xl font-bold mb-2">Coursewise</h3>
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Blue Book">📘</span>
 								<h3 className="text-xl font-bold mb-2 basis-1/4">Spring 2023</h3>
