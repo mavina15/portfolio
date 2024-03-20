@@ -9,17 +9,17 @@ const Projects = () => {
 			<div className="mb-8 p-6 mx-auto rounded-xl bg-white border border-gray-200 shadow">
 				<div className="flex flex-row justify-evenly">
 					<div className="mb-6">
-						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+						<a href="/bike" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
 							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
-								<h3 className="text-xl font-bold mb-2">Music Generation</h3>
-								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Musical Score">🎼</span>
-								<h3 className="text-xl font-bold mb-2 basis-1/4">Winter 2024</h3>
+								<h3 className="text-xl font-bold mb-2">Seoul Bike Data</h3>
+								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Bicycle">🚲</span>
+								<h3 className="text-xl font-bold mb-2 basis-1/4">Spring 2022</h3>
 							</div>
 						</a>
 					</div>
 
 					<div className="mb-6">
-						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+						<a href="/cancer" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
 							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
 								<h3 className="text-xl font-bold mb-2">Breast Cancer Classification</h3>
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Hospital">🏥</span>
@@ -46,16 +46,6 @@ const Projects = () => {
 								<h3 className="text-xl font-bold mb-2">Network Anamoly Detector</h3>
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Credit Card">💳</span>
 								<h3 className="text-xl font-bold mb-2 basis-1/4">Summer 2023</h3>
-							</div>
-						</a>
-					</div>
-
-					<div className="mb-6">
-						<a href="/bike" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-							<div className="flex flex-col items-center"> {/* Flex container to align items horizontally */}
-								<h3 className="text-xl font-bold mb-2">Seoul Bike Data</h3>
-								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Bicycle">🚲</span>
-								<h3 className="text-xl font-bold mb-2 basis-1/4">Spring 2022</h3>
 							</div>
 						</a>
 					</div>
