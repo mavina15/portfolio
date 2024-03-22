@@ -1,12 +1,12 @@
 import React from "react";
 
-const Cancer = () => {
+const WNBA = () => {
 	return (
 
-		<div id="cancer" class="container mx-auto my-auto p-4 max-w-5xl">
+		<div id="wnba" class="container mx-auto my-auto p-4 max-w-5xl">
 			<div class="mx-auto max-w-2xl p-8">
-				<span class="text-5xl mb-2 mx-2" role="img" aria-label="Hospital">🏥</span>
-				<h1 class="text-3xl font-bold mb-4">Breast Cancer Classification</h1>
+				<span class="text-5xl mb-2 mx-2" role="img" aria-label="Basketball">🏀</span>
+				<h1 class="text-3xl font-bold mb-4">WNBA Prediction</h1>
 				<p class="mb-4">
 					In the Fall of 2023, I attended a collaboration workshop between Aggie
 					Analytics and the Society of Women Engineers at UC Davis. This event
@@ -16,7 +16,7 @@ const Cancer = () => {
 				</p>
 
 				<div class="relative">
-					<img src="public/img/breastcancerai.jpeg" alt="breast cancer image" class="h-48 w-full object-cover rounded-md object-right-top" />
+					<img src="./img/wnba.png" alt="wnba image" class="h-48 w-full object-cover rounded-md object-right-top" />
 					<div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
 					<div class="absolute inset-0 flex items-center justify-center">
 						<h2 class="text-white text-3xl font-bold text-balance text-center">Goal: Predict the outcome of WNBA games using data analysis and machine learning techniques.</h2>
@@ -60,7 +60,8 @@ const Cancer = () => {
 				<p class="mb-4">Code/Github: <a href="https://github.com/mavina15/WNBA_Predict" class="text-blue-600">https://github.com/mavina15/WNBA_Predict</a></p>
 			</div>
 		</div>
+
 	);
 };
 
-export default Cancer;
+export default WNBA;
