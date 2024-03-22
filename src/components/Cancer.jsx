@@ -16,7 +16,7 @@ const Cancer = () => {
 				</p>
 
 				<div class="relative">
-					<img src="public/img/breastcancerai.jpeg" alt="breast cancer image" class="h-48 w-full object-cover rounded-md object-right-top" />
+					<img src="./img/breastcancerai.jpeg" alt="breast cancer image" class="h-48 w-full object-cover rounded-md object-right-top" />
 					<div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
 					<div class="absolute inset-0 flex items-center justify-center">
 						<h2 class="text-white text-3xl font-bold text-balance text-center">Goal: Predict the outcome of WNBA games using data analysis and machine learning techniques.</h2>
