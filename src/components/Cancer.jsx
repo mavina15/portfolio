@@ -7,8 +7,8 @@ const Cancer = () => {
 			<div className="mb-15 p-6 mx-auto my-20 rounded-xl bg-white border border-gray-200 shadow">
 				<div className="my-5">
 					<div className="my-8">
-						<h1 className="mb-4 text-5xl font-extrabold leading-none text-gray-900 underline underline-offset-3 decoration-8 decoration-pink-600">Seoul Bike Data</h1>
-						<h3 className="mb-4 text-3xl font-extrabold leading-none text-gray-900">MATH 167: Applied Linear Algebra Final Project</h3>
+						<h1 className="mb-4 text-5xl font-extrabold leading-none text-gray-900 underline underline-offset-3 decoration-8 decoration-pink-600">Breast Cancer Classification</h1>
+						<h3 className="mb-4 text-3xl font-extrabold leading-none text-gray-900">AISC Weekend Workshop</h3>
 						<p className="mb-4 text-lg text-gray-500">My partner and I began by selecting the Kaggle data set, titled: “Seoul Bike Sharing Demand Prediction: Predict the Bike Demand in specific day”. The parameters affecting demand are specific weather conditions including temperature, humidity, windspeed and more.</p>
 					</div>
 

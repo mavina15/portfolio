@@ -6,6 +6,7 @@ const Projects = () => {
 		<div id="projects" className="container mx-auto p-4 max-w-5xl">
 			<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
 				bg-clip-text text-transparent">projects</h2>
+
 			<div className="mb-8 p-6 mx-auto rounded-xl bg-white border border-gray-200 shadow">
 				<div className="flex flex-row justify-evenly">
 					<div className="mb-6">

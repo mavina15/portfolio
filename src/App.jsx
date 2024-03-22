@@ -7,6 +7,7 @@ import Projects from "./components/Projects.jsx";
 import Experience from "./components/Experience.jsx";
 import Leadership from "./components/Leadership.jsx";
 import Bike from "./components/BikeData.jsx";
+import Cancer from "./components/Cancer.jsx";
 import Footer from "./components/Footer.jsx";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
 					<Route exact path='/experience' element={<Experience />} />
 					<Route exact path='/leadership' element={<Leadership />} />
 					<Route exact path='/bike' element={<Bike />} />
+					<Route exact path='/cancer' element={<Cancer />} />
 				</Routes>
 				<Footer />
 			</Router>
