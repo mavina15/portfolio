@@ -7,7 +7,7 @@ const Projects = () => {
 			<h2 class="text-3xl p-4 text-center font-bold from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r 
 				bg-clip-text text-transparent">projects</h2>
 
-			<div className="mb-8 p-6 mx-auto rounded-xl bg-white border border-gray-200 shadow">
+			<div className="mb-8 p-6 mx-auto">
 				<div className="flex flex-row justify-evenly">
 					<div className="mb-6">
 						<a href="/bike" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
@@ -40,6 +40,8 @@ const Projects = () => {
 					</div>
 				</div >
 
+				<h3 className="text-3xl font-bold mb-4 basis-1/4 text-red-500 text-center">🚧 Under Construction</h3>
+
 				<div className="flex flex-row justify-evenly">
 					<div className="mb-6">
 						<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
@@ -47,8 +49,6 @@ const Projects = () => {
 								<h3 className="text-xl font-bold mb-2">Network Anamoly Detector</h3>
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Credit Card">💳</span>
 								<h3 className="text-xl font-bold mb-2 basis-1/4">Summer 2023</h3>
-								<h3 className="text-xl font-bold mb-2 basis-1/4 text-red-500">🚧 Under Construction</h3>
-
 							</div>
 						</a>
 					</div>
@@ -59,7 +59,6 @@ const Projects = () => {
 								<h3 className="text-xl font-bold mb-2">Coursewise</h3>
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Blue Book">📘</span>
 								<h3 className="text-xl font-bold mb-2 basis-1/4">Spring 2023</h3>
-								<h3 className="text-xl font-bold mb-2 basis-1/4 text-red-500">🚧 Under Construction</h3>
 							</div>
 						</a>
 					</div>
@@ -70,7 +69,6 @@ const Projects = () => {
 								<h3 className="text-xl font-bold mb-2">Visualizing Society</h3>
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Round Pushpin">📍</span>
 								<h3 className="text-xl font-bold mb-2 basis-1/4">Fall 2022</h3>
-								<h3 className="text-xl font-bold mb-2 basis-1/4 text-red-500">🚧 Under Construction</h3>
 							</div>
 						</a>
 					</div>

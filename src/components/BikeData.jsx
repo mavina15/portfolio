@@ -13,12 +13,20 @@ sns.pairplot(df, x_vars=['Hour', 'Temperature(°C)', 'Humidity(%)',
 	return (
 
 		<div id="bike" className="container mx-auto my-auto p-4 max-w-5xl">
-			<div className="mb-15 p-6 mx-auto my-20 rounded-xl bg-white border border-gray-200 shadow">
+			<div className="mb-15 p-6 mx-auto my-5">
 				<div className="my-5">
 					<div className="my-8">
 						<h1 className="mb-4 text-5xl font-extrabold leading-none text-gray-900 underline underline-offset-3 decoration-8 decoration-pink-600">Seoul Bike Data</h1>
 						<h3 className="mb-4 text-3xl font-extrabold leading-none text-gray-900">MATH 167: Applied Linear Algebra Final Project</h3>
 						<p className="mb-4 text-lg text-gray-500">My partner and I began by selecting the Kaggle data set, titled: “Seoul Bike Sharing Demand Prediction: Predict the Bike Demand in specific day”. The parameters affecting demand are specific weather conditions including temperature, humidity, windspeed and more.</p>
+					</div>
+
+					<div class="relative">
+						<img src="./img/seoulbike.jpg" alt="breast cancer image" class="h-48 w-full object-cover rounded-md object-center" />
+						<div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
+						<div class="absolute inset-0 flex items-center justify-center">
+							<h2 class="text-white text-3xl font-bold text-balance text-center">Goal: Predict the outcome of WNBA games using data analysis and machine learning techniques.</h2>
+						</div>
 					</div>
 
 					<div className="my-8">
