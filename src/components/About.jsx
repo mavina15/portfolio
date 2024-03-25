@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
 	return (
 
-		<div id="about" className="container mx-auto p-4 max-w-5xl" >
+		<div id="about" className="container mx-auto p-4">
 			<div className="mb-8 p-6 mx-auto my-20 rounded-xl bg-white border border-gray-200 shadow flex justify-evenly">
 
 				<div>
@@ -41,7 +41,6 @@ const About = () => {
 							</li>
 						</ul>
 					</div>
-
 				</div>
 
 				<div class="my-5">
@@ -49,7 +48,6 @@ const About = () => {
 				</div>
 
 			</div>
-
 		</div >
 	);
 };
