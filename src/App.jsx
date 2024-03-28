@@ -9,7 +9,7 @@ import Leadership from "./components/Leadership.jsx";
 import Bike from "./components/BikeData.jsx";
 import WNBA from "./components/WNBA.jsx";
 import Cancer from "./components/Cancer.jsx";
-import Footer from "./components/Footer.jsx";
+// import Footer from "./components/Footer.jsx";
 
 const App = () => {
 	return (
@@ -26,7 +26,6 @@ const App = () => {
 					<Route exact path='/wnba' element={<WNBA />} />
 					<Route exact path='/cancer' element={<Cancer />} />
 				</Routes>
-				<Footer />
 			</Router>
 		</div>
 	);
