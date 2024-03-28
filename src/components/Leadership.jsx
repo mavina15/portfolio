@@ -9,7 +9,7 @@ const Leadership = () => {
 				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="./img/lafalogo.png" alt="Bordered avatar" />
 				<div class="ml-4">
 					<a href="#">
-						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">PRESIDENT @ <a href="https://ucdlafamilia.com/" target="_blank" className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">LA FAMILIA DE UC DAVIS</a></h5>
+						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">PRESIDENT @ <a href="https://ucdlafamilia.com/" target="_blank" className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_4px] bg-no-repeat bg-bottom">LA FAMILIA DE UC DAVIS</a></h5>
 						<h3 class="text-xl font-bold mb-2">2020 - 2023</h3>
 					</a>
 					<p class="mb-3 font-normal text-gray-500">As the Senior Developer at UC Davis Codelab, I had the privilege of leading a dynamic team of 4 developers and designers through a transformative 15-week project.</p>
@@ -27,7 +27,7 @@ const Leadership = () => {
 
 				<div class="ml-4">
 					<a href="#">
-						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">EXTERNAL ACADEMIC CHAIR @ <a href="https://calessatucd.wixsite.com/calessatucd" target="_blank" className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">CALESS</a></h5>
+						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">EXTERNAL ACADEMIC CHAIR @ <a href="https://calessatucd.wixsite.com/calessatucd" target="_blank" className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_4px] bg-no-repeat bg-bottom">CALESS</a></h5>
 						<h3 class="text-xl font-bold mb-2">Fall 2020 - Spring 2021</h3>
 					</a>
 					<p class="mb-3 font-normal text-gray-500">As the Senior Developer at UC Davis Codelab, I had the privilege of leading a dynamic team of 4 developers and designers through a transformative 15-week project.</p>

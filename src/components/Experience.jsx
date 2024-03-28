@@ -10,7 +10,7 @@ const Experience = () => {
 				<img class="w-20 h-20 p-1 rounded-full ring-2 ring-pink-600" src="./img/codelablogo.jpeg" alt="Bordered avatar" />
 				<div class="ml-4">
 					<a href="#">
-						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">Junior Developer and Project Manager @ <a href="https://www.codelabdavis.com/" target="_blank" class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">CODELAB</a></h5>
+						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">Junior Developer and Project Manager @ <a href="https://www.codelabdavis.com/" target="_blank" class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_4px] bg-no-repeat bg-bottom">CODELAB</a></h5>
 						<h3 class="text-xl font-bold mb-2">Winter - Spring 2023</h3>
 					</a>
 					<p class="mb-3 font-normal text-gray-500">As the Senior Developer at UC Davis Codelab, I had the privilege of leading a dynamic team of 4 developers and designers through a transformative 15-week project.</p>
@@ -28,7 +28,7 @@ const Experience = () => {
 				<div class="ml-4">
 					<a href="#">
 						<h5 class="text-xl font-bold mb-2 whitespace-nowrap">Junior Developer @ <a href="https://www.math.ucdavis.edu/" target="_blank" class="bg-gradient-to-r
-							 from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_6px] bg-no-repeat bg-bottom">UC DAVIS MATH DEPARTMENT</a></h5>
+							 from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_4px] bg-no-repeat bg-bottom">UC DAVIS MATH DEPARTMENT</a></h5>
 						<h3 class="text-xl font-bold mb-2">Winter - Spring 2022</h3>
 					</a>
 					<p class="mb-3 font-normal text-gray-500 ">As a Software Developer at UC Davis Math Department from January to June 2022, I took the lead in crafting a cutting-edge Google Sheets extension powered by Google Apps Script and JavaScript.</p>
