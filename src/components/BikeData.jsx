@@ -129,7 +129,6 @@ plt.savefig('dtr2.png')`
 								<br></br>
 								plt.savefig('snspairplot.png')</code></pre>
 						</div>
-
 						<img class="mt-4 w-full lg:mt-10 rounded-lg" src="./img/snspairplot.png" alt="office content 2" />
 					</div>
 				</div>
@@ -140,29 +139,21 @@ plt.savefig('dtr2.png')`
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Linear Regression Model</h2>
 						<p class="mb-4">The data is then split into two subgroups to use for model training and testing. X train shape is (6570, 5), while y train shape is (6570, ). X test shape is (2190, 5), while y train shape is (2190, ).</p>
-					</div>
-					<div class="grid grid-cols-2 gap-4 mt-8">
 						<div class="code-block font-mono text-sm text-gray-800">
 							<pre><code># pairplot <br></br>
 								import seaborn as sns <br></br>
 								%matplotlib inline <br></br>
 								<br></br>
-
-								sns.pairplot(bike_data, <br></br>
-								x_vars=['Hour', <br></br>
-								'Temperature(°C)', <br></br>
-								'Humidity(%)', <br></br>
-								'Wind speed (m/s)', <br></br>
-								'Visibility (10m)'], <br></br>
-								plot_kws=dict(color='magenta'), <br></br>
-								diag_kws=dict(color='magenta')) <br></br>
+								sns.pairplot(bike_data, x_vars=['Hour', 'Temperature(°C)',<br></br>
+								'Humidity(%)', 'Wind speed (m/s)', 'Visibility (10m)'], <br></br>
+								plot_kws=dict(color='magenta'), diag_kws=dict(color='magenta')) <br></br>
 								<br></br>
 								plt.savefig('snspairplot.png')</code></pre>
 						</div>
-						<div class="flex flex-col">
-							<img class="mt-4 w-full h-full lg:mt-10 rounded-lg" src="./img/sbd1.png" alt="office content 2" />
-							<img class="mt-4 w-full h-full lg:mt-10 rounded-lg" src="./img/sbd2.png" alt="office content 2" />
-						</div>
+					</div>
+					<div class="grid gap-4 mt-8">
+						<img class="mt-4 w-2/3 lg:mt-10 rounded-lg" src="./img/lr1.png" alt="office content 2" />
+						<img class="mt-4 w-2/3 lg:mt-10 rounded-lg" src="./img/lr2.png" alt="office content 2" />
 					</div>
 				</div>
 			</section>
@@ -172,65 +163,28 @@ plt.savefig('dtr2.png')`
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Decision Tree Regressor Model</h2>
 						<p class="mb-4">Now we can utilize a linear regression model to compare the predicted and actual values of bike rentals based on the parameters.</p>
-					</div>
-					<div class="grid grid-cols-2 gap-4 mt-8">
 						<div class="code-block font-mono text-sm text-gray-800">
 							<pre><code># pairplot <br></br>
 								import seaborn as sns <br></br>
 								%matplotlib inline <br></br>
 								<br></br>
-
-								sns.pairplot(bike_data, <br></br>
-								x_vars=['Hour', <br></br>
-								'Temperature(°C)', <br></br>
-								'Humidity(%)', <br></br>
-								'Wind speed (m/s)', <br></br>
-								'Visibility (10m)'], <br></br>
-								plot_kws=dict(color='magenta'), <br></br>
-								diag_kws=dict(color='magenta')) <br></br>
+								sns.pairplot(bike_data, x_vars=['Hour', 'Temperature(°C)',<br></br>
+								'Humidity(%)', 'Wind speed (m/s)', 'Visibility (10m)'], <br></br>
+								plot_kws=dict(color='magenta'), diag_kws=dict(color='magenta')) <br></br>
 								<br></br>
 								plt.savefig('snspairplot.png')</code></pre>
 						</div>
-						<div class="flex flex-col">
-							<img class="mt-4 w-full h-full lg:mt-10 rounded-lg" src="./img/sbd1.png" alt="office content 2" />
-							<img class="mt-4 w-full h-full lg:mt-10 rounded-lg" src="./img/sbd2.png" alt="office content 2" />
-						</div>
+						<SyntaxHighlighter class="block bg-gray-900 text-white rounded-md p-4 relative" language="python" style={dracula}>
+							{CodeString1}
+						</SyntaxHighlighter>
+					</div>
+					<div class="grid gap-4 mt-8">
+						<img class="mt-4 w-2/3  lg:mt-10 rounded-lg" src="./img/dtr1.png" alt="office content 2" />
+						<img class="mt-4 w-2/3  lg:mt-10 rounded-lg" src="./img/dtr2.png" alt="office content 2" />
 					</div>
 				</div>
 			</section>
 
-
-			<section>
-				<h2 class="my-4 text-2xl font-extrabold">Part 2: Linear Regression Model</h2>
-				<div class="flex flex-col">
-					<p class="my-4 text-lg text-gray-500 text-left">The data is then split into two subgroups to use for model training and testing. X train shape is (6570, 5), while y train shape is (6570, ). X test shape is (2190, 5), while y train shape is (2190, ).</p>
-				</div>
-				<p class="italic text-center font-bold">Figure 2: Linear Regression Model</p>
-				<div className="flex flex-row">
-					<div class="flex flex-col">
-						<img class="w-100 p-1" src="./img/sbd1.png" alt="Seaborn Pairplots" />
-						<img class="w-100 p-1" src="./img/sbd2.png" alt="Residual Pairplots" />
-					</div>
-					<SyntaxHighlighter class="block bg-gray-900 text-white rounded-md p-4 relative" language="python" style={dracula}>
-						{CodeString1}
-					</SyntaxHighlighter>
-				</div>
-			</section>
-
-			<section>
-				<h2 class="my-4 text-2xl font-extrabold">Part 3: Decision Tree Regressor Model</h2>
-				<p class="mt-4 text-lg text-gray-500">Now we can utilize a linear regression model to compare the predicted and actual values of bike rentals based on the parameters. </p>
-				<p class="italic text-center font-bold">Figure 3: Decision Tree Regression Model</p>
-				<div class='flex flex-row'>
-					<div class="flex flex-col">
-						<img class="w-100 p-1" src="./img/sbd1.png" alt="Seaborn Pairplots" />
-						<img class="w-100 p-1" src="./img/sbd2.png" alt="Residual Pairplots" />
-					</div>
-					<SyntaxHighlighter class="block bg-gray-900 text-white rounded-md p-4 relative" language="python" style={dracula}>
-						{CodeString2}
-					</SyntaxHighlighter>
-				</div>
-			</section>
 		</div >
 
 	);
