@@ -1,4 +1,5 @@
 import React from "react";
+import { a11yLight, anOldHope, solarizedLight } from "react-code-blocks";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -7,12 +8,7 @@ const Bike = () => {
 	const CodeString = `import seaborn as sns
 %matplotlib inline
 
-sns.pairplot(df, 
-			 x_vars=['Hour', 
-			 		 'Temperature(°C)', 
-					 'Humidity(%)', 
-			 		 'Wind speed (m/s)', 
-					 'Visibility (10m)'])`;
+sns.pairplot(df, x_vars=['Hour', 'Temperature(°C)', 'Humidity(%)', 'Wind speed (m/s)', 'Visibility (10m)'])`;
 
 	const CodeString1 = `from sklearn.linear_model import LinearRegression
 
@@ -69,7 +65,8 @@ residuals_tree = y_test - y_pred_tree
 # Plotting the actual vs. predicted values with trend line and residuals
 plt.scatter(y_test, y_pred_tree, alpha=0.5, label='Data Points', color='magenta')
 plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='purple', linestyle='--', label='Trend Line')
-plt.axhline(0, color='black', linewidth=0.5)  # Add a horizontal line at y=0 for reference
+plt.axhline(0, color='black', linewidth=0.5)  
+# Add a horizontal line at y=0 for reference
 plt.xlabel("Actual Rented Bike Count")
 plt.ylabel("Predicted Rented Bike Count")
 plt.title("Actual vs. Predicted Rented Bike Count", loc='left', weight='bold', fontsize=20)
@@ -79,7 +76,8 @@ plt.savefig('dtr1.png')
 
 # Plotting the residuals
 plt.scatter(y_test, residuals_tree, alpha=0.5, color='magenta')
-plt.axhline(0, color='black', linewidth=0.5)  # Add a horizontal line at y=0 for reference
+plt.axhline(0, color='black', linewidth=0.5)  
+# Add a horizontal line at y=0 for reference
 plt.xlabel("Actual Rented Bike Count")
 plt.ylabel("Residuals")
 plt.title("Residual Plot", loc='left', weight='bold', fontsize=20)
@@ -90,13 +88,12 @@ plt.savefig('dtr2.png')`
 
 		<div id="bike" class="container mx-auto my-auto p-4 max-w-8xl">
 
-			<section class="bg-white my-10">
+			<section class="bg-white my-12">
 				<div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
 					<div class="mr-auto place-self-center lg:col-span-7">
 						<h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">Seoul Bike Data</h1>
-						<h3 class="text-xl font-semibold mb-8">MATH 167: Applied Linear Algebra Final Project</h3>
 						<h2 class="max-w-xl my-6 text-3xl font-extrabold">Goal: Predict bike rental counts accurately based on Seoul bike sharing data.</h2>
-						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">My partner and I began by selecting the Kaggle data set, titled: “Seoul Bike Sharing Demand Prediction: Predict the Bike Demand in specific day”. The parameters affecting demand are specific weather conditions including temperature, humidity, windspeed and more.</p>
+						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">The final project for MATH 167, Applied Linear Algebra, gave my partner and I the opportunity to select the Kaggle data set, titled: “Seoul Bike Sharing Demand Prediction: Predict the Bike Demand in specific day”. The parameters affecting demand are specific weather conditions including temperature, humidity, windspeed and more.</p>
 					</div>
 					<div class="lg:col-span-5 lg:flex lg:items-center">
 						<img class="object-contain mx-auto lg:mx-0" src="./img/seoul bike.jpeg" alt="mockup" />
@@ -112,23 +109,9 @@ plt.savefig('dtr2.png')`
 						<p>A Seaborn pairplot is a quick and easy way to become familiar with our new dataset. It plots pairwise relationships between variables within a dataset, allowing us to visualize large datasets in a condensed format.</p>
 					</div>
 					<div class="grid grid-cols-2 gap-4 mt-8">
-						<div class="code-block font-mono text-sm text-gray-800">
-							<pre><code># pairplot <br></br>
-								import seaborn as sns <br></br>
-								%matplotlib inline <br></br>
-								<br></br>
-
-								sns.pairplot(bike_data, <br></br>
-								x_vars=['Hour', <br></br>
-								'Temperature(°C)', <br></br>
-								'Humidity(%)', <br></br>
-								'Wind speed (m/s)', <br></br>
-								'Visibility (10m)'], <br></br>
-								plot_kws=dict(color='magenta'), <br></br>
-								diag_kws=dict(color='magenta')) <br></br>
-								<br></br>
-								plt.savefig('snspairplot.png')</code></pre>
-						</div>
+						<SyntaxHighlighter className="rounded-lg h-1/3 p-4 text-xs bg-gray-100 text-gray-800 overflow-x-auto" style={dracula} wrapLongLines language="python">
+							{CodeString}
+						</SyntaxHighlighter>
 						<img class="mt-4 w-full lg:mt-10 rounded-lg" src="./img/snspairplot.png" alt="office content 2" />
 					</div>
 				</div>
@@ -139,21 +122,13 @@ plt.savefig('dtr2.png')`
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Linear Regression Model</h2>
 						<p class="mb-4">The data is then split into two subgroups to use for model training and testing. X train shape is (6570, 5), while y train shape is (6570, ). X test shape is (2190, 5), while y train shape is (2190, ).</p>
-						<div class="code-block font-mono text-sm text-gray-800">
-							<pre><code># pairplot <br></br>
-								import seaborn as sns <br></br>
-								%matplotlib inline <br></br>
-								<br></br>
-								sns.pairplot(bike_data, x_vars=['Hour', 'Temperature(°C)',<br></br>
-								'Humidity(%)', 'Wind speed (m/s)', 'Visibility (10m)'], <br></br>
-								plot_kws=dict(color='magenta'), diag_kws=dict(color='magenta')) <br></br>
-								<br></br>
-								plt.savefig('snspairplot.png')</code></pre>
-						</div>
+						<SyntaxHighlighter className="rounded-lg p-4 text-xs bg-gray-100 text-gray-800 wrapLongLines overflow-x-auto" style={dracula} wrapLongLines language="python">
+							{CodeString1}
+						</SyntaxHighlighter>
 					</div>
 					<div class="grid gap-4 mt-8">
-						<img class="mt-4 w-2/3 lg:mt-10 rounded-lg" src="./img/lr1.png" alt="office content 2" />
-						<img class="mt-4 w-2/3 lg:mt-10 rounded-lg" src="./img/lr2.png" alt="office content 2" />
+						<img class="mt-4 w-4/5 lg:mt-10 rounded-lg" src="./img/lr1.png" alt="office content 2" />
+						<img class="mt-4 w-4/5 lg:mt-10 rounded-lg" src="./img/lr2.png" alt="office content 2" />
 					</div>
 				</div>
 			</section>
@@ -163,27 +138,17 @@ plt.savefig('dtr2.png')`
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Decision Tree Regressor Model</h2>
 						<p class="mb-4">Now we can utilize a linear regression model to compare the predicted and actual values of bike rentals based on the parameters.</p>
-						<div class="code-block font-mono text-sm text-gray-800">
-							<pre><code># pairplot <br></br>
-								import seaborn as sns <br></br>
-								%matplotlib inline <br></br>
-								<br></br>
-								sns.pairplot(bike_data, x_vars=['Hour', 'Temperature(°C)',<br></br>
-								'Humidity(%)', 'Wind speed (m/s)', 'Visibility (10m)'], <br></br>
-								plot_kws=dict(color='magenta'), diag_kws=dict(color='magenta')) <br></br>
-								<br></br>
-								plt.savefig('snspairplot.png')</code></pre>
-						</div>
-						<SyntaxHighlighter class="block bg-gray-900 text-white rounded-md p-4 relative" language="python" style={dracula}>
-							{CodeString1}
+						<SyntaxHighlighter className="rounded-lg p-4 text-xs bg-gray-100 text-gray-800 overflow-x-auto" style={dracula} wrapLongLines language="python">
+							{CodeString2}
 						</SyntaxHighlighter>
+
 					</div>
 					<div class="grid gap-4 mt-8">
-						<img class="mt-4 w-2/3  lg:mt-10 rounded-lg" src="./img/dtr1.png" alt="office content 2" />
-						<img class="mt-4 w-2/3  lg:mt-10 rounded-lg" src="./img/dtr2.png" alt="office content 2" />
+						<img class="mt-4 w-5/6 lg:mt-10 rounded-lg" src="./img/dtr1.png" alt="office content 2" />
+						<img class="mt-4 w-5/6 lg:mt-10 rounded-lg" src="./img/dtr2.png" alt="office content 2" />
 					</div>
 				</div>
-			</section>
+			</section >
 
 		</div >
 
