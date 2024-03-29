@@ -56,7 +56,7 @@ const Projects = () => {
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Blue Book">📘</span>
 							</div>
 							<h3 class="mb-2 text-xl font-bold ">coursewise</h3>
-							<p class="text-gray-500 ">Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.</p>
+							<p class="text-gray-500">Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.</p>
 						</div>
 						<div>
 							<div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12">
