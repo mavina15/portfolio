@@ -9,7 +9,7 @@ const About = () => {
 				<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
 
 					<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Mel Avina-Beltran</h1>
-					<p class="mb-8 text-3xl mt-3 font-bold text-pink-500 lg:text-3xl sm:px-16 xl:px-36">Data Scientist + Software Engineer</p>
+					<p class="mb-8 text-3xl mt-3 font-bold text-pink-500 lowercase lg:text-3xl sm:px-16 xl:px-36">Data Scientist + Software Engineer</p>
 
 					<div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-sm lg:px-36">
 						<span class="font-semibold text-gray-400 uppercase">contact</span>

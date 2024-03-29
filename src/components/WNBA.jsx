@@ -1,64 +1,74 @@
 import React from "react";
+import { a11yLight, anOldHope, solarizedLight } from "react-code-blocks";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const WNBA = () => {
+
+	const CodeString = `import seaborn as sns
+	%matplotlib inline
+	
+	sns.pairplot(df, x_vars=['Hour', 'Temperature(°C)', 'Humidity(%)', 'Wind speed (m/s)', 'Visibility (10m)'])`;
+
 	return (
 
-		<div id="wnba" class="container mx-auto my-auto p-4 max-w-5xl">
-			<div class="mx-auto max-w-2xl p-8">
-				<span class="text-5xl mb-2 mx-2" role="img" aria-label="Basketball">🏀</span>
-				<h1 class="text-3xl font-bold mb-4">WNBA Prediction</h1>
-				<p class="mb-4">
-					In the Fall of 2023, I attended a collaboration workshop between Aggie
-					Analytics and the Society of Women Engineers at UC Davis. This event
-					sought to introduce computer science, engineering and other
-					underrepresented student groups to data science projects through female
-					sports events.
-				</p>
+		<div id="wnba" class="container mx-auto my-auto p-4 max-w-8xl">
 
-				<div class="relative">
-					<img src="./img/wnba.png" alt="wnba image" class="h-48 w-full object-cover rounded-md object-right-top" />
-					<div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
-					<div class="absolute inset-0 flex items-center justify-center">
-						<h2 class="text-white text-3xl font-bold text-balance text-center">Goal: Predict the outcome of WNBA games using data analysis and machine learning techniques.</h2>
+			<section class="bg-white my-12">
+				<div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+					<div class="mr-auto place-self-center lg:col-span-7">
+						<h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">WNBA Prediction</h1>
+						<h2 class="max-w-xl my-6 text-3xl font-extrabold">Goal: Develop and evaluate machine learning models to accurately classify breast tumors as malignant or benign using features extracted from digitized images, contributing to early detection and diagnosis of breast cancer for improved patient outcomes.</h2>
+						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">During the weekend, the UC Davis AI Student Collective hosted a 4 hour workshop, to classify Breast Cancer using 10 machine learning techniques. They choose this subject as Breast Cancer plagues women worldwide. Early detection has shown to be vital in improving patient outcomes. Machine Learning Algorithms have the potential to build models to accurately predict the malignancy of a breast tumor using features extracted from images of breast mass. </p>
+					</div>
+					<div class="lg:col-span-5 lg:flex lg:items-center">
+						<img class="rounded-xl shadow-md object-contain mx-auto lg:mx-0" src="./img/wnba.png" alt="mockup" />
 					</div>
 				</div>
+			</section>
 
-				<h2 class="text-xl font-bold my-2">Technologies used:</h2>
-				<ul class="list-disc pl-8 mb-4">
-					<li>Python</li>
-					<li>Libraries: Pandas, Scikit-Learn</li>
-				</ul>
+			<section class="bg-white">
+				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+					<div class="font-light text-gray-500 sm:text-lg">
+						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Importing Libraries and Splitting Data</h2>
+						<p class="mb-4">Using Google Colab, I imported the following libraries: pandas, numpy, sklearn, matplotlib, and seaborn. To visualize the weather conditions, I used seaborn to print pairplots for each parameter and later assigned it to a variable that will hold the columns that represent the X data, while y will represent the number of bikes rented on a given day.</p>
+						<p>A Seaborn pairplot is a quick and easy way to become familiar with our new dataset. It plots pairwise relationships between variables within a dataset, allowing us to visualize large datasets in a condensed format.</p>
+					</div>
+					<div class="grid grid-cols-2 gap-4 mt-8">
+						<SyntaxHighlighter className="rounded-lg h-1/3 p-4 text-xs bg-gray-100 text-gray-800 overflow-x-auto" style={dracula} wrapLongLines language="python">
+							{CodeString}
+						</SyntaxHighlighter>
+						<img class="mt-4 w-full lg:mt-10 rounded-lg" src="./img/snspairplot.png" alt="office content 2" />
+					</div>
+				</div>
+			</section >
 
-				<section>
-					<h2 class="my-4 text-2xl font-extrabold">Part 1: Data Cleaning</h2>
-					<p class="mb-4">There are two files we begin to analyze for upkeep, “reg_season.csv” and “advanced_stats.csv”. The first csv file contains schedule information for the teams, while the latter contains more specific information like W, L, TS percentage and more.</p>
-					<p class="mb-4">For both the schedule and advanced stats datasets, we must remove columns that are not needed, ie. x, y and z. In the second dataset, “advanced_stats.csv,” we remove NaN columns. Now we can merge and organize the two datasets according to their team names. Finally to show a home team won, we must add a column accordingly.</p>
-				</section>
+			<section class="bg-white">
+				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+					<div class="font-light text-gray-500 sm:text-lg">
+						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Linear Regression Model</h2>
+						<p class="mb-4">The data is then split into two subgroups to use for model training and testing. X train shape is (6570, 5), while y train shape is (6570, ). X test shape is (2190, 5), while y train shape is (2190, ).</p>
+					</div>
+					<div class="grid gap-4 mt-8">
+						<img class="mt-4 w-4/5 lg:mt-10 rounded-lg" src="./img/lr1.png" alt="office content 2" />
+						<img class="mt-4 w-4/5 lg:mt-10 rounded-lg" src="./img/lr2.png" alt="office content 2" />
+					</div>
+				</div>
+			</section>
 
-				<section>
-					<h2 class="my-4 text-2xl font-extrabold">Part 2: Feature Selection</h2>
-					<p class="mb-4">Moving on to choosing successful predictors for the model, we can utilize a ridge regression classifier and sequential feature selector. This will help us select the 10 best features from the stats. Hence we can continue to identify the selected predictor for the model, ie. x, y and z.</p>
-				</section>
+			<section class="bg-white">
+				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+					<div class="font-light text-gray-500 sm:text-lg">
+						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Decision Tree Regressor Model</h2>
+						<p class="mb-4">Now we can utilize a linear regression model to compare the predicted and actual values of bike rentals based on the parameters.</p>
 
-				<section>
-					<h2 class="my-4 text-2xl font-extrabold">Part 3: Model Creation and Evaluation</h2>
-					<p class="mb-4">A successful dataset clean up and feature selection builds the foundation for an accurate and clear model to be built. To build and test the model, we split the data into a training and testing subset. Next, we use Logistic Regression to train the model. This allows us to check the accuracy of the model using the Monte Carlo cross-validation method.</p>
-					<p class="mb-4">After our model is created, we test it, achieving <span class="font-bold">70.38%</span> accuracy for meeting the goal in predicting WNBA game outcomes.</p>
-				</section>
-
-				<section>
-					<h2 class="my-4 text-2xl font-extrabold">Part 4: Predicting Finals</h2>
-					<p class="mb-4">Using the model, we can continue testing outcomes in predicting the final game matchups. To do this successfully, we need to remove games where the Las Vegas Aces and New York Liberty play one another. Then we select a final game between the Las Vegas Aces, where they are the home team, against the visiting team, New York Liberty. This allows us to continue training the model using the rest of the dataset to predict the outcome of the final game.</p>
-				</section>
-
-				<section>
-					<h2 class="my-4 text-2xl font-extrabold">Part 5: Conclusion</h2>
-					<p class="mb-4">For an introduction workshop, this was hosted and demonstrated effectively, with many underrepresented students showing visible excitement and focus. This workshop gave me the confidence and initial interest to analyze sports data and apply my previous skillset to adding usability and application developments in future work. In the coming weeks, I intend to build a dashboard for this dataset that allows users to choose teams to pit against each other and predict the outcome of a game. This project would allows me to build my web application skills with the technologies of Flask.</p>
-				</section>
-
-				<p class="mb-4">References: Aggie Analytics, SWE</p>
-				<p class="mb-4">Code/Github: <a href="https://github.com/mavina15/WNBA_Predict" class="text-blue-600">https://github.com/mavina15/WNBA_Predict</a></p>
-			</div>
+					</div>
+					<div class="grid gap-4 mt-8">
+						<img class="mt-4 w-5/6 lg:mt-10 rounded-lg" src="./img/dtr1.png" alt="office content 2" />
+						<img class="mt-4 w-5/6 lg:mt-10 rounded-lg" src="./img/dtr2.png" alt="office content 2" />
+					</div>
+				</div>
+			</section>
 		</div>
 
 	);
