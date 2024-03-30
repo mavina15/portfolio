@@ -24,11 +24,11 @@ const Education = () => {
 					<article class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl mt-2">
 						<div class="md:flex">
 							<div class="md:shrink-0">
-								<img class="h-48 w-full object-cover md:h-full md:w-48" src="./img/smc.jpg" alt="University of California, Davis" />
+								<img class="h-48 w-full object-cover md:h-full md:w-48" src="./img/smc.jpg" alt="Santa Monica College" />
 							</div>
 							<div class="p-8">
-								<div class="tracking-wide text-2xl text-indigo-500 font-bold lowercase">santa monica college</div>
-								<a href="#" class="block mt-1 text-lg leading-tight font-bold text-black hover:underline lowercase">june 2019</a>
+								<div class="tracking-wide text-2xl text-indigo-500 font-bold lowercase">Santa Monica College</div>
+								<a href="#" class="block mt-1 text-lg leading-tight font-bold text-black hover:underline lowercase">June 2019</a>
 								<p class="mt-2 mb-2 text-slate-500 text-xl lowercase">A.S. in General Sciences</p>
 							</div>
 						</div>
@@ -37,8 +37,8 @@ const Education = () => {
 				</div>
 				<div class="mb-4 py-10 mx-auto max-w-4xl">
 					<div class="flex flex-row">
-						<p class="text-3xl mb-4 font-bold basis-1/4 text-left lowercase">Relevant Coursework:</p>
-						<p class="text-xl text-gray-500 mb-2 basis-3/4">
+						<p class="text-3xl mb-4 font-bold w-1/4 text-left lowercase">Relevant Coursework:</p>
+						<p class="text-xl text-gray-500 mb-2 w-3/4">
 							Introduction to Programming, Introduction to Data Structures, Introduction to Programming and Microcontrollers,
 							Human-Computer Interaction, Introduction to Artificial Intelligence, Theory of Computation, Visualizing Society
 							with Data, Optimization, Numerical Analysis, Applied Linear Algebra, Modern Algebra, Probability, Ordinary
@@ -46,9 +46,10 @@ const Education = () => {
 						</p>
 					</div>
 				</div>
+
 			</div>
 
-		</section>
+		</section >
 
 	);
 };

@@ -60,8 +60,7 @@ print(f"Accuracy: {score}")`
 				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Cleaning Data</h2>
-						<p class="mb-4">Using Google Colab, I imported the following libraries: pandas, numpy, sklearn, matplotlib, and seaborn. To visualize the weather conditions, I used seaborn to print pairplots for each parameter and later assigned it to a variable that will hold the columns that represent the X data, while y will represent the number of bikes rented on a given day.</p>
-						<p>A Seaborn pairplot is a quick and easy way to become familiar with our new dataset. It plots pairwise relationships between variables within a dataset, allowing us to visualize large datasets in a condensed format.</p>
+						<p class="mb-4">First we clean and prepare our dataset, which allows us to import game schedule and advanced statistics datasets, remove unnecessary columns, and merge the datasets to give us a comprehensive dataframe to analyze.</p>
 					</div>
 					<div class="grid grid-cols-2 gap-4 mt-8">
 						<SyntaxHighlighter className="rounded-lg h-1/3 p-4 text-xs bg-gray-100 text-gray-800 overflow-x-auto" style={dracula} wrapLongLines language="python">
@@ -76,7 +75,7 @@ print(f"Accuracy: {score}")`
 				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Determine Predictors</h2>
-						<p class="mb-4">The data is then split into two subgroups to use for model training and testing. X train shape is (6570, 5), while y train shape is (6570, ). X test shape is (2190, 5), while y train shape is (2190, ).</p>
+						<p class="mb-4">A Sequential Feature Selector technique with Ridge Regression Classification makes it possible to determine influential predictors for game outcomes. This will identify 10 features with the strongest correlation to predicting game winners.</p>
 					</div>
 					<div class="grid gap-4 mt-8">
 						<img class="mt-4 w-4/5 lg:mt-10 rounded-lg" src="./img/lr1.png" alt="office content 2" />
@@ -89,7 +88,7 @@ print(f"Accuracy: {score}")`
 				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Creating and Testing Model</h2>
-						<p class="mb-4">Now we can utilize a linear regression model to compare the predicted and actual values of bike rentals based on the parameters.</p>
+						<p class="mb-4">After a logistic regression model is developed and evaluates its accuracy using a Monte Carlo simulation approach. The data is then split into a training and test set, where the model is trained and tested on its predictive performance.</p>
 
 					</div>
 					<div class="grid gap-4 mt-8">
@@ -103,8 +102,12 @@ print(f"Accuracy: {score}")`
 				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 					<div class="font-light text-gray-500 sm:text-lg">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Predicting Finals</h2>
-						<p class="mb-4">Now we can utilize a linear regression model to compare the predicted and actual values of bike rentals based on the parameters.</p>
+						<p class="mb-4">The trained model can now be applied to predict the outcome of a hypothetical final game between the Las Vegas Aces and the New York Liberty. A prediction of the winner is then made utilizing the selected predictors and logistic regression model.</p>
+						<p>For an introduction workshop, this was hosted and demonstrated effectively, with many underrepresented students showing visible excitement and focus. This workshop gave me the confidence and initial interest to analyze sports data and apply my previous skillset to adding usability and application developments in future work. In the coming weeks, I intend to build a dashboard for this dataset that allows users to choose teams to pit against each other and predict the outcome of a game. This project would allows me to build my web application skills with the technologies of Flask.
 
+							References: Aggie Analytics, SWE
+
+							Code/Github: https://github.com/mavina15/WNBA_Predict</p>
 					</div>
 					<div class="grid gap-4 mt-8">
 						<img class="mt-4 w-5/6 lg:mt-10 rounded-lg" src="./img/dtr1.png" alt="office content 2" />
