@@ -1,55 +1,62 @@
+import React from "react";
 
 const Education = () => {
+
 	return (
-		<section id="education" class="container mx-auto p-4 max-w-5xl">
-			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-				<div class="max-w-screen-md mb-8 lg:mb-16">
-					<h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 ">education</h2>
-				</div>
+		<div id="education" className="container mx-auto p-4 max-w-5xl">
 
-				<div class="grid gap-8 lg:grid-cols-2">
-					<article class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl mt-2">
-						<div class="md:flex">
-							<div class="md:shrink-0">
-								<img class="h-48 w-full object-cover md:h-full md:w-48" src="./img/administration-uc-davis.jpg" alt="University of California, Davis" />
-							</div>
-							<div class="p-8">
-								<div class="tracking-wide text-2xl text-indigo-500 font-bold lowercase">University of California, Davis</div>
-								<a href="#" class="block mt-1 text-lg leading-tight font-bold text-black hover:underline lowercase">December 2023</a>
-								<p class="mt-2 mb-2 text-slate-500 text-xl lowercase">B.S. in Applied Mathematics</p>
+			<section class="bg-white">
+				<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
+					<div class="max-w-screen-md mb-4 lg:mb-8">
+						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">education</h2>
+					</div>
+
+					<div class="mb-5 md:mb-8">
+						<h3 class="text-xl font-bold mb-2 lowercase">Relevant Coursework</h3>
+						<p class="mx-auto max-w-screen-lg text-gray-500 md:text-md">Introduction to Programming, Introduction to Data Structures, Introduction to Programming and Microcontrollers, Human-Computer Interaction, Introduction to Artificial Intelligence, Theory of Computation, Visualizing Society with Data, Optimization, Numerical Analysis, Applied Linear Algebra, Modern Algebra, Probability, Ordinary Differential Equations, Real Analysis, Complex Analysis</p>
+					</div>
+
+					<div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8">
+
+						<div class="flex flex-col overflow-hidden rounded-lg border bg-white">
+							<a href="https://www.ucdavis.edu/" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+								<img src="./img/Mrak3.jpg" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+							</a>
+
+							<div class="flex flex-1 flex-col p-4 sm:p-6">
+								<h2 class="mb-2 text-2xl font-extrabold text-gray-800">
+									<a href="https://www.ucdavis.edu/" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">university of california, davis</a>
+								</h2>
+								<h4 class="mb-2 text-xl font-bold text-pink-600">
+									<a href="#" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">december 2023</a>
+								</h4>
+								<p class="mb-2 text-gray-500">b.s. applied mathematics</p>
 							</div>
 						</div>
-					</article>
 
-					<article class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-4xl mt-2">
-						<div class="md:flex">
-							<div class="md:shrink-0">
-								<img class="h-48 w-full object-cover md:h-full md:w-48" src="./img/smc.jpg" alt="Santa Monica College" />
-							</div>
-							<div class="p-8">
-								<div class="tracking-wide text-2xl text-indigo-500 font-bold lowercase">Santa Monica College</div>
-								<a href="#" class="block mt-1 text-lg leading-tight font-bold text-black hover:underline lowercase">June 2019</a>
-								<p class="mt-2 mb-2 text-slate-500 text-xl lowercase">A.S. in General Sciences</p>
+
+
+						<div class="flex flex-col overflow-hidden rounded-lg border bg-white">
+							<a href="https://www.smc.edu/" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+								<img src="./img/smc.jpg" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+							</a>
+
+							<div class="flex flex-1 flex-col p-4 sm:p-6">
+								<h2 class="mb-2 text-2xl font-extrabold text-gray-800">
+									<a href="https://www.smc.edu/" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">santa monica college</a>
+								</h2>
+								<h4 class="mb-2 text-xl font-bold text-pink-600">
+									<a href="#" class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">june 2019</a>
+								</h4>
+								<p class="mb-2 text-gray-500">a.s. general science</p>
 							</div>
 						</div>
-					</article>
 
-				</div>
-				<div class="mb-4 py-10 mx-auto max-w-4xl">
-					<div class="flex flex-row">
-						<p class="text-3xl mb-4 font-bold w-1/4 text-left lowercase">Relevant Coursework:</p>
-						<p class="text-xl text-gray-500 mb-2 w-3/4">
-							Introduction to Programming, Introduction to Data Structures, Introduction to Programming and Microcontrollers,
-							Human-Computer Interaction, Introduction to Artificial Intelligence, Theory of Computation, Visualizing Society
-							with Data, Optimization, Numerical Analysis, Applied Linear Algebra, Modern Algebra, Probability, Ordinary
-							Differential Equations, Real Analysis, Complex Analysis
-						</p>
 					</div>
 				</div>
+			</section>
+		</div>
 
-			</div>
-
-		</section >
 
 	);
 };

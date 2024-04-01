@@ -6,7 +6,7 @@ const Projects = () => {
 		<div id="projects" className="container mx-auto p-4 max-w-5xl">
 
 			<section class="bg-white">
-				<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+				<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
 					<div class="max-w-screen-md mb-8 lg:mb-16">
 						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">projects</h2>
 					</div>
@@ -15,7 +15,7 @@ const Projects = () => {
 							<div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12">
 								<span className="text-5xl mb-2 mx-2" role="img" aria-label="Bicycle">🚲</span>
 							</div>
-							<h3 class="mb-2 text-xl font-bold ">seoul bike data</h3>
+							<h3 class="mb-2 text-xl font-bold">seoul bike data</h3>
 							<p class="text-gray-500 ">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
 							<a href="/bike" class="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700">
 								Learn more
