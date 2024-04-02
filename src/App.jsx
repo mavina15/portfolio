@@ -9,6 +9,7 @@ import Leadership from "./components/Leadership.jsx";
 import Bike from "./components/BikeData.jsx";
 import WNBA from "./components/WNBA.jsx";
 import Cancer from "./components/Cancer.jsx";
+import Visual from "./components/VisualSociety.jsx";
 // import Footer from "./components/Footer.jsx";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
 					<Route exact path='/bike' element={<Bike />} />
 					<Route exact path='/wnba' element={<WNBA />} />
 					<Route exact path='/cancer' element={<Cancer />} />
+					<Route exact path='/visual' element={<Visual />} />
 				</Routes>
 			</Router>
 		</div>
