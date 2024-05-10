@@ -15,13 +15,13 @@ const Education = () => {
 						<ol class="relative border-s-2 border-pink-600">
 							<li class="mb-10 ms-8">
 								<div class="absolute w-5 h-5 bg-pink-600 rounded-full mt-1.5 -start-2.5 border-2 border-white"></div>
-								<time class="mb-1 text-lg font-bold leading-none text-pink-600 lowercase">December 2023</time>
+								<time class="mb-1 text-md font-bold leading-none text-pink-600 lowercase">December 2023</time>
 								<h3 class="text-2xl font-semibold text-gray-900 lowercase">University of California, Davis</h3>
 								<p class="mb-4 text-base font-normal text-gray-500 ">B.S. Applied Mathematics</p>
 							</li>
 							<li class="mb-10 ms-8">
 								<div class="absolute w-5 h-5 bg-pink-600 rounded-full mt-1.5 -start-2.5 border-2 border-white"></div>
-								<time class="mb-1 text-lg font-bold leading-none text-pink-600 lowercase">June 2019</time>
+								<time class="mb-1 text-md font-bold leading-none text-pink-600 lowercase">June 2019</time>
 								<h3 class="text-2xl font-semibold text-gray-900 lowercase">Santa Monica College</h3>
 								<p class="text-base font-normal text-gray-500 ">A.S. General Science</p>
 							</li>
