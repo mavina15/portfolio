@@ -8,7 +8,7 @@ const Education = () => {
 			<section class="bg-white">
 				<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
 					<div class="max-w-screen-md mb-4 lg:mb-8">
-						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">education</h2>
+						<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">education</h2>
 					</div>
 
 					<div class="m-5 md:mb-8">

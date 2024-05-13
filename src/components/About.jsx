@@ -5,14 +5,17 @@ const About = () => {
 		<div id="about" className="container mx-auto p-4 max-w-7xl">
 
 			<section className="bg-white">
+
 				<div className="py-8 px-4 mx-auto max-w-screen-2xl lg:py-16 lg:px-12">
-					<div className="grid grid-cols-3 lg:grid-cols-3 gap-8">
-						<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow pt-4">
-							<div className="flex flex-col items-center pb-10">
-								<img className="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://via.placeholder.com/150" alt="Bonnie image" />
-								<h5 className="mb-1 text-2xl font-bold text-gray-900 ">Mel Avina-Beltran</h5>
-								<span className="mb-1 text-lg font-bold text-pink-500 lowercase mb-3">Data Scientist + Software Engineer</span>
-								<span className="text-lg font-bold text-gray-400 lowercase">Contact</span>
+
+					<div className="grid grid-cols-3 items-start lg:grid-cols-3 gap-8">
+						<div className="col-span-1 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow pt-4">
+							<div className="flex flex-col items-center pb-5">
+								<img class="w-32 h-32 mr-6 rounded-full shadow-lg" src="public/img/profile-pic.png" alt="Bonnie image" />
+								<h5 class="mb-1 text-2xl font-bold text-gray-900">Mel Avina-Beltran</h5>
+								<span class="mb-2 text-xl font-bold text-pink-500 lowercase">Data Scientist + Software Engineer</span>
+
+								<span className="text-xl font-bold text-gray-400 lowercase">Contact</span>
 								<div className="flex mt-2 md:mt-4">
 									<a href="#" className="mr-5 mb-5 lg:mb-0 hover:text-gray-800">
 										<svg className="w-8 h-8 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -36,39 +39,68 @@ const About = () => {
 						</div>
 
 						<div className="col-span-2 bg-white p-4">
-							<div className="text-lg text-balance text-gray-600">
+							<div className="text-lg text-pretty text-gray-600">
 								<p className="font-bold lowercase">Data scientist and software engineer passionate about</p>
 								<p className="font-bold text-black text-4xl lowercase">leveraging technology to solve real-world problems.</p>
 							</div>
-							<div>
-							</div>
+						</div>
+
+					</div>
+
+					<div class="py-3 lg:py-5 mx-auto items-start">
+						<h4 class="mb-4 text-3xl font-extrabold text-gray-900 text-center">view my recent projects!</h4>
+						<div class="grid sm:grid-cols-2 lg:grid-cols-3 items-left gap-6">
+							<a class="group flex gap-y-6 size-full hover:bg-gray-100 rounded-lg p-5 transition-all" href="/bike">
+								<span className="flex-shrink-0 text-5xl mt-0.5 me-6" role="img" aria-label="Bike">🚲</span>
+								<div>
+									<div>
+										<h3 class="block font-bold text-gray-800">seoul bike data</h3>
+										<p class="text-gray-600">Predict bike rental counts accurately based on Seoul bike sharing data.</p>
+									</div>
+
+									<p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
+										Learn more
+										<svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+									</p>
+								</div>
+							</a>
+
+							<a class="group flex gap-y-6 size-full hover:bg-gray-100 rounded-lg p-5 transition-all" href="/cancer">
+								<span className="flex-shrink-0 text-5xl mt-0.5 me-6" role="img" aria-label="Hospital">🏥</span>
+								<div>
+									<div>
+										<h3 class="block font-bold text-gray-800">breast cancer classification</h3>
+										<p class="text-gray-600">Develop and evaluate machine learning models to accurately classify breast tumors.</p>
+									</div>
+
+									<p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
+										Learn more
+										<svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+									</p>
+								</div>
+							</a>
+
+							<a class="group flex gap-y-6 size-full hover:bg-gray-100 rounded-lg p-5 transition-all" href="/wnba">
+								<span className="flex-shrink-0 text-5xl mt-0.5 me-6" role="img" aria-label="Basketball">🏀</span>
+								<div>
+									<div>
+										<h3 class="block font-bold text-gray-800">wnba prediction</h3>
+										<p class="text-gray-600">Predict the outcome of WNBA games using data analysis and machine learning techniques.</p>
+									</div>
+
+									<p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
+										Learn more
+										<svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+									</p>
+								</div>
+							</a>
+
 						</div>
 					</div>
+
 				</div>
 			</section>
 
-			<div class="max-w-screen-md mb-4 lg:mb-8">
-				<h2 class="m-4 text-left text-lg font-bold tracking-tight text-gray-900 ">education</h2>
-				<ol class="relative border-s-2 border-pink-600">
-					<li class="mb-10 ms-8">
-						<div class="absolute w-5 h-5 bg-pink-600 rounded-full mt-1.5 -start-2.5 border-2 border-white"></div>
-						<time class="mb-1 text-md font-bold leading-none text-pink-600 lowercase">December 2023</time>
-						<h3 class="text-2xl font-semibold text-gray-900 lowercase">University of California, Davis</h3>
-						<p class="mb-4 text-base font-normal text-gray-500 ">B.S. Applied Mathematics</p>
-					</li>
-					<li class="mb-10 ms-8">
-						<div class="absolute w-5 h-5 bg-pink-600 rounded-full mt-1.5 -start-2.5 border-2 border-white"></div>
-						<time class="mb-1 text-md font-bold leading-none text-pink-600 lowercase">June 2019</time>
-						<h3 class="text-2xl font-semibold text-gray-900 lowercase">Santa Monica College</h3>
-						<p class="text-base font-normal text-gray-500 ">A.S. General Science</p>
-					</li>
-				</ol>
-
-				<div class="m-5 md:mb-8">
-					<h3 class="text-xl font-bold mb-2 lowercase">Relevant Coursework</h3>
-					<p class="mx-auto max-w-screen-lg text-gray-500 md:text-md">Introduction to Programming, Introduction to Data Structures, Introduction to Programming and Microcontrollers, Human-Computer Interaction, Introduction to Artificial Intelligence, Theory of Computation, Visualizing Society with Data, Optimization, Numerical Analysis, Applied Linear Algebra, Modern Algebra, Probability, Ordinary Differential Equations, Real Analysis, Complex Analysis</p>
-				</div>
-			</div>
 
 		</div>
 	);
