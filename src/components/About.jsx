@@ -11,7 +11,7 @@ const About = () => {
 					<div className="grid grid-cols-3 items-start lg:grid-cols-3 gap-8">
 						<div className="col-span-1 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow pt-4">
 							<div className="flex flex-col items-center pb-5">
-								<img class="w-32 h-32 mr-6 rounded-full shadow-lg" src="public/img/profile-pic.png" alt="Bonnie image" />
+								<img class="w-32 h-32 mr-6 rounded-full shadow-lg" src="./img/profile-pic.png" alt="profile image" />
 								<h5 class="mb-1 text-2xl font-bold text-gray-900">Mel Avina-Beltran</h5>
 								<span class="mb-2 text-xl font-bold text-pink-500 lowercase">Data Scientist + Software Engineer</span>
 
