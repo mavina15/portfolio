@@ -44,7 +44,6 @@ const About = () => {
 								<p className="font-bold text-black text-4xl lowercase">leveraging technology to solve real-world problems.</p>
 							</div>
 						</div>
-
 					</div>
 
 					<div class="py-3 lg:py-5 mx-auto items-start">
