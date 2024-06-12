@@ -50,7 +50,7 @@ print(f"Accuracy: {score}")`
 						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">In the Fall of 2023, I attended a collaboration workshop between Aggie Analytics and the Society of Women Engineers at UC Davis. This event sought to introduce computer science, engineering and other underrepresented student groups to data science projects through female sports events. </p>
 						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">With the increase in attention towards women's sports, the Women's National basketball Association (WNBA) has garnered fans across the world with high-energy games and competitive spirit. This project gave me the opportunity to apply machine learning technique to predict WNBA game winners using game statistics.</p>
 						<div class="flex space-x-4">
-							<a href="#" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-600">Live Demo</a>
+							<a href="https://wnbaflask-595f54052c18.herokuapp.com/" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-600">Live Demo</a>
 							<a href="#" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600">Learn More</a>
 						</div>
 					</div>
