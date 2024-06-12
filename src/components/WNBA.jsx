@@ -49,12 +49,17 @@ print(f"Accuracy: {score}")`
 						<h2 class="max-w-xl my-6 text-3xl font-extrabold">Goal: Predict the outcome of WNBA games using data analysis and machine learning techniques.</h2>
 						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">In the Fall of 2023, I attended a collaboration workshop between Aggie Analytics and the Society of Women Engineers at UC Davis. This event sought to introduce computer science, engineering and other underrepresented student groups to data science projects through female sports events. </p>
 						<p class="max-w-2xl mb-6 font-light text-gray-500 md:text-lg lg:text-xl">With the increase in attention towards women's sports, the Women's National basketball Association (WNBA) has garnered fans across the world with high-energy games and competitive spirit. This project gave me the opportunity to apply machine learning technique to predict WNBA game winners using game statistics.</p>
+						<div class="flex space-x-4">
+							<a href="#" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-600">Live Demo</a>
+							<a href="#" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600">Learn More</a>
+						</div>
 					</div>
 					<div class="lg:col-span-5 lg:flex lg:items-center">
 						<img class="rounded-xl shadow-md object-contain mx-auto lg:mx-0" src="./img/2022-WNBA-PREVIEW-4x3-1.webp" alt="mockup" />
 					</div>
 				</div>
 			</section>
+
 
 			<section class="bg-white">
 				<div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
