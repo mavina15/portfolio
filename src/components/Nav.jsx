@@ -61,7 +61,7 @@ export default function Example() {
 						))}
 					</div>
 					<div>
-						<a href="./img/Mel_Avina-Beltran_DS_ Resume.pdf" className="inline-block text-lg px-4 py-2 font-bold leading-none border rounded text-white border-white hover:border-transparent lowercase hover:text-pink-500 hover:bg-white mt-4 lg:mt-0" target="_blank">
+						<a href="./img/6 Mel Avina-Beltran  Resume.pdf" className="inline-block text-lg px-4 py-2 font-bold leading-none border rounded text-white border-white hover:border-transparent lowercase hover:text-pink-500 hover:bg-white mt-4 lg:mt-0" target="_blank">
 							Resume
 						</a>
 					</div>
