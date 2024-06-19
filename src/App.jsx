@@ -1,37 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import Nav from "./components/Nav.jsx";
-import About from "./components/About.jsx";
-import Education from "./components/Education.jsx";
-import Projects from "./components/Projects.jsx";
-import Experience from "./components/Experience.jsx";
-import Leadership from "./components/Leadership.jsx";
-import Bike from "./components/BikeData.jsx";
-import WNBA from "./components/WNBA.jsx";
-import Cancer from "./components/Cancer.jsx";
-import Visual from "./components/VisualSociety.jsx";
-// import Footer from "./components/Footer.jsx";
+import ParallaxSection from './components/ParallaxSection';
 
-const App = () => {
+function App() {
 	return (
-		<div>
-			<Router>
-				<Nav />
-				<Routes>
-					<Route exact path='/' element={<About />} />
-					<Route exact path='/education' element={<Education />} />
-					<Route exact path='/projects' element={<Projects />} />
-					<Route exact path='/experience' element={<Experience />} />
-					<Route exact path='/leadership' element={<Leadership />} />
-					<Route exact path='/bike' element={<Bike />} />
-					<Route exact path='/wnba' element={<WNBA />} />
-					<Route exact path='/cancer' element={<Cancer />} />
-					<Route exact path='/visual' element={<Visual />} />
-				</Routes>
-			</Router>
+		<div className="App">
+			<ParallaxSection />
+			{/* Add more parallax sections here */}
 		</div>
 	);
-};
+}
 
 export default App;
 
