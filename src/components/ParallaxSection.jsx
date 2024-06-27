@@ -1,20 +1,17 @@
 import React from 'react';
 import Nav from './Nav';
-import profilePic from './img/memoji02.png'; // Adjust the path based on your project structure
-import mailIcon from './img/mail-app.png'; // Replace with actual path to mail icon
-import githubIcon from './img/github-app.png'; // Replace with actual path to GitHub icon
-import linkedinIcon from './img/linkedin-app.png'; // Replace with ac
-import rocCurve from './img/roccurve.png'; // Replace with ac
-import wnbaPredictionImage from './img/2022-WNBA-PREVIEW-4x3-1.webp'
-
-
-
-
+import profilePic from './img/profile-pic.png';
+import mailIcon from './img/mail-app.png';
+import githubIcon from './img/github-app.png';
+import linkedinIcon from './img/linkedin-app.png';
+import rocCurve from './img/roccurve.png';
+import wnbaPredictionImage from './img/2022-WNBA-PREVIEW-4x3-1.webp';
+import bannerPic from './img/nonlinear-dynamics.jpeg';
+import mathImage from './img/deqn.jpeg';
 
 const ParallaxSection = () => {
 	return (
 		<div className="relative overflow-hidden min-h-screen">
-
 			<Nav />
 
 			{/* Home Section */}
@@ -22,14 +19,14 @@ const ParallaxSection = () => {
 				<div className="container mx-auto max-w-4xl">
 					<div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-lg p-8">
 						{/* Profile Image */}
-						<div className="relative mb-6">
-							<div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-tr from-blue-400 to-purple-500 flex items-center justify-center">
-								<img className="w-28 h-28 object-cover" src={profilePic} alt="profile image" style={{ marginBottom: '-0.90rem' }} />
+						<div className="relative mt-1 h-32 w-full bg-cover rounded-xl" style={{ backgroundImage: `url(${bannerPic})` }}>
+							<div className="absolute bottom-[-50px] left-1/2 transform translate-x-[-50%] flex items-center justify-center w-40 h-40 bg-white rounded-full border-4 border-white">
+								<img className="h-full w-full rounded-full" src={profilePic} alt="profile image" />
 							</div>
-							{/* Adjust position using negative margin */}
 						</div>
-						<h1 className="text-4xl font-bold text-gray-900 mb-2">Mel Avina-Beltran</h1>
-						<p className="text-xl font-semibold text-purple-500 mb-4">Data Scientist + Software Engineer</p>
+
+						<h1 className="text-4xl text-gray-900 mt-16 mb-2">Mel Avina-Beltran</h1>
+						<p className="text-xl font-semibold text-pink-500 mb-4">Data Scientist + Software Engineer</p>
 						<p className="text-center text-lg text-gray-700 mb-6">Passionate about leveraging technology to solve real-world problems.</p>
 						{/* Contact Links */}
 						<div className="flex space-x-4 mb-6">
@@ -44,7 +41,7 @@ const ParallaxSection = () => {
 							</a>
 						</div>
 						{/* Download Resume Button */}
-						<a href="/path/to/your/resume.pdf" download className="inline-block mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-purple-400 transition-colors font-semibold">
+						<a href="./img/6 Mel Avina-Beltran  Resume.pdf" download className="inline-block mt-4 bg-pink-500 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-purple-400 transition-colors">
 							Download Resume
 						</a>
 					</div>
@@ -97,88 +94,85 @@ const ParallaxSection = () => {
 							<div className="ml-3 text-xl font-semibold text-yellow-600">Projects</div>
 						</div>
 						<p className="text-lg text-center text-gray-400 mb-4">2024</p>
-						<div class="bg-white p-6 flex flex-wrap justify-evenly">
-							<div class="w-full md:w-3/5 text-balance">
-								<h2 class="underline text-2xl font-semibold mb-4">🏀 WNBA Prediction</h2>
-								<a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" target="_blank">Live Demo</a>
-								<p class="text-gray-700 my-4">Implemented a predictive modeling project for WNBA game outcomes using Python and machine learning techniques. The project involved data cleaning, feature selection, and model training to predict the winner of basketball games. The model achieved an accuracy of approximately 70.4%.</p>
+						<div className="bg-white p-6 flex flex-wrap justify-evenly">
+							<div className="w-full md:w-3/5 text-balance">
+								<h2 className="underline text-2xl font-semibold mb-4">🏀 WNBA Prediction</h2>
+								<a href="https://wnbaflask-595f54052c18.herokuapp.com/" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" target="_blank">Live Demo</a>
+								<p className="text-gray-700 my-4">Implemented a predictive modeling project for WNBA game outcomes using Python and machine learning techniques. The project involved data cleaning, feature selection, and model training to predict the winner of basketball games. The model achieved an accuracy of approximately 70.4%.</p>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Tech Used:</h3>
-									<p class="text-gray-700">Python, Pandas, Scikit-learn</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Tech Used:</h3>
+									<p className="text-gray-700">Python, Pandas, Scikit-learn</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Steps:</h3>
-									<p class="text-gray-700"><strong>Cleaning Data:</strong> Imported and cleaned schedule and advanced statistics data. Merged datasets and added a column to indicate the home team’s win or loss.</p>
-									<p class="text-gray-700"><strong>Determining Predictors:</strong> Used Sequential Feature Selector to identify the top 10 predictors for the model.</p>
-									<p class="text-gray-700"><strong>Creating and Testing Model:</strong> Implemented a logistic regression model. Utilized Monte Carlo simulation for model evaluation, achieving an accuracy of 70.4%.</p>
-									<p class="text-gray-700"><strong>Predicting Finals:</strong> Predicted the outcome of a specific WNBA final matchup between the Las Vegas Aces and New York Liberty.</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Steps:</h3>
+									<p className="text-gray-700"><strong>Cleaning Data:</strong> Imported and cleaned schedule and advanced statistics data. Merged datasets and added a column to indicate the home team’s win or loss.</p>
+									<p className="text-gray-700"><strong>Determining Predictors:</strong> Used Sequential Feature Selector to identify the top 10 predictors for the model.</p>
+									<p className="text-gray-700"><strong>Creating and Testing Model:</strong> Implemented a logistic regression model. Utilized Monte Carlo simulation for model evaluation, achieving an accuracy of 70.4%.</p>
+									<p className="text-gray-700"><strong>Predicting Finals:</strong> Predicted the outcome of a specific WNBA final matchup between the Las Vegas Aces and New York Liberty.</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Skills Demonstrated:</h3>
-									<p class="text-gray-700">Data Cleaning, Feature Selection, Machine Learning (Logistic Regression), Model Evaluation and Testing</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Skills Demonstrated:</h3>
+									<p className="text-gray-700">Data Cleaning, Feature Selection, Machine Learning (Logistic Regression), Model Evaluation and Testing</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Achievements:</h3>
-									<p class="text-gray-700">Successfully developed and tested a predictive model for WNBA game outcomes. Achieved a model accuracy of 70.4%.</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Achievements:</h3>
+									<p className="text-gray-700">Successfully developed and tested a predictive model for WNBA game outcomes. Achieved a model accuracy of 70.4%.</p>
 								</div>
 							</div>
 
-							<div class="w-full md:w-1/3 flex items-center justify-center md:justify-end mt-4 md:mt-0">
-								<img src={wnbaPredictionImage} alt="WNBA Prediction Visualization" class="w-full h-auto rounded-lg shadow-md object-cover" />
+							<div className="w-full md:w-1/3 flex items-center justify-center md:justify-end mt-4 md:mt-0">
+								<img src={wnbaPredictionImage} alt="WNBA Prediction Visualization" className="w-full h-auto rounded-lg shadow-md object-cover" />
 							</div>
 						</div>
 
-						<div class="bg-white p-6 flex flex-wrap justify-evenly">
-							<div class="w-full md:w-3/5 text-balance">
-								<h2 class="underline text-2xl font-semibold mb-4">🩻 Breast Cancer Classification</h2>
-								<a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" target="_blank">Live Demo</a>
-								<p class="text-gray-700 my-4">Implemented various machine learning models to classify breast cancer tumors as malignant or benign using the Breast Cancer Wisconsin dataset. The project involved data preprocessing, model implementation, and extensive evaluation to achieve high accuracy.</p>
+						<div className="bg-white p-6 flex flex-wrap justify-evenly">
+							<div className="w-full md:w-3/5 text-balance">
+								<h2 className="underline text-2xl font-semibold mb-4">🩻 Breast Cancer Classification</h2>
+								<p className="text-gray-700 my-4">Implemented various machine learning models to classify breast cancer tumors as malignant or benign using the Breast Cancer Wisconsin dataset. The project involved data preprocessing, model implementation, and extensive evaluation to achieve high accuracy.</p>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Tech Used:</h3>
-									<p class="text-gray-700">Python, Numpy, Pandas, Matplotlib, Scikit-learn, XGBoost</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Tech Used:</h3>
+									<p className="text-gray-700">Python, Numpy, Pandas, Matplotlib, Scikit-learn, XGBoost</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Models Implemented and Compared:</h3>
-									<p class="text-gray-700">Logistic Regression, K-Nearest Neighbors, Support Vector Machine, Decision Tree, Random Forest, Gradient Boosting, Naive Bayes, Neural Network (MLP Classifier), AdaBoost, XGBoost</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Models Implemented and Compared:</h3>
+									<p className="text-gray-700">Logistic Regression, K-Nearest Neighbors, Support Vector Machine, Decision Tree, Random Forest, Gradient Boosting, Naive Bayes, Neural Network (MLP Classifier), AdaBoost, XGBoost</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Model Evaluation and Results:</h3>
-									<p class="text-gray-700">Conducted thorough evaluation using metrics like confusion matrix, precision, recall, F1-score, and AUC-ROC. Visualized model performance through ROC curves and Precision-Recall curves.</p>
-									<p class="text-gray-700 font-bold">Outcome: Achieved high accuracy and AUC scores across multiple models, with logistic regression achieving 98% accuracy.</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Model Evaluation and Results:</h3>
+									<p className="text-gray-700">Conducted thorough evaluation using metrics like confusion matrix, precision, recall, F1-score, and AUC-ROC. Visualized model performance through ROC curves and Precision-Recall curves.</p>
+									<p className="text-gray-700 font-bold">Outcome: Achieved high accuracy and AUC scores across multiple models, with logistic regression achieving 98% accuracy.</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Challenges and Learnings:</h3>
-									<p class="text-gray-700">Throughout the project, I faced challenges such as optimizing model hyperparameters and dealing with class imbalance. These challenges helped me enhance my problem-solving skills and deepen my understanding of machine learning concepts.</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Challenges and Learnings:</h3>
+									<p className="text-gray-700">Throughout the project, I faced challenges such as optimizing model hyperparameters and dealing with class imbalance. These challenges helped me enhance my problem-solving skills and deepen my understanding of machine learning concepts.</p>
 								</div>
 
-								<div class="mb-4">
-									<h3 class="font-semibold">Skills Demonstrated:</h3>
-									<p class="text-gray-700">Machine Learning, Data Analysis, Model Evaluation, Python Programming</p>
+								<div className="mb-4">
+									<h3 className="font-semibold">Skills Demonstrated:</h3>
+									<p className="text-gray-700">Machine Learning, Data Analysis, Model Evaluation, Python Programming</p>
 								</div>
 							</div>
 
-							<div class="w-full md:w-1/3 flex items-center justify-center md:justify-end mt-4 md:mt-0">
-								<img src={rocCurve} alt="ROC Curve" class="w-full h-auto object-cover" />
+							<div className="w-full md:w-1/3 flex items-center justify-center md:justify-end mt-4 md:mt-0">
+								<img src={rocCurve} alt="ROC Curve" className="w-full h-auto object-cover rounded-lg shadow-md" />
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-
-		</div >
+		</div>
 	);
 };
 
 export default ParallaxSection;
-
 
 
 
