@@ -4,9 +4,9 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Nav = () => {
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 bg-pink-500 p-6 flex items-center justify-between">
+		<nav className="fixed top-0 left-0 right-0 z-50 bg-brightBlue p-6 flex items-center justify-between">
 			<div className="flex items-center">
-				<span className="text-white font-semibold text-xl">Mel Avina-Beltran</span>
+				<span className="text-accentYellow font-semibold text-xl">Mel Avina-Beltran</span>
 			</div>
 			<div className="hidden lg:flex lg:space-x-6 lowercase font-bold">
 				<Link
@@ -15,7 +15,7 @@ const Nav = () => {
 					smooth={true}
 					offset={-70}
 					duration={500}
-					className="text-white hover:text-gray-200 cursor-pointer"
+					className="text-white hover:text-accentOrange cursor-pointer"
 				>
 					Home
 				</Link>
@@ -25,7 +25,7 @@ const Nav = () => {
 					smooth={true}
 					offset={-70}
 					duration={500}
-					className="text-white hover:text-gray-200 cursor-pointer"
+					className="text-white hover:text-accentOrange cursor-pointer"
 				>
 					About
 				</Link>
@@ -35,7 +35,7 @@ const Nav = () => {
 					smooth={true}
 					offset={-70}
 					duration={500}
-					className="text-white hover:text-gray-200 cursor-pointer"
+					className="text-white hover:text-accentOrange cursor-pointer"
 				>
 					Projects
 				</Link>
@@ -45,5 +45,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-

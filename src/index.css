@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --darkBlue: #0a1128;
+  --brightBlue: #001f54;
+  --lightBlue: #034078;
+  --accentOrange: #ffa500;
+  --accentYellow: #ffd700;
+}
+
+body {
+  background-color: var(--darkBlue);
+  color: var(--lightBlue);
+}
+
+.text-darkBlue {
+  color: var(--darkBlue);
+}
+
+.text-brightBlue {
+  color: var(--brightBlue);
+}
+
+.text-lightBlue {
+  color: var(--lightBlue);
+}
+
+.text-accentOrange {
+  color: var(--accentOrange);
+}
+
+.text-accentYellow {
+  color: var(--accentYellow);
+}
+
+.bg-darkBlue {
+  background-color: var(--darkBlue);
+}
+
+.bg-brightBlue {
+  background-color: var(--brightBlue);
+}
+
+.bg-lightBlue {
+  background-color: var(--lightBlue);
+}
+
+.bg-accentOrange {
+  background-color: var(--accentOrange);
+}
+
+.bg-accentYellow {
+  background-color: var(--accentYellow);
+}
