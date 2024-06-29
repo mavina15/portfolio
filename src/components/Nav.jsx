@@ -10,34 +10,14 @@ const Nav = () => {
 			</div>
 			<div className="hidden lg:flex lg:space-x-6 lowercase font-bold">
 				<Link
-					to="home"
+					to="./img/6 Mel Avina-Beltran Resume.pdf"
 					spy={true}
 					smooth={true}
 					offset={-70}
 					duration={500}
 					className="text-white hover:text-accentOrange cursor-pointer"
 				>
-					Home
-				</Link>
-				<Link
-					to="about"
-					spy={true}
-					smooth={true}
-					offset={-70}
-					duration={500}
-					className="text-white hover:text-accentOrange cursor-pointer"
-				>
-					About
-				</Link>
-				<Link
-					to="projects"
-					spy={true}
-					smooth={true}
-					offset={-70}
-					duration={500}
-					className="text-white hover:text-accentOrange cursor-pointer"
-				>
-					Projects
+					Download Resume
 				</Link>
 			</div>
 		</nav>
