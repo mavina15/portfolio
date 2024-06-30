@@ -75,10 +75,10 @@ const Dashboard = () => {
 						<li className="flex flex-col">
 							<div className="mb-2">
 								<span className="font-semibold">🏀 WNBA Matrix</span>
-								<p className="text-sm text-gray-500 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id magna ac neque mattis lacinia.</p>
+								<p className="text-sm text-gray-500 mb-2">Predict the outcome of WNBA games using data analysis and machine learning techniques.</p>
 							</div>
 							<div className="flex items-center mt-auto">
-								<a href="https://wnbaflask-595f54052c18.herokuapp.com/" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+								<a href="https://wnbaflask-595f54052c18.herokuapp.com/" target="_blank" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
 									Live Demo
 									<svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
 										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -92,7 +92,7 @@ const Dashboard = () => {
 						<li className="flex flex-col">
 							<div className="mb-2">
 								<span className="font-semibold">🩻 Breast Cancer Classification</span>
-								<p className="text-sm text-gray-500 mb-2">Nullam sagittis massa ut libero pharetra, vel condimentum magna interdum. Fusce auctor dui ut metus efficitur vestibulum.</p>
+								<p className="text-sm text-gray-500 mb-2">Develop and evaluate machine learning models to accurately classify breast tumors as malignant or benign using features extracted from digitized images, contributing to early detection and diagnosis of breast cancer for improved patient outcomes.</p>
 							</div>
 							<div className="flex items-center mt-auto">
 								<a href="https://wnbaflask-595f54052c18.herokuapp.com/" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
