@@ -4,7 +4,7 @@ import profilePic from './img/profile-pic.png';
 import mailIcon from './img/mail-app.png';
 import githubIcon from './img/github-app.png';
 import linkedinIcon from './img/linkedin-app.png';
-import bannerPic from './img/ordinary differential equations.png';
+import bannerPic from './img/ordinary-differential-equations.png';
 
 const Dashboard = () => {
 	return (
