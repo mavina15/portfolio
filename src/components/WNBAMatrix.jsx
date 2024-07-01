@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import wnbaPic from './img/wnba-render-image.png';
 
-const WNBACaseStudy = () => {
+const WNBAMatrix = () => {
 	return (
 		<div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
 
@@ -81,7 +81,7 @@ const WNBACaseStudy = () => {
 	);
 };
 
-export default WNBACaseStudy;
+export default WNBAMatrix;
 
 
 
