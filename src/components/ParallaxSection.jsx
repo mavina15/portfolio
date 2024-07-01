@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import profilePic from './img/profile-pic.png';
 import mailIcon from './img/mail-app.png';
@@ -41,18 +42,8 @@ const Dashboard = () => {
 					<div className="flex-1 overflow-auto">
 						<h2 className="text-2xl font-semibold text-orange-600 my-4">About</h2>
 						<ul className="text-gray-700 space-y-2">
-							<li className="flex items-center">
-								<svg className="w-6 h-6 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-									<path fillRule="evenodd" d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20zM8.942 14.678l-4.55-4.55a.646.646 0 0 1 .914-.914l3.252 3.253 7.114-7.113a.646.646 0 0 1 .914.914l-7.77 7.77a.646.646 0 0 1-.914 0z" />
-								</svg>
-								<span className="font-semibold text-lg">🐮 B.S. Applied Mathematics, UC Davis</span>
-							</li>
-							<li className="flex items-center">
-								<svg className="w-6 h-6 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-									<path fillRule="evenodd" d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20zM8.942 14.678l-4.55-4.55a.646.646 0 0 1 .914-.914l3.252 3.253 7.114-7.113a.646.646 0 0 1 .914.914l-7.77 7.77a.646.646 0 0 1-.914 0z" />
-								</svg>
-								<span className="font-semibold text-lg">🏴‍☠️ A.S. General Science, Santa Monica College</span>
-							</li>
+							<AboutItem icon="🐮" text="B.S. Applied Mathematics, UC Davis" />
+							<AboutItem icon="🏴‍☠️" text="A.S. General Science, Santa Monica College" />
 						</ul>
 					</div>
 				</div>
@@ -60,38 +51,18 @@ const Dashboard = () => {
 				{/* Projects Section */}
 				<div className="md:col-span-2 bg-white border border-gray-200 rounded-lg shadow-lg p-6">
 					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Projects</h2>
-					{/* Project 1 */}
-					<div className="mb-8">
-						<h3 className="text-xl font-semibold mb-2">🏀 WNBA Matrix</h3>
-						<p className="text-sm text-gray-500 mb-4">Predict the outcome of WNBA games using data analysis and machine learning techniques.</p>
-						<div className="flex items-center space-x-4">
-							<a href="https://wnbaflask-595f54052c18.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-								Live Demo
-								<svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-								</svg>
-							</a>
-							<a href="#" className="text-blue-700 hover:text-blue-800">
-								Read More
-							</a>
-						</div>
-					</div>
-					{/* Project 2 */}
-					<div className="mb-8">
-						<h3 className="text-xl font-semibold mb-2">🩻 Breast Cancer Classification</h3>
-						<p className="text-sm text-gray-500 mb-4">Develop and evaluate machine learning models to accurately classify breast tumors as malignant or benign.</p>
-						<div className="flex items-center space-x-4">
-							<a href="https://wnbaflask-595f54052c18.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-								Live Demo
-								<svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-								</svg>
-							</a>
-							<a href="#" className="text-blue-700 hover:text-blue-800">
-								Read More
-							</a>
-						</div>
-					</div>
+					<ProjectItem
+						title="WNBA Matrix"
+						description="Predict the outcome of WNBA games using data analysis and machine learning techniques."
+						demoLink="https://wnbaflask-595f54052c18.herokuapp.com/"
+						readMoreLink="/wnba-case-study"
+					/>
+					<ProjectItem
+						title="Breast Cancer Classification"
+						description="Develop and evaluate machine learning models to accurately classify breast tumors as malignant or benign."
+						demoLink="https://your-other-demo-page-url"
+						readMoreLink="https://your-other-read-more-page-url"
+					/>
 					{/* Add more projects here */}
 				</div>
 			</div>
@@ -99,9 +70,29 @@ const Dashboard = () => {
 	);
 };
 
+const AboutItem = ({ icon, text }) => (
+	<li className="flex items-center">
+		<span className="text-orange-600 mr-2">{icon}</span>
+		<span className="font-semibold text-lg">{text}</span>
+	</li>
+);
+
+const ProjectItem = ({ title, description, demoLink, readMoreLink }) => (
+	<div className="mb-8">
+		<h3 className="text-xl font-semibold mb-2">{title}</h3>
+		<p className="text-sm text-gray-500 mb-4">{description}</p>
+		<div className="flex items-center space-x-4">
+			<a href={demoLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+				Live Demo
+				<svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+					<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+				</svg>
+			</a>
+			<Link to={readMoreLink} className="text-blue-700 hover:text-blue-800">
+				Read More
+			</Link>
+		</div>
+	</div>
+);
+
 export default Dashboard;
-
-
-
-
-

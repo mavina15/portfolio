@@ -54,3 +54,11 @@ body {
 .bg-accentYellow {
   background-color: var(--accentYellow);
 }
+
+.case-study-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem; /* Adjust top margin as needed */
+}

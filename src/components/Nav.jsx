@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-scroll'; // Import Link from react-scroll for smooth scrolling
 
 const Nav = () => {
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-brightBlue p-6 flex items-center justify-between">
 			<div className="flex items-center">
-				<span className="text-white font-semibold text-xl">Mel Avina-Beltran</span>
+				{/* Use Link component for smooth scrolling */}
+				<Link to="home" smooth={true} duration={500} className="text-white font-semibold text-xl cursor-pointer">
+					Mel Avina-Beltran
+				</Link>
 			</div>
 			<div className="hidden lg:flex lg:space-x-6 lowercase font-bold">
 				<a
@@ -21,4 +24,5 @@ const Nav = () => {
 };
 
 export default Nav;
+
 
