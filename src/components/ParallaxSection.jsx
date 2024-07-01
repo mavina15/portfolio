@@ -55,7 +55,7 @@ const Dashboard = () => {
 						title="WNBA Matrix"
 						description="Predict the outcome of WNBA games using data analysis and machine learning techniques."
 						demoLink="https://wnbaflask-595f54052c18.herokuapp.com/"
-						readMoreLink="/wnba-case-study"
+						readMoreLink="/wnba-matrix"
 					/>
 					<ProjectItem
 						title="Breast Cancer Classification"
