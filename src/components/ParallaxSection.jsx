@@ -63,11 +63,8 @@ const Dashboard = () => {
 						demoLink="https://your-other-demo-page-url"
 						readMoreLink="https://your-other-read-more-page-url"
 					/>
-					{/* Add more projects here */}
-				</div>
 
-				{/* Education Section */}
-				<div className="md:col-span-2 bg-white border border-gray-200 rounded-lg shadow-lg p-6">
+					{/* Education Section */}
 					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Education</h2>
 					<EducationItem
 						title="Western Governor's University"
@@ -79,11 +76,8 @@ const Dashboard = () => {
 						description="B.S. Applied Mathematics"
 						otherDescription="Introduction to Programming, Data Structures, Introduction to Artificial Intelligence, Theory of Computation, Human-Computer Interaction, Visualizing Society with Data, Optimization, Applied Linear Algebra, Probability, Applied Numerical Methods, Complex Variables, Modern Algebra, Real Analysis, Ordinary Differential Equations"
 					/>
-					<EducationItem
-						title="Santa Monica College"
-						description="A.A. General Education"
-					/>
 				</div>
+
 			</div>
 		</div>
 	);
