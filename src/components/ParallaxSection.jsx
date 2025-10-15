@@ -65,6 +65,23 @@ const Dashboard = () => {
 					/>
 					{/* Add more projects here */}
 				</div>
+
+				{/* Education Section */}
+				<div className="md:col-span-2 bg-white border border-gray-200 rounded-lg shadow-lg p-6">
+					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Education</h2>
+					<EducationItem
+						title="Western Governor's University"
+						description="M.S. Teaching, Mathematics Education"
+					/>
+					<EducationItem
+						title="University of California, Davis"
+						description="B.S. Applied Mathematics"
+					/>
+					<EducationItem
+						title="Santa Monica College"
+						description="A.A. General Education"
+					/>
+				</div>
 			</div>
 		</div>
 	);
@@ -92,6 +109,13 @@ const ProjectItem = ({ title, description, demoLink, readMoreLink }) => (
 				Read More
 			</Link>
 		</div>
+	</div>
+);
+
+const EducationItem = ({ title, description }) => (
+	<div className="mb-8">
+		<h3 className="text-xl font-semibold mb-2">{title}</h3>
+		<p className="text-sm text-gray-500 mb-4">{description}</p>
 	</div>
 );
 

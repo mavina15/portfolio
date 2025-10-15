@@ -12,8 +12,8 @@ const Nav = () => {
 			</div>
 			<div className="hidden lg:flex lg:space-x-6 lowercase font-bold">
 				<a
-					href="./img/6 Mel Avina-Beltran Resume.pdf"
-					download="Mel Avina-Beltran Resume.pdf"
+					href="/components/img/2025 Data Science, Mel Avina-Beltran Resume.pdf"
+					download="2025 Data Science, Mel Avina-Beltran Resume.pdf"
 					className="text-white bg-orange-600 hover:bg-orange-500 py-2 px-4 rounded-lg shadow-lg transition-colors duration-300"
 				>
 					Download Resume
