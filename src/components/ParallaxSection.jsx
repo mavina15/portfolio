@@ -25,8 +25,8 @@ const Dashboard = () => {
 							</div>
 						</div>
 						<h1 className="text-4xl text-gray-900 mt-16 mb-2">Mel Avina-Beltran</h1>
-						<p className="text-xl font-semibold text-orange-600 mb-4">Data Scientist + Software Engineer</p>
-						<p className="text-center text-lg text-gray-700 mb-4">Passionate about leveraging technology to solve real-world problems.</p>
+						<p className="text-xl font-semibold text-orange-600 mb-4">Data Engineer | Analytics Engineer</p>
+						<p className="text-center text-lg text-gray-700 mb-4">I build reliable ETL, monitoring, and models that cut manual triage 65% and scale analytics to production.</p>
 						<div className="flex space-x-4 mb-4">
 							<a href="mailto:melavinabeltran@gmail.com" className="hover:text-gray-800" aria-label="Email">
 								<img src={mailIcon} alt="Mail Icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
@@ -42,6 +42,7 @@ const Dashboard = () => {
 					<div className="flex-1 overflow-auto">
 						<h2 className="text-2xl font-semibold text-orange-600 my-4">About</h2>
 						<ul className="text-gray-700 space-y-2">
+							<AboutItem icon="🦉" text="M.S. Teaching, Mathematics Education, WGU" />
 							<AboutItem icon="🐮" text="B.S. Applied Mathematics, UC Davis" />
 							<AboutItem icon="🏴‍☠️" text="A.S. General Science, Santa Monica College" />
 						</ul>
