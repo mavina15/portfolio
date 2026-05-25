@@ -19,124 +19,102 @@ const Dashboard = () => {
 				{/* Home Section */}
 				<div className="md:col-span-1 bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col">
 					<div className="flex flex-col items-center mb-6">
-						<div
-							className="relative w-full bg-cover rounded-xl"
-							style={{ backgroundImage: `url(${bannerPic})`, height: '150px' }}
-							role="img"
-							aria-label="banner showing mathematical illustration"
-						>
+						<div className="relative w-full bg-cover rounded-xl" style={{ backgroundImage: `url(${bannerPic})`, height: '150px' }}>
 							<div className="absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 flex items-center justify-center w-40 h-40 bg-white rounded-full border-4 border-white">
-								<img
-									className="h-full w-full rounded-full"
-									src={profilePic}
-									alt="Mel Avina-Beltran profile"
-								/>
+								<img className="h-full w-full rounded-full" src={profilePic} alt="profile image" />
 							</div>
 						</div>
-
 						<h1 className="text-4xl text-gray-900 mt-16 mb-2">Mel Avina-Beltran</h1>
-						<p className="text-xl font-semibold text-orange-600 mb-2">Data Engineer • Analytics Engineer</p>
-
-						{/* Metric-led one-line value statement */}
-						<p className="text-center text-lg text-gray-700 mb-4">
-							I build production ETL, schema tests, and monitored analytics that double stakeholder
-							visibility and reduce triage time by 65%.
-						</p>
-
-						{/* CTAs */}
-						<div className="flex space-x-3 mb-4">
-							<a
-								href="/resume-data-engineer.pdf"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-orange-600 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-300"
-								aria-label="Download resume as PDF"
-							>
-								Resume (Data Engineer)
-							</a>
-							<a
-								href="mailto:melavinabeltran@gmail.com"
-								className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
-								aria-label="Email Mel"
-							>
-								Contact
-							</a>
-						</div>
-
+						<p className="text-xl font-semibold text-orange-600 mb-4">Data Engineer | Analytics Engineer</p>
+						<p className="text-center text-lg text-gray-700 mb-4">I build reliable ETL, monitoring, and models that cut manual triage 65% and scale analytics to production.</p>
 						<div className="flex space-x-4 mb-4">
-							<a href="mailto:melavinabeltran@gmail.com" aria-label="Send email to Mel">
-								<img src={mailIcon} alt="Email icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
+							<a href="mailto:melavinabeltran@gmail.com" className="hover:text-gray-800" aria-label="Email">
+								<img src={mailIcon} alt="Mail Icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
 							</a>
-							<a href="https://github.com/mavina15" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile">
-								<img src={githubIcon} alt="GitHub icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
+							<a href="https://github.com/mavina15" target="_blank" className="hover:text-gray-800" aria-label="GitHub">
+								<img src={githubIcon} alt="Github Icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
 							</a>
-							<a href="https://linkedin.com/in/mavinabeltran" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">
-								<img src={linkedinIcon} alt="LinkedIn icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
+							<a href="https://linkedin.com/in/mavinabeltran" target="_blank" className="hover:text-gray-800" aria-label="LinkedIn">
+								<img src={linkedinIcon} alt="LinkedIn Icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
 							</a>
 						</div>
 					</div>
-
 					<div className="flex-1 overflow-auto">
 						<h2 className="text-2xl font-semibold text-orange-600 my-4">About</h2>
 						<ul className="text-gray-700 space-y-2">
-							<AboutItem icon="🎓" text="B.S. Applied Mathematics, UC Davis (Dec 2023)" />
-							<AboutItem icon="🛠️" text="Primary: Python, SQL, PySpark; ETL, CI, monitoring" />
-							<AboutItem icon="⚡" text="Focus: Analytics pipelines, schema validation, production monitoring" />
+							<AboutItem icon="🦉" text="M.S. Teaching, Mathematics Education, WGU" />
+							<AboutItem icon="🐮" text="B.S. Applied Mathematics, UC Davis" />
+							<AboutItem icon="🏴‍☠️" text="A.S. General Science, Santa Monica College" />
 						</ul>
 					</div>
 				</div>
 
-				{/* Projects + Education Section */}
+				{/* Projects Section */}
 				<div className="md:col-span-2 bg-white border border-gray-200 rounded-lg shadow-lg p-6">
-					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Selected Projects</h2>
-
+					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Projects</h2>
 					<ProjectItem
-						title="Analytics ETL — Reproducible Pipeline"
-						impact="Reduced pipeline failures 80% and shortened detection time from days to <2 hours."
-						description="Built ingestion → staging → modeled tables pipeline with schema tests, CI, and monitoring dashboards to support weekly executive reporting."
-						demoLink="https://github.com/mavina15/analytics-etl-examples"
-						readMoreLink="/projects/analytics-etl"
-					/>
-
-					<ProjectItem
-						title="Network Anomaly Detector"
-						impact="Achieved 92% detection and cut triage time 65%."
-						description="Trained deep autoencoder (TensorFlow); deployed evaluation dashboards for real-time alerting and triage."
-						demoLink="https://github.com/mavina15/network-anomaly-detector"
-						readMoreLink="/projects/network-anomaly"
-					/>
-
-					<ProjectItem
-						title="WNBA Predictive App"
-						impact="Reached 70.4% holdout accuracy and optimized inference <200ms."
-						description="Built end-to-end model pipeline and Flask API with monitoring; instrumented usage metrics for ongoing model health checks."
+						title="WNBA Matrix"
+						description="Predict the outcome of WNBA games using data analysis and machine learning techniques."
 						demoLink="https://wnbaflask-595f54052c18.herokuapp.com/"
 						readMoreLink="/wnba-matrix"
 					/>
+					<ProjectItem
+						title="Breast Cancer Classification"
+						description="Develop and evaluate machine learning models to accurately classify breast tumors as malignant or benign."
+						demoLink="https://your-other-demo-page-url"
+						readMoreLink="https://your-other-read-more-page-url"
+					/>
 
 					{/* Education Section */}
-					<h2 className="text-2xl font-semibold text-orange-600 mt-8 mb-4">Education</h2>
+					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Education</h2>
+					<EducationItem
+						title="Western Governor's University"
+						description="M.S. Teaching, Mathematics Education"
+						otherDescription="General Secondary Methods, Secondary Mathematics Curriculum, Algebra for Secondary Mathematics Teaching, Geometry for Secondary Mathematics Teaching, Secondary Literacy Methods and Interventions, Methods of Teaching Secondary Mathematics, Statistics for Secondary Mathematics Teaching, Secondary Disciplinary Literacy"
+					/>
 					<EducationItem
 						title="University of California, Davis"
 						description="B.S. Applied Mathematics"
-						otherDescription="Relevant coursework: Data Structures, Probability, Optimization, Applied Linear Algebra, Numerical Methods"
-					/>
-					<EducationItem
-						title="Western Governors University"
-						description="M.S. Teaching, Mathematics Education"
-						otherDescription="Secondary curriculum methods, statistics for educators; focused on data-driven instruction design"
+						otherDescription="Introduction to Programming, Data Structures, Introduction to Artificial Intelligence, Theory of Computation, Human-Computer Interaction, Visualizing Society with Data, Optimization, Applied Linear Algebra, Probability, Applied Numerical Methods, Complex Variables, Modern Algebra, Real Analysis, Ordinary Differential Equations"
 					/>
 				</div>
+
 			</div>
 		</div>
 	);
 };
 
 const AboutItem = ({ icon, text }) => (
-	<li className="flex items-start">
-		<span className="text-orange-600 mr-3 text-xl">{icon}</span>
-		<span className="font-medium text-gray-800">{text}</span>
+	<li className="flex items-center">
+		<span className="text-orange-600 mr-2">{icon}</span>
+		<span className="font-semibold text-lg">{text}</span>
 	</li>
 );
 
-const ProjectItem = ({ title, impact, description, demoLink, 
+const ProjectItem = ({ title, description, demoLink, readMoreLink }) => (
+	<div className="mb-8">
+		<h3 className="text-xl font-semibold mb-2">{title}</h3>
+		<p className="text-sm text-gray-500 mb-4">{description}</p>
+		<div className="flex items-center space-x-4">
+			<a href={demoLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+				Live Demo
+				<svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+					<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+				</svg>
+			</a>
+			<Link to={readMoreLink} className="text-blue-700 hover:text-blue-800">
+				Read More
+			</Link>
+		</div>
+	</div>
+);
+
+const EducationItem = ({ title, description, otherDescription }) => (
+	<div className="mb-8">
+		<h3 className="text-xl font-semibold mb-2">{title}</h3>
+		<p className="text-sm text-gray-500 mb-4">{description}</p>
+		<p className="text-sm text-gray-500 mb-4">{otherDescription}</p>
+	</div>
+);
+
+export default Dashboard;
