@@ -36,7 +36,7 @@ const ParallaxSection = () => {
 							</div>
 						</div>
 
-						<div className="mt-20 text-center">
+						<div className="mt-10 text-center">
 							<h1 className="text-3xl font-bold text-gray-900 tracking-tight">Mel Avina‑Beltran</h1>
 							<p className="text-lg font-semibold text-accentOrange mt-1">Data Engineer • Analytics Engineer</p>
 							<p className="text-sm text-gray-600 mt-4 max-w-sm mx-auto leading-relaxed">
