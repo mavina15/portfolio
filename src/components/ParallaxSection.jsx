@@ -9,16 +9,16 @@ import bannerPic from "./img/ordinary-differential-equations.png";
 
 const Dashboard = () => {
 	return (
-		<div className="h-screen bg-gray-50 mt-14 overflow-hidden">
+		<div className="h-screen bg-gray-50 mt-14">
 			<Nav />
 
-			<main className="max-w-content mx-auto h-[calc(100vh-4rem)] px-4">
+			<main className="max-w-5xl mx-auto h-[calc(100vh-4rem)] px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
 					{/* LEFT: Profile card */}
-					<aside className="md:col-span-1 card p-4 flex flex-col h-full">
+					<aside className="md:col-span-1 bg-white border border-gray-200 rounded-lg p-4 flex flex-col h-full">
 						<div className="relative">
 							<div
-								className="w-full rounded-xl bg-cover"
+								className="w-full rounded-xl bg-cover bg-center"
 								style={{ backgroundImage: `url(${bannerPic})`, height: 120 }}
 								role="img"
 								aria-label="Mathematical illustration banner"
