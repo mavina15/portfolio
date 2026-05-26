@@ -26,7 +26,8 @@ const Dashboard = () => {
 						</div>
 						<h1 className="text-4xl text-gray-900 mt-16 mb-2">Mel Avina-Beltran</h1>
 						<p className="text-xl font-semibold text-orange-600 mb-4">Data Engineer | Analytics Engineer</p>
-						<p className="text-center text-lg text-gray-700 mb-4">I build reliable ETL, monitoring, and models that cut manual triage 65% and scale analytics to production.</p>
+						<p className="text-center text-lg text-gray-700 mb-4">I build production ETL, schema tests, and monitored analytics that double stakeholder
+							visibility and reduce triage time by 65%.</p>
 						<div className="flex space-x-4 mb-4">
 							<a href="mailto:melavinabeltran@gmail.com" className="hover:text-gray-800" aria-label="Email">
 								<img src={mailIcon} alt="Mail Icon" className="w-8 h-8 rounded-lg transition-transform transform hover:scale-110" />
