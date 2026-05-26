@@ -102,82 +102,8 @@ const Dashboard = () => {
 	);
 };
 
+/* Single AboutItem + ProjectItem definitions (no duplicates) */
 /* Reusable subcomponents (single definitions) */
-
-const AboutItem = ({ icon, primary, detail }) => (
-	<li className="flex items-start">
-		<span className="text-accentOrange mr-3 text-lg">{icon}</span>
-		<div>
-			{detail ? (
-				<p className="text-sm text-gray-800">
-					<span className="font-semibold">{primary}</span>{" "}
-					<span className="text-gray-600">{detail}</span>
-				</p>
-			) : (
-				<p className="text-sm text-gray-800"><span className="font-semibold">{primary}</span></p>
-			)}
-		</div>
-	</li>
-);
-
-const ProjectItem = ({ title, impact, teaser, tech = [], repoLink, demoLink, readMoreLink }) => (
-	<article className="project-card p-3">
-		<div className="flex flex-col md:flex-row md:justify-between">
-			<div className="md:flex-1">
-				<h3 className="text-lg font-semibold">{title}</h3>
-				<p className="text-xs font-semibold text-gray-800 mt-1">{impact}</p>
-				<p className="text-sm text-gray-500 mt-2">{teaser}</p>
-				<div className="mt-2 flex flex-wrap gap-2">
-					{tech.map(t => <span key={t} className="badge">{t}</span>)}
-				</div>
-			</div>
-
-			<div className="mt-3 md:mt-0 md:ml-4 flex gap-2">
-				{repoLink && <a href={repoLink} target="_blank" rel="noopener noreferrer" className="btn-ghost">Repo</a>}
-				{demoLink && <a href={demoLink} target="_blank" rel="noopener noreferrer" className="btn-primary">Live Demo</a>}
-				{readMoreLink && <Link to={readMoreLink} className="text-blue-700 text-sm">Read →</Link>}
-			</div>
-		</div>
-	</article>
-);
-
-const AboutItem = ({ icon, primary, detail }) => (
-	<li className="flex items-start">
-		<span className="text-accentOrange mr-3 text-lg">{icon}</span>
-		<div>
-			{detail ? (
-				<p className="text-sm text-gray-800">
-					<span className="font-semibold">{primary}</span>{" "}
-					<span className="text-gray-600">{detail}</span>
-				</p>
-			) : (
-				<p className="text-sm text-gray-800"><span className="font-semibold">{primary}</span></p>
-			)}
-		</div>
-	</li>
-);
-
-const ProjectItem = ({ title, impact, teaser, tech = [], repoLink, demoLink, readMoreLink }) => (
-	<article className="project-card p-3">
-		<div className="flex flex-col md:flex-row md:justify-between">
-			<div className="md:flex-1">
-				<h3 className="text-lg font-semibold">{title}</h3>
-				<p className="text-xs font-semibold text-gray-800 mt-1">{impact}</p>
-				<p className="text-sm text-gray-500 mt-2">{teaser}</p>
-				<div className="mt-2 flex flex-wrap gap-2">
-					{tech.map(t => <span key={t} className="badge">{t}</span>)}
-				</div>
-			</div>
-
-			<div className="mt-3 md:mt-0 md:ml-4 flex gap-2">
-				{repoLink && <a href={repoLink} target="_blank" rel="noopener noreferrer" className="btn-ghost">Repo</a>}
-				{demoLink && <a href={demoLink} target="_blank" rel="noopener noreferrer" className="btn-primary">Live Demo</a>}
-				{readMoreLink && <Link to={readMoreLink} className="text-blue-700 text-sm">Read →</Link>}
-			</div>
-		</div>
-	</article>
-);
-
 
 
 const AboutItem = ({ icon, primary, detail }) => (
