@@ -16,16 +16,16 @@ const Dashboard = () => {
 			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-				{/* Home Section */}
-				<div className="md:col-span-1 bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col">
-					<div className="flex flex-col items-center mb-6">
+				{/* Home Section (fits one page, About at bottom) */}
+				<div className="md:col-span-1 bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col h-screen max-h-[calc(100vh-4rem)] overflow-hidden">
+					<div className="flex flex-col items-center mb-4">
 						<div
 							className="relative w-full bg-cover rounded-xl"
 							style={{ backgroundImage: `url(${bannerPic})`, height: '150px' }}
 							role="img"
 							aria-label="Mathematical illustration banner"
 						>
-							<div className="absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 flex items-center justify-center w-40 h-40 bg-white rounded-full border-4 border-white">
+							<div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex items-center justify-center w-40 h-40 bg-white rounded-full border-4 border-white">
 								<img className="h-full w-full rounded-full" src={profilePic} alt="Mel Avina-Beltran profile" />
 							</div>
 						</div>
@@ -38,7 +38,7 @@ const Dashboard = () => {
 						</p>
 
 						{/* CTAs */}
-						<div className="flex space-x-3 mb-4">
+						<div className="flex space-x-3 mb-3">
 							<a
 								href="/resume-data-engineer.pdf"
 								target="_blank"
@@ -73,12 +73,15 @@ const Dashboard = () => {
 						<p className="text-xs text-gray-500">Location: Bay Area, CA — Open to remote</p>
 					</div>
 
-					<div className="flex-1 overflow-auto mt-2">
-						<h2 className="text-2xl font-semibold text-orange-600 my-4">About</h2>
+					{/* spacer ensures About stays pinned to bottom */}
+					<div className="flex-1" />
+
+					<div className="mt-4">
+						<h2 className="text-2xl font-semibold text-orange-600 my-2">About</h2>
 						<ul className="text-gray-700 space-y-2">
-							<AboutItem icon="🎓" text="B.S. Applied Mathematics, UC Davis (Dec 2023)" />
-							<AboutItem icon="🛠️" text="Primary: Python, SQL, PySpark — ETL, schema tests, monitoring" />
-							<AboutItem icon="📈" text="Impact: doubled stakeholder visibility; reduced triage time 65%" />
+							<AboutItem icon="🎓" primary="B.S. Applied Mathematics, UC Davis (Dec 2023)" />
+							<AboutItem icon="🛠️" primary="Primary:" detail="Python, SQL, PySpark — ETL, schema tests, monitoring" />
+							<AboutItem icon="📈" primary="Impact:" detail="Doubled stakeholder visibility; reduced triage time 65%" />
 						</ul>
 					</div>
 				</div>
@@ -119,12 +122,22 @@ const Dashboard = () => {
 	);
 };
 
-const AboutItem = ({ icon, text }) => (
-	<li className="flex items-center">
-		<span className="text-orange-600 mr-2">{icon}</span>
-		<span className="font-semibold text-lg">{text}</span>
+const AboutItem = ({ icon, primary, detail }) => (
+	<li className="flex items-start">
+		<span className="text-orange-600 mr-3 text-xl">{icon}</span>
+		<div>
+			{detail ? (
+				<p className="text-sm text-gray-800">
+					<span className="font-semibold">{primary}</span>{" "}
+					<span className="text-gray-600">{detail}</span>
+				</p>
+			) : (
+				<p className="text-sm text-gray-800"><span className="font-semibold">{primary}</span></p>
+			)}
+		</div>
 	</li>
 );
+
 
 const ProjectItem = ({ title, description, demoLink, readMoreLink }) => (
 	<div className="mb-8">
