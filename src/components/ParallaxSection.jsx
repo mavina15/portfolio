@@ -141,8 +141,6 @@ const ProjectItem = ({ title, impact, teaser, tech = [], repoLink, demoLink, rea
 	</article>
 );
 
-export default Dashboard;
-
 const AboutItem = ({ icon, primary, detail }) => (
 	<li className="flex items-start">
 		<span className="text-accentOrange mr-3 text-lg">{icon}</span>
