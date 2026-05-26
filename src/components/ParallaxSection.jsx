@@ -44,11 +44,6 @@ const ParallaxSection = () => {
 							</p>
 						</div>
 
-						<div className="mt-6 flex items-center justify-center gap-4">
-							<a href="/resume-data-engineer.pdf" className="btn-primary flex-1 text-center py-3 font-bold" aria-label="Open resume PDF">Resume</a>
-							<a href="mailto:melavinabeltran@gmail.com" className="btn-ghost flex-1 text-center py-3 border-gray-300 font-semibold" aria-label="Email Mel">Contact</a>
-						</div>
-
 						<div className="mt-6 flex items-center justify-center gap-6 border-b border-gray-100 pb-6">
 							<a href="mailto:melavinabeltran@gmail.com" className="hover:scale-110 transition-transform">
 								<img src={mailIcon} alt="email" className="w-7 h-7" />
