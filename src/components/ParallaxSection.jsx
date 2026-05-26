@@ -88,21 +88,30 @@ const Dashboard = () => {
 
 
 				{/* Projects Section */}
-				<div className="md:col-span-2 bg-white border border-gray-200 rounded-lg shadow-lg p-6">
+				<div className="md:col-span-2 card p-6">
 					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Projects</h2>
+
 					<ProjectItem
 						title="WNBA Matrix"
-						description="Predict the outcome of WNBA games using data analysis and machine learning techniques."
+						impact="70.4% holdout accuracy · inference <200ms"
+						teaser="End-to-end model pipeline and deployed Flask API with monitoring and usage instrumentation."
+						tech={["Python", "scikit-learn", "Flask", "Docker", "CI"]}
+						repoLink="https://github.com/mavina15/wnba-predictive-app"
 						demoLink="https://wnbaflask-595f54052c18.herokuapp.com/"
-						readMoreLink="/wnba-matrix"
+						readMoreLink="/projects/wnba-matrix"
 					/>
+
 					<ProjectItem
 						title="Breast Cancer Classification"
-						description="Develop and evaluate machine learning models to accurately classify breast tumors as malignant or benign."
+						impact="~95% test accuracy · reproducible pipeline"
+						teaser="Compared classifiers with cross-validation, produced model card, and added training/serving scripts."
+						tech={["Python", "scikit-learn", "pandas", "Jupyter"]}
+						repoLink="https://github.com/mavina15/breast-cancer-classification"
 						demoLink="https://your-other-demo-page-url"
-						readMoreLink="https://your-other-read-more-page-url"
+						readMoreLink="/projects/breast-cancer-classification"
 					/>
 				</div>
+
 
 			</div>
 		</div>
@@ -126,22 +135,52 @@ const AboutItem = ({ icon, primary, detail }) => (
 );
 
 
-const ProjectItem = ({ title, description, demoLink, readMoreLink }) => (
-	<div className="mb-8">
-		<h3 className="text-xl font-semibold mb-2">{title}</h3>
-		<p className="text-sm text-gray-500 mb-4">{description}</p>
-		<div className="flex items-center space-x-4">
-			<a href={demoLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-				Live Demo
-				<svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-					<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-				</svg>
-			</a>
-			<Link to={readMoreLink} className="text-blue-700 hover:text-blue-800">
-				Read More
-			</Link>
+const ProjectItem = ({ title, impact, teaser, tech = [], repoLink, demoLink, readMoreLink }) => (
+	<article className="project-card mb-6">
+		<div className="flex flex-col md:flex-row md:items-start md:justify-between">
+			<div className="md:flex-1">
+				<h3 className="text-xl font-semibold">{title}</h3>
+				<p className="text-sm font-semibold text-gray-800 mt-1">{impact}</p>
+				<p className="text-sm text-gray-500 mt-2">{teaser}</p>
+				<div className="mt-3 flex flex-wrap gap-2">
+					{tech.map(t => (
+						<span key={t} className="badge">{t}</span>
+					))}
+				</div>
+			</div>
+
+			<div className="mt-4 md:mt-0 md:ml-6 flex flex-row md:flex-col items-start gap-2">
+				{repoLink && (
+					<a
+						href={repoLink}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="btn-ghost"
+						aria-label={`Open repo for ${title}`}
+					>
+						Repo
+					</a>
+				)}
+				{demoLink && (
+					<a
+						href={demoLink}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="btn-primary"
+						aria-label={`Open demo for ${title}`}
+					>
+						Live Demo
+					</a>
+				)}
+				{readMoreLink && (
+					<Link to={readMoreLink} className="text-blue-700 text-sm mt-1" aria-label={`Read case study for ${title}`}>
+						Read case study →
+					</Link>
+				)}
+			</div>
 		</div>
-	</div>
+	</article>
 );
+
 
 export default Dashboard;
