@@ -102,19 +102,6 @@ const Dashboard = () => {
 						demoLink="https://your-other-demo-page-url"
 						readMoreLink="https://your-other-read-more-page-url"
 					/>
-
-					{/* Education Section */}
-					<h2 className="text-2xl font-semibold text-orange-600 mb-4">Education</h2>
-					<EducationItem
-						title="Western Governor's University"
-						description="M.S. Teaching, Mathematics Education"
-						otherDescription="General Secondary Methods, Secondary Mathematics Curriculum, Algebra for Secondary Mathematics Teaching, Geometry for Secondary Mathematics Teaching, Secondary Literacy Methods and Interventions, Methods of Teaching Secondary Mathematics, Statistics for Secondary Mathematics Teaching, Secondary Disciplinary Literacy"
-					/>
-					<EducationItem
-						title="University of California, Davis"
-						description="B.S. Applied Mathematics"
-						otherDescription="Introduction to Programming, Data Structures, Introduction to Artificial Intelligence, Theory of Computation, Human-Computer Interaction, Visualizing Society with Data, Optimization, Applied Linear Algebra, Probability, Applied Numerical Methods, Complex Variables, Modern Algebra, Real Analysis, Ordinary Differential Equations"
-					/>
 				</div>
 
 			</div>
@@ -154,14 +141,6 @@ const ProjectItem = ({ title, description, demoLink, readMoreLink }) => (
 				Read More
 			</Link>
 		</div>
-	</div>
-);
-
-const EducationItem = ({ title, description, otherDescription }) => (
-	<div className="mb-8">
-		<h3 className="text-xl font-semibold mb-2">{title}</h3>
-		<p className="text-sm text-gray-500 mb-4">{description}</p>
-		<p className="text-sm text-gray-500 mb-4">{otherDescription}</p>
 	</div>
 );
 
