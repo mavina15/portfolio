@@ -21,20 +21,6 @@ const ParallaxSection = () => {
 
 					{/* LEFT: Profile Card (White) */}
 					<aside className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col shadow-2xl">
-						<div className="relative">
-							<div
-								className="w-full rounded-xl bg-cover bg-center"
-								style={{ backgroundImage: `url(${bannerPic})`, height: 140 }}
-								role="img"
-								aria-label="Mathematical illustration banner"
-							/>
-							<div
-								className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-white border-4 border-white overflow-hidden shadow-sm"
-								style={{ top: 105 }}
-							>
-								<img src={profilePic} alt="Mel Avina-Beltran" className="w-full h-full object-cover" />
-							</div>
-						</div>
 
 						<div className="mt-10 text-center">
 							<h1 className="text-3xl font-bold text-gray-900 tracking-tight">Mel Avina‑Beltran</h1>
