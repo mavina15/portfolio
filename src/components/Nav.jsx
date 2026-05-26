@@ -5,106 +5,106 @@ const Nav = () => {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 bg-brightBlue/95 backdrop-blur-sm px-4 py-3">
-			<div className="max-w-6xl mx-auto flex items-center justify-between">
-				{/* Brand */}
-				<div className="flex items-center space-x-4">
+		<nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 px-4 py-3 transition-all duration-300">
+			<div className="max-w-5xl mx-auto flex items-center justify-between">
+				{/* Brand / Logo Area */}
+				<div className="flex items-center space-x-3">
 					<ScrollLink
 						to="home"
 						smooth={true}
 						duration={500}
-						className="text-white font-semibold text-lg cursor-pointer"
-						aria-label="Scroll to top / home"
+						className="text-gray-900 font-bold text-xl cursor-pointer tracking-tight"
+						aria-label="Scroll to top"
 					>
 						Mel Avina‑Beltran
 					</ScrollLink>
-					<span className="hidden sm:inline-block text-sm text-white/80">Data Engineer • Analytics</span>
+					<div className="hidden sm:block h-4 w-[1px] bg-gray-300"></div>
+					<span className="hidden sm:inline-block text-xs font-medium text-gray-500 uppercase tracking-widest">
+						Portfolio
+					</span>
 				</div>
 
-				{/* Desktop actions */}
-				<div className="hidden md:flex items-center space-x-3">
-					<a
-						href="/resume-data-engineer.pdf"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-white bg-orange-600 hover:bg-orange-500 px-3 py-1.5 rounded-md text-sm font-medium shadow-sm"
-						aria-label="Open resume PDF"
+				{/* Desktop Menu Items */}
+				<div className="hidden md:flex items-center space-x-6">
+					<ScrollLink
+						to="projects"
+						smooth={true}
+						className="text-sm font-medium text-gray-600 hover:text-accentOrange cursor-pointer transition-colors"
 					>
-						Resume
-					</a>
+						Projects
+					</ScrollLink>
 
-					<a
-						href="mailto:melavinabeltran@gmail.com"
-						className="text-white border border-white/20 px-3 py-1.5 rounded-md text-sm hover:bg-white/5"
-						aria-label="Email Mel"
-					>
-						Contact
-					</a>
+					<div className="flex items-center space-x-3 ml-4">
+						<a
+							href="/resume-data-engineer.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="bg-accentOrange hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm transition-all active:scale-95"
+							aria-label="Open resume PDF"
+						>
+							Resume
+						</a>
+
+						<a
+							href="mailto:melavinabeltran@gmail.com"
+							className="text-gray-700 border border-gray-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all"
+							aria-label="Email Mel"
+						>
+							Contact
+						</a>
+					</div>
 				</div>
 
-				{/* Mobile menu button */}
+				{/* Mobile Menu Button */}
 				<div className="md:hidden">
 					<button
 						onClick={() => setOpen(!open)}
 						aria-expanded={open}
 						aria-label="Toggle menu"
-						className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
+						className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accentOrange/20"
 					>
 						<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							{open ? (
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
 							) : (
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
 							)}
 						</svg>
 					</button>
 				</div>
 			</div>
 
-			{/* Mobile panel */}
+			{/* Mobile Dropdown Panel */}
 			{open && (
-				<div className="md:hidden mt-2 px-2 pb-3">
-					<ScrollLink
-						to="projects"
-						smooth={true}
-						duration={500}
-						onClick={() => setOpen(false)}
-						className="block px-3 py-2 rounded-md text-white hover:bg-white/5 text-sm"
-						role="link"
-					>
-						Projects
-					</ScrollLink>
+				<div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-xl animate-in slide-in-from-top duration-200">
+					<div className="flex flex-col p-4 space-y-3">
+						<ScrollLink
+							to="projects"
+							smooth={true}
+							duration={500}
+							onClick={() => setOpen(false)}
+							className="text-gray-700 font-medium px-4 py-2 rounded-md hover:bg-gray-50"
+						>
+							Projects
+						</ScrollLink>
 
-					<ScrollLink
-						to="about"
-						smooth={true}
-						duration={500}
-						onClick={() => setOpen(false)}
-						className="block px-3 py-2 rounded-md text-white hover:bg-white/5 text-sm"
-						role="link"
-					>
-						About
-					</ScrollLink>
+						<a
+							href="/resume-data-engineer.pdf"
+							target="_blank"
+							className="text-accentOrange font-bold px-4 py-2 rounded-md hover:bg-orange-50"
+							onClick={() => setOpen(false)}
+						>
+							Resume (PDF)
+						</a>
 
-					<a
-						href="/resume-data-engineer.pdf"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="block px-3 py-2 rounded-md text-white hover:bg-white/5 text-sm"
-						aria-label="Open resume PDF"
-						onClick={() => setOpen(false)}
-					>
-						Resume
-					</a>
-
-					<a
-						href="mailto:melavinabeltran@gmail.com"
-						className="block px-3 py-2 rounded-md text-white hover:bg-white/5 text-sm"
-						aria-label="Email Mel"
-						onClick={() => setOpen(false)}
-					>
-						Contact
-					</a>
+						<a
+							href="mailto:melavinabeltran@gmail.com"
+							className="bg-gray-900 text-white text-center font-bold px-4 py-3 rounded-xl shadow-lg"
+							onClick={() => setOpen(false)}
+						>
+							Contact Me
+						</a>
+					</div>
 				</div>
 			)}
 		</nav>
@@ -112,6 +112,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-
-
