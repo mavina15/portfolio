@@ -1,12 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Nav from './Nav';
-import profilePic from './img/profile-pic.png';
-import mailIcon from './img/mail-app.png';
-import githubIcon from './img/github-app.png';
-import linkedinIcon from './img/linkedin-app.png';
-import bannerPic from './img/ordinary-differential-equations.png';
-
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
@@ -19,12 +10,11 @@ import bannerPic from "./img/ordinary-differential-equations.png";
 const Dashboard = () => {
 	return (
 		<div className="h-screen bg-gray-50 mt-14 overflow-hidden">
-			{/* Navigation */}
 			<Nav />
 
 			<main className="max-w-content mx-auto h-[calc(100vh-4rem)] px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
-					{/* LEFT: Home card (fixed height, content fits) */}
+					{/* LEFT: Profile card */}
 					<aside className="md:col-span-1 card p-4 flex flex-col h-full">
 						<div className="relative">
 							<div
@@ -33,7 +23,10 @@ const Dashboard = () => {
 								role="img"
 								aria-label="Mathematical illustration banner"
 							/>
-							<div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-white border-4 border-white overflow-hidden" style={{ top: 90 }}>
+							<div
+								className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-white border-4 border-white overflow-hidden"
+								style={{ top: 90 }}
+							>
 								<img src={profilePic} alt="Mel Avina-Beltran" className="w-full h-full object-cover" />
 							</div>
 						</div>
@@ -73,7 +66,7 @@ const Dashboard = () => {
 						</div>
 					</aside>
 
-					{/* RIGHT: Projects column (scrollable if needed but compact) */}
+					{/* RIGHT: Projects column */}
 					<section className="md:col-span-2 card p-4 flex flex-col h-full overflow-hidden">
 						<h2 className="text-xl font-semibold text-accentOrange mb-3">Projects</h2>
 
@@ -94,12 +87,11 @@ const Dashboard = () => {
 								teaser="Classifier comparison with cross-validation; model card and reproducible training scripts."
 								tech={["Python", "scikit-learn", "pandas"]}
 								repoLink="https://github.com/mavina15/breast-cancer-classification"
-								demoLink="https://your-other-demo-page-url"
+								demoLink="#"
 								readMoreLink="/projects/breast-cancer-classification"
 							/>
 						</div>
 
-						{/* Short footer line */}
 						<div className="mt-3 text-xs text-gray-500">
 							B.S., Applied Mathematics — UC Davis (Dec 2023) • Based in Bay Area, open to remote
 						</div>
@@ -109,6 +101,48 @@ const Dashboard = () => {
 		</div>
 	);
 };
+
+/* Reusable subcomponents (single definitions) */
+
+const AboutItem = ({ icon, primary, detail }) => (
+	<li className="flex items-start">
+		<span className="text-accentOrange mr-3 text-lg">{icon}</span>
+		<div>
+			{detail ? (
+				<p className="text-sm text-gray-800">
+					<span className="font-semibold">{primary}</span>{" "}
+					<span className="text-gray-600">{detail}</span>
+				</p>
+			) : (
+				<p className="text-sm text-gray-800"><span className="font-semibold">{primary}</span></p>
+			)}
+		</div>
+	</li>
+);
+
+const ProjectItem = ({ title, impact, teaser, tech = [], repoLink, demoLink, readMoreLink }) => (
+	<article className="project-card p-3">
+		<div className="flex flex-col md:flex-row md:justify-between">
+			<div className="md:flex-1">
+				<h3 className="text-lg font-semibold">{title}</h3>
+				<p className="text-xs font-semibold text-gray-800 mt-1">{impact}</p>
+				<p className="text-sm text-gray-500 mt-2">{teaser}</p>
+				<div className="mt-2 flex flex-wrap gap-2">
+					{tech.map(t => <span key={t} className="badge">{t}</span>)}
+				</div>
+			</div>
+
+			<div className="mt-3 md:mt-0 md:ml-4 flex gap-2">
+				{repoLink && <a href={repoLink} target="_blank" rel="noopener noreferrer" className="btn-ghost">Repo</a>}
+				{demoLink && <a href={demoLink} target="_blank" rel="noopener noreferrer" className="btn-primary">Live Demo</a>}
+				{readMoreLink && <Link to={readMoreLink} className="text-blue-700 text-sm">Read →</Link>}
+			</div>
+		</div>
+	</article>
+);
+
+export default Dashboard;
+
 
 const AboutItem = ({ icon, primary, detail }) => (
 	<li className="flex items-start">
