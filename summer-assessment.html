@@ -145,6 +145,17 @@ figcaption{font-size:.84rem; color:var(--muted)}
 .st.ok{background:#e7f0ff; color:var(--navy)} .st.fu{background:#ffe2a8; color:#6b4200}
 a.dl{display:inline-block; background:var(--ink); color:#fff; text-decoration:none; font-weight:700; font-size:.9rem; padding:.6rem 1.1rem; border-radius:.6rem}
 a.dl:hover{background:var(--orange)}
+
+.tbl th[colspan]{text-align:center; border-left:1px solid rgba(255,255,255,.15)}
+.tbl td.abs{color:#b42318; font-weight:600}
+.pv{display:inline-block; font-size:.72rem; font-weight:700; padding:.15rem .55rem; border-radius:999px; white-space:nowrap}
+.pv.g0{background:#dcfce7; color:#166534} .pv.g1{background:#fef3c7; color:#854d0e} .pv.g2,.pv.g3{background:#fee2e2; color:#991b1b}
+.gb{display:grid; grid-template-columns:9rem minmax(0,1fr); gap:.25rem 1rem; align-items:center}
+.gb .gl{grid-row:span 2; font-size:.88rem; color:#374151}
+.gt{display:flex; align-items:center; gap:.5rem}
+.gt .gf{height:.65rem; border-radius:999px} .gf.ela{background:var(--navy)} .gf.math{background:var(--orange-bright)}
+.gt span{font-size:.8rem; color:var(--muted)}
+@media (max-width:520px){.gb{grid-template-columns:minmax(0,1fr)} .gb .gl{grid-row:auto}}
 </style>
 </head><body>
 <nav class="top"><div class="in">
@@ -186,7 +197,7 @@ a.dl:hover{background:var(--orange)}
   <p class="note">Almost half of families got notices in a language other than English. Students with IEPs and 504 plans got tailored versions.</p>
 </div></section>
 
-<section><div class="section-head"><h2>The tracker, rebuilt with sample data</h2><span class="label">Fictional families</span></div>
+<section><div class="section-head"><h2>Step 1 tracker: scheduling families</h2><span class="label">Fictional families</span></div>
 <div class="prose"><p>The real roster holds student and family information, so it stays private. This is a rebuilt version of the same tracker filled with made-up families, so you can see how it works.</p></div>
 <div class="tbl"><table><thead><tr><th>Family</th><th>Week</th><th>Language</th><th>Confirmed</th><th>Email sent</th><th>Notes</th><th>Status</th></tr></thead><tbody><tr class='ok'><td>F-001</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td>Confirmed by email</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-002</td><td>Week 2</td><td>Spanish</td><td>Jul 14</td><td>Yes</td><td>Prefers morning slot</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-003</td><td>Week 1</td><td>English</td><td>Jul 9</td><td>Yes</td><td>Sibling testing same day</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-004</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td></td><td><span class='st ok'>Confirmed</span></td></tr><tr class='fu'><td>F-005</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>Yes</td><td>Left voicemail</td><td><span class='st fu'>Follow up</span></td></tr><tr class='fu'><td>F-006</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>No</td><td>Email bounced, calling</td><td><span class='st fu'>Follow up</span></td></tr><tr class='ok'><td>F-007</td><td>Week 3</td><td>English</td><td>Jul 23</td><td>Yes</td><td>Prefers morning slot</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-008</td><td>Week 1</td><td>Spanish</td><td>Jul 7</td><td>Yes</td><td></td><td><span class='st ok'>Confirmed</span></td></tr></tbody></table></div>
 <p class="note">First 8 of 147 sample rows. Every family ID, date and note is invented.</p>
@@ -195,7 +206,24 @@ a.dl:hover{background:var(--orange)}
 <li><div><b>Summary tab.</b> COUNTIF and COUNTIFS formulas total families, confirmations and follow-ups by testing week and by language, with a confirmation rate for each.</div></li>
 <li><div><b>Follow-up List tab.</b> INDEX and MATCH pull every family still needing a call into one list, so the next round of outreach is ready without filtering by hand.</div></li>
 </ol>
-<p><a class="dl" href="summer-assessment-sample-tracker.xlsx">Download the sample tracker (.xlsx)</a></p>
+<p><a class="dl" href="summer-assessment-sample-tracker.xlsx">Download the scheduling tracker (.xlsx)</a></p>
+</section>
+<section><div class="section-head"><h2>Step 2 tracker: diagnostics and placement</h2><span class="label">Fictional students</span></div>
+<div class="prose"><p>Once families confirmed, each testing week got its own tab. Students were pulled in from the roster automatically and split into three equal testing groups. As each i-Ready ELA and Math diagnostic finished, I logged the status, the score and the overall placement level from the i-Ready report, and the sheet compared that placement to the student's grade.</p></div>
+<div class="tbl"><table><thead><tr><th rowspan="2">Student</th><th rowspan="2">Grade</th><th rowspan="2">Group</th><th colspan="3">i-Ready ELA</th><th colspan="3">i-Ready Math</th></tr><tr><th>Score</th><th>Placement</th><th>vs. grade</th><th>Score</th><th>Placement</th><th>vs. grade</th></tr></thead><tbody><tr><td>S-001</td><td>8</td><td>Group A</td><td>667</td><td>Grade 8</td><td><span class='pv g0'>On/above grade</span></td><td>582</td><td>Grade 6</td><td><span class='pv g2'>2 grades below</span></td></tr><tr><td>S-002</td><td>5</td><td>Group A</td><td>566</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td><td>432</td><td>Grade 2</td><td><span class='pv g3'>3+ grades below</span></td></tr><tr><td>S-003</td><td>8</td><td>Group A</td><td>622</td><td>Grade 7</td><td><span class='pv g1'>1 grade below</span></td><td colspan='3' class='abs'>Absent</td></tr><tr><td>S-006</td><td>5</td><td>Group A</td><td>504</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td><td>537</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-009</td><td>5</td><td>Group A</td><td>536</td><td>Grade 4</td><td><span class='pv g1'>1 grade below</span></td><td>564</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-011</td><td>5</td><td>Group A</td><td>505</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td><td>569</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-013</td><td>5</td><td>Group A</td><td>565</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td><td>495</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td></tr><tr><td>S-017</td><td>5</td><td>Group A</td><td>533</td><td>Grade 4</td><td><span class='pv g1'>1 grade below</span></td><td>405</td><td>Grade 1</td><td><span class='pv g3'>3+ grades below</span></td></tr></tbody></table></div>
+<p class="note">First 8 rows of the Week 1 tab. Every student ID, score and placement is invented.</p>
+<div class="bars">
+  <div class="row" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><b style="font-size:.95rem">Placement compared with grade, sample data</b><div class="key"><span><i style="background:var(--navy)"></i>ELA</span><span><i style="background:var(--orange-bright)"></i>Math</span></div></div>
+  <div class="gb"><span class="gl">On/above grade</span><div class="gt"><div class="gf ela" style="width:95.0%"></div><span class="mono">38</span></div><div class="gt"><div class="gf math" style="width:90.0%"></div><span class="mono">36</span></div></div><div class="gb"><span class="gl">1 grade below</span><div class="gt"><div class="gf ela" style="width:82.5%"></div><span class="mono">33</span></div><div class="gt"><div class="gf math" style="width:100.0%"></div><span class="mono">40</span></div></div><div class="gb"><span class="gl">2 grades below</span><div class="gt"><div class="gf ela" style="width:75.0%"></div><span class="mono">30</span></div><div class="gt"><div class="gf math" style="width:72.5%"></div><span class="mono">29</span></div></div><div class="gb"><span class="gl">3+ grades below</span><div class="gt"><div class="gf ela" style="width:65.0%"></div><span class="mono">26</span></div><div class="gt"><div class="gf math" style="width:55.0%"></div><span class="mono">22</span></div></div>
+  <p class="note">Students who completed each diagnostic in the sample (127 ELA, 127 Math). The Summary tab builds this view automatically, so leadership can see at a glance how many students need support and in which subject.</p>
+</div>
+<ol class="steps">
+<li><div><b>Week tabs.</b> INDEX and MATCH pull each week's students from the roster, and a formula splits them into Groups A, B and C of equal size for proctors.</div></li>
+<li><div><b>Placement check.</b> For each subject, a formula turns the i-Ready placement (for example "Grade 3") into a gap against the student's grade and labels it On/above, 1, 2, or 3+ grades below, with color coding.</div></li>
+<li><div><b>Attendance.</b> Daily dropdowns track Present, Absent or Completed All, so makeups are easy to spot.</div></li>
+<li><div><b>Summary tab.</b> Completion rates, average scores and placement counts by subject, updated as results come in.</div></li>
+</ol>
+<p><a class="dl" href="summer-diagnostic-tracker-sample.xlsx">Download the diagnostic tracker (.xlsx)</a></p>
 </section>
 <section><div class="section-head"><h2>What I did</h2></div>
 <ol class="steps"><li><div><b>Built the roster.</b> One sheet tracked every family: testing week, preferred language, confirmed date, whether the confirmation email went out, and notes.</div></li><li><div><b>Confirmed dates.</b> Reached 131 families directly, then followed up with the rest by phone and email.</div></li><li><div><b>Coordinated the teams.</b> Worked with leadership, IT, operations and food services so rooms, devices and meals were ready on each fixed test date.</div></li><li><div><b>Reported the results.</b> Wrote a summary report with placement results and recommended student groupings. Leadership used it to finalize the 2026–27 cohorts.</div></li></ol></section>
