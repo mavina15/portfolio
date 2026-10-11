@@ -159,6 +159,31 @@ a.dl:hover{background:var(--orange)}
 
 .sp{display:inline-block; min-width:2.2rem; text-align:center; font-size:.78rem; font-weight:700; padding:.12rem .5rem; border-radius:999px}
 .sp.ok{background:#dcfce7; color:#166534} .sp.bad{background:#fee2e2; color:#991b1b}
+
+.kpis{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:.8rem; overflow:hidden}
+.kpis div{background:#fff; padding:1rem 1.1rem; display:grid; gap:.2rem; min-width:0}
+.kpis b{font:700 1.7rem/1 var(--sans); font-variant-numeric:tabular-nums; color:var(--ink)}
+.kpis span{font-size:.82rem; color:var(--muted); line-height:1.35}
+.kpis.two-up{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.jump{display:flex; flex-wrap:wrap; gap:.4rem; position:sticky; top:calc(env(safe-area-inset-top,0px) + 3.6rem); z-index:5; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); padding:.6rem 0; border-bottom:1px solid var(--line)}
+.jump a{font-size:.8rem; font-weight:600; color:#374151; text-decoration:none; border:1px solid var(--line); background:#fff; padding:.3rem .75rem; border-radius:999px; white-space:nowrap}
+.jump a:hover{background:var(--ink); color:#fff; border-color:var(--ink)}
+section[id]{scroll-margin-top:8rem}
+.tl{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem}
+.tl div{border-top:3px solid var(--orange-bright); background:var(--soft); border-radius:0 0 .6rem .6rem; padding:.9rem 1rem; display:grid; gap:.3rem; min-width:0}
+.tl b{font-size:1rem} .tl p{font-size:.88rem; color:var(--muted)}
+@media (max-width:640px){.tl{grid-template-columns:minmax(0,1fr)}}
+.two{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+.sub{font-size:.92rem; color:var(--ink)}
+details.how{border:1px solid var(--line); border-radius:.8rem; padding:.2rem 1rem; background:#fff}
+details.how[open]{padding-bottom:1rem}
+details.how summary{cursor:pointer; font-weight:600; font-size:.92rem; color:var(--ink); padding:.7rem 0; list-style-position:outside}
+details.how summary:hover{color:var(--orange)}
+details.how > *:not(summary){margin-top:.8rem}
+ul.dots{margin:0; padding-left:1.1rem; display:grid; gap:.45rem; color:#374151; font-size:.92rem}
+.gb .gl{font-size:.86rem}
 </style>
 </head><body>
 <nav class="top"><div class="in">
@@ -179,69 +204,114 @@ a.dl:hover{background:var(--orange)}
 </header>
 <div class="meta">
   <div><span class="label">Context</span><p>Making Waves Academy, Summer 2026</p></div>
-  <div><span class="label">Tools</span><p>Google Sheets, email, phone outreach</p></div>
-  <div><span class="label">Code</span><p>Internal school data, not public</p></div>
+  <div><span class="label">Tools</span><p>Google Sheets, email, phone and text outreach</p></div>
+  <div><span class="label">My role</span><p>Scheduling, family outreach, proctoring, data tracking and the final report</p></div>
 </div>
-<section><div class="section-head"><h2>The problem</h2></div>
-<div class="prose"><p>Every incoming student needed a placement test before the 2026–27 school year. The tests had to be scheduled with families, run on fixed dates, and staffed with help from IT, operations and food services. Leadership needed the results in time to set next year's class groupings.</p></div></section>
-
-<section><div class="section-head"><h2>From roster to results</h2><span class="label">Students &amp; families</span></div>
-<div class="bars" role="img" aria-label="147 families on the roster, 131 confirmed testing dates, 125 students completed testing">
-  <div class="bar"><div class="row"><span>Families on the roster</span><span class="mono">147</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
-  <div class="bar"><div class="row"><span>Testing dates confirmed directly</span><span class="mono">131 · 89%</span></div><div class="track"><div class="fill" style="width:89.1%"></div></div></div>
-  <div class="bar"><div class="row"><span>Students who completed testing</span><span class="mono">125 · 86%</span></div><div class="track"><div class="fill" style="width:85.0%"></div></div></div>
-  <p class="note">Bars are drawn to the same scale (147). Completion is 125 of the 146 students expected to test. The remaining families were followed up with by phone and email.</p>
-</div></section>
-
-<section><div class="section-head"><h2>Families by preferred language</h2></div>
-<div class="bars">
-  <div class="split" role="img" aria-label="79 English-preferred, 68 Spanish, Arabic or Portuguese-preferred"><div class="a" style="width:53.7%"></div><div class="b" style="width:46.3%"></div></div>
-  <div class="key"><span><i style="background:var(--navy)"></i>English <span class="mono">79</span></span><span><i style="background:var(--orange-bright)"></i>Spanish, Arabic or Portuguese <span class="mono">68</span></span></div>
-  <p class="note">Almost half of families got notices in a language other than English. Students with IEPs and 504 plans got tailored versions.</p>
-</div></section>
-
-<section><div class="section-head"><h2>Step 1 tracker: scheduling families</h2><span class="label">Fictional families</span></div>
-<div class="prose"><p>The real roster holds student and family information, so it stays private. This is a rebuilt version of the same tracker filled with made-up families, so you can see how it works.</p></div>
-<div class="tbl"><table><thead><tr><th>Family</th><th>Week</th><th>Language</th><th>Confirmed</th><th>Email sent</th><th>Notes</th><th>Status</th></tr></thead><tbody><tr class='ok'><td>F-001</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td>Confirmed by email</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-002</td><td>Week 2</td><td>Spanish</td><td>Jul 14</td><td>Yes</td><td>Prefers morning slot</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-003</td><td>Week 1</td><td>English</td><td>Jul 9</td><td>Yes</td><td>Sibling testing same day</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-004</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td></td><td><span class='st ok'>Confirmed</span></td></tr><tr class='fu'><td>F-005</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>Yes</td><td>Left voicemail</td><td><span class='st fu'>Follow up</span></td></tr><tr class='fu'><td>F-006</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>No</td><td>Email bounced, calling</td><td><span class='st fu'>Follow up</span></td></tr><tr class='ok'><td>F-007</td><td>Week 3</td><td>English</td><td>Jul 23</td><td>Yes</td><td>Prefers morning slot</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-008</td><td>Week 1</td><td>Spanish</td><td>Jul 7</td><td>Yes</td><td></td><td><span class='st ok'>Confirmed</span></td></tr></tbody></table></div>
-<p class="note">First 8 of 147 sample rows. Every family ID, date and note is invented.</p>
-<ol class="steps">
-<li><div><b>Roster tab.</b> One row per family. Status fills itself in: a confirmed date means Confirmed, a blank means Follow up, and follow-up rows are highlighted.</div></li>
-<li><div><b>Summary tab.</b> COUNTIF and COUNTIFS formulas total families, confirmations and follow-ups by testing week and by language, with a confirmation rate for each.</div></li>
-<li><div><b>Follow-up List tab.</b> INDEX and MATCH pull every family still needing a call into one list, so the next round of outreach is ready without filtering by hand.</div></li>
-</ol>
-<p><a class="dl" href="summer-assessment-sample-tracker.xlsx">Download the scheduling tracker (.xlsx)</a></p>
-</section>
-<section><div class="section-head"><h2>Step 2 tracker: diagnostics and placement</h2><span class="label">Fictional students</span></div>
-<div class="prose"><p>Once families confirmed, each testing week got its own tab. Students were pulled in from the roster automatically and split into three equal testing groups. As each English and Math diagnostic finished, I logged the status, the score and the overall placement level from the diagnostic report, and the sheet compared that placement to the student's grade.</p></div>
-<div class="tbl"><table><thead><tr><th rowspan="2">Student</th><th rowspan="2">Grade</th><th rowspan="2">Group</th><th colspan="3">English diagnostic</th><th colspan="3">Math diagnostic</th></tr><tr><th>Score</th><th>Placement</th><th>vs. grade</th><th>Score</th><th>Placement</th><th>vs. grade</th></tr></thead><tbody><tr><td>S-001</td><td>8</td><td>Group A</td><td>667</td><td>Grade 8</td><td><span class='pv g0'>On/above grade</span></td><td>582</td><td>Grade 6</td><td><span class='pv g2'>2 grades below</span></td></tr><tr><td>S-002</td><td>5</td><td>Group A</td><td>566</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td><td>432</td><td>Grade 2</td><td><span class='pv g3'>3+ grades below</span></td></tr><tr><td>S-003</td><td>8</td><td>Group A</td><td>622</td><td>Grade 7</td><td><span class='pv g1'>1 grade below</span></td><td colspan='3' class='abs'>Absent</td></tr><tr><td>S-006</td><td>5</td><td>Group A</td><td>504</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td><td>537</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-009</td><td>5</td><td>Group A</td><td>536</td><td>Grade 4</td><td><span class='pv g1'>1 grade below</span></td><td>564</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-011</td><td>5</td><td>Group A</td><td>505</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td><td>569</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-013</td><td>5</td><td>Group A</td><td>565</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td><td>495</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td></tr><tr><td>S-017</td><td>5</td><td>Group A</td><td>533</td><td>Grade 4</td><td><span class='pv g1'>1 grade below</span></td><td>405</td><td>Grade 1</td><td><span class='pv g3'>3+ grades below</span></td></tr></tbody></table></div>
-<p class="note">First 8 rows of the Week 1 tab. Every student ID, score and placement is invented.</p>
-<div class="bars">
-  <div class="row" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><b style="font-size:.95rem">Placement compared with grade, sample data</b><div class="key"><span><i style="background:var(--navy)"></i>English</span><span><i style="background:var(--orange-bright)"></i>Math</span></div></div>
-  <div class="gb"><span class="gl">On/above grade</span><div class="gt"><div class="gf ela" style="width:95.0%"></div><span class="mono">38</span></div><div class="gt"><div class="gf math" style="width:90.0%"></div><span class="mono">36</span></div></div><div class="gb"><span class="gl">1 grade below</span><div class="gt"><div class="gf ela" style="width:82.5%"></div><span class="mono">33</span></div><div class="gt"><div class="gf math" style="width:100.0%"></div><span class="mono">40</span></div></div><div class="gb"><span class="gl">2 grades below</span><div class="gt"><div class="gf ela" style="width:75.0%"></div><span class="mono">30</span></div><div class="gt"><div class="gf math" style="width:72.5%"></div><span class="mono">29</span></div></div><div class="gb"><span class="gl">3+ grades below</span><div class="gt"><div class="gf ela" style="width:65.0%"></div><span class="mono">26</span></div><div class="gt"><div class="gf math" style="width:55.0%"></div><span class="mono">22</span></div></div>
-  <p class="note">Students who completed each diagnostic in the sample (127 English, 127 Math). The Summary tab builds this view automatically, so leadership can see at a glance how many students need support and in which subject.</p>
+<div class="kpis">
+  <div><b>147</b><span>families contacted</span></div>
+  <div><b>131</b><span>families confirmed</span></div>
+  <div><b>86%</b><span>completed both diagnostics</span></div>
+  <div><b>6</b><span>teams coordinated</span></div>
 </div>
-<ol class="steps">
-<li><div><b>Week tabs.</b> INDEX and MATCH pull each week's students from the roster, and a formula splits them into Groups A, B and C of equal size for proctors.</div></li>
-<li><div><b>Placement check.</b> For each subject, a formula turns the diagnostic placement (for example "Grade 3") into a gap against the student's grade and labels it On/above, 1, 2, or 3+ grades below, with color coding.</div></li>
-<li><div><b>Attendance.</b> Daily dropdowns track Present, Absent or Completed All, so makeups are easy to spot.</div></li>
-<li><div><b>Summary tab.</b> Completion rates, average scores and placement counts by subject, updated as results come in.</div></li>
-</ol>
-<p><a class="dl" href="summer-diagnostic-tracker-sample.xlsx">Download the diagnostic tracker (.xlsx)</a></p>
+
+<nav class="jump" aria-label="On this page">
+  <a href="#goal">Goal</a><a href="#plan">Plan</a><a href="#schedule">1 · Schedule</a><a href="#test">2 · Test</a><a href="#results">Results</a><a href="#cohorts">3 · Cohorts</a><a href="#outcome">Outcome</a>
+</nav>
+
+<section id="goal"><div class="section-head"><h2>Goal</h2></div>
+<div class="prose"><p>Leadership needed every incoming 5th grader and new 6th to 8th grader to finish an English and a Math diagnostic before August scheduling. The results would set each student's placement, build balanced classes, and flag who needed extra support from the first day.</p></div>
 </section>
-<section><div class="section-head"><h2>Step 3 tracker: balanced cohorts</h2><span class="label">Fictional students</span></div>
-<div class="prose"><p>With every diagnostic logged, the last step was splitting the incoming class into four cohorts that were as even as possible. No cohort should be stronger or weaker than another, and each should have a similar mix of girls and boys, students with IEPs and 504 plans, Black, Hispanic, White and Asian students, and English learners and English speakers.</p><p>The sheet shows every cohort's makeup side by side and updates the moment a student is moved, so we could adjust placements until every measure lined up.</p></div>
-<div class="tbl"><table><thead><tr><th>Measure</th><th>5A</th><th>5B</th><th>5C</th><th>5D</th><th>Spread</th><th>Spread if split randomly</th></tr></thead><tbody><tr><td>Students</td><td>28</td><td>28</td><td>28</td><td>28</td><td><span class='sp ok'>0</span></td><td><span class='sp ok'>0</span></td></tr><tr><td>Avg reading score</td><td>499</td><td>499</td><td>499</td><td>499</td><td><span class='sp ok'>0.2</span></td><td><span class='sp bad'>17.1</span></td></tr><tr><td>Avg math score</td><td>503</td><td>503</td><td>504</td><td>504</td><td><span class='sp ok'>1.2</span></td><td><span class='sp bad'>28.1</span></td></tr><tr><td>Girls</td><td>14</td><td>14</td><td>15</td><td>15</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>3</span></td></tr><tr><td>Boys</td><td>14</td><td>14</td><td>13</td><td>13</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>3</span></td></tr><tr><td>IEP</td><td>3</td><td>4</td><td>3</td><td>3</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>4</span></td></tr><tr><td>504</td><td>2</td><td>2</td><td>2</td><td>2</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>2</span></td></tr><tr><td>Black</td><td>6</td><td>6</td><td>6</td><td>6</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>7</span></td></tr><tr><td>Hispanic/Latino</td><td>13</td><td>13</td><td>13</td><td>13</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>11</span></td></tr><tr><td>White</td><td>3</td><td>3</td><td>4</td><td>4</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>5</span></td></tr><tr><td>Asian</td><td>6</td><td>6</td><td>5</td><td>5</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>7</span></td></tr><tr><td>English learners</td><td>8</td><td>7</td><td>8</td><td>8</td><td><span class='sp ok'>1</span></td><td><span class='sp ok'>1</span></td></tr><tr><td>English speakers</td><td>20</td><td>21</td><td>20</td><td>20</td><td><span class='sp ok'>1</span></td><td><span class='sp ok'>1</span></td></tr></tbody></table></div>
-<p class="note">Sample of 112 fictional students. Spread is the highest cohort minus the lowest. The last column shows the same students split at random, for comparison: average scores differed by up to 28 points, and some groups by as many as 7 students.</p>
-<ol class="steps">
-<li><div><b>Students tab.</b> One row per student with reading and math scores and placements, plus the details used for balancing. The cohort column is a dropdown.</div></li>
-<li><div><b>Balance tab.</b> COUNTIFS and AVERAGEIF formulas build the side-by-side comparison, and each spread turns green when cohorts are within 1 student (or 10 points for average scores) and red when they are not.</div></li>
-<li><div><b>Cohort tabs.</b> Each cohort's class list fills in automatically, ready to share with its teacher.</div></li>
-</ol>
-<p><a class="dl" href="cohort-balancer-sample.xlsx">Download the cohort balancer (.xlsx)</a></p>
+
+<section id="plan"><div class="section-head"><h2>How the program ran</h2><span class="label">June 29 – July 17, 2026</span></div>
+<div class="tl">
+  <div><span class="label">Jun 29 – Jul 2</span><b>Prep week</b><p>Classroom setup, IT training, roster checks and family notices.</p></div>
+  <div><span class="label">Jul 6 – 10</span><b>Week 1 testing</b><p>Last names A–L. Three classrooms, 20 to 25 students per session.</p></div>
+  <div><span class="label">Jul 13 – 17</span><b>Week 2 testing</b><p>Last names M–Z, plus Week 1 absences. Final report on July 17.</p></div>
+</div>
+<p class="note">Each day ran from 8:00 breakfast through three testing blocks and lunch to 3:00 pickup. Students could leave the program once both diagnostics were done, and they picked up their school Chromebooks during their week.</p>
+<div class="tbl"><table><thead><tr><th>Team</th><th>People</th><th>Focus</th></tr></thead><tbody>
+<tr><td>Division director</td><td>1</td><td>Oversight and final placement decisions</td></tr>
+<tr><td>Program coordinator</td><td>1</td><td>Assessment planning and placement recommendations</td></tr>
+<tr><td><b>Teacher aides (my team)</b></td><td>3</td><td>Family outreach, scheduling, proctoring, tracker and data management</td></tr>
+<tr><td>IT</td><td>3</td><td>Student logins, Chromebook setup, testing platform access</td></tr>
+<tr><td>Operations</td><td>3</td><td>Rooms, arrival and attendance support, campus logistics</td></tr>
+<tr><td>Food services</td><td>2</td><td>Daily breakfast and lunch</td></tr>
+</tbody></table></div>
 </section>
-<section><div class="section-head"><h2>What I did</h2></div>
-<ol class="steps"><li><div><b>Built the roster.</b> One sheet tracked every family: testing week, preferred language, confirmed date, whether the confirmation email went out, and notes.</div></li><li><div><b>Confirmed dates.</b> Reached 131 families directly, then followed up with the rest by phone and email.</div></li><li><div><b>Coordinated the teams.</b> Worked with leadership, IT, operations and food services so rooms, devices and meals were ready on each fixed test date.</div></li><li><div><b>Reported the results.</b> Wrote a summary report with placement results and recommended student groupings. Leadership used it to finalize the 2026–27 cohorts.</div></li></ol></section>
-<div class="result"><span class="label">Outcome</span><b class="big">86%</b><p>completion, 125 of 146 students tested on a fixed schedule, with results delivered in time to set next year's cohorts.</p></div>
+
+<section id="schedule"><div class="section-head"><h2>Step 1 · Scheduling families</h2></div>
+<div class="prose"><p>I tracked every family in one roster and contacted them in their preferred language until each had a confirmed testing week.</p></div>
+<div class="two">
+  <div class="bars">
+    <div class="bar"><div class="row"><span>Families confirmed a testing date</span><span class="mono">131 of 147 · 89%</span></div><div class="track"><div class="fill" style="width:89%"></div></div></div>
+    <p class="note">The rest were followed up by phone, email and text. Nine families said neither week worked.</p>
+  </div>
+  <div class="bars">
+    <b class="sub">Preferred language</b>
+    <div class="split" role="img" aria-label="79 English-preferred, 68 Spanish, Arabic or Portuguese-preferred"><div class="a" style="width:53.7%"></div><div class="b" style="width:46.3%"></div></div>
+    <div class="key"><span><i style="background:var(--navy)"></i>English <span class="mono">79</span></span><span><i style="background:var(--orange-bright)"></i>Spanish, Arabic or Portuguese <span class="mono">68</span></span></div>
+    <p class="note">Families of students with IEPs or 504 plans also got a separate notice explaining accommodations.</p>
+  </div>
+</div>
+<details class="how"><summary>See the scheduling tracker (sample data)</summary>
+<div class="tbl"><table><thead><tr><th>Family</th><th>Week</th><th>Language</th><th>Confirmed</th><th>Email sent</th><th>Status</th></tr></thead><tbody><tr class='ok'><td>F-001</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-002</td><td>Week 2</td><td>Spanish</td><td>Jul 14</td><td>Yes</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-003</td><td>Week 1</td><td>English</td><td>Jul 9</td><td>Yes</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-004</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='fu'><td>F-005</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>Yes</td><td><span class='st fu'>Follow up</span></td></tr><tr class='fu'><td>F-006</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>No</td><td><span class='st fu'>Follow up</span></td></tr></tbody></table></div>
+<ul class="dots">
+<li><b>Roster:</b> one row per family. Status fills in from the confirmed date, and families needing follow-up are highlighted.</li>
+<li><b>Summary:</b> COUNTIF and COUNTIFS total confirmations and follow-ups by week and language.</li>
+<li><b>Follow-up list:</b> INDEX and MATCH gather every family still needing a call.</li>
+</ul>
+<p class="note">Rebuilt with fictional families. The real roster stays private.</p>
+</details>
+</section>
+
+<section id="test"><div class="section-head"><h2>Step 2 · Running the diagnostics</h2></div>
+<div class="prose"><p>Each testing week had its own tracker. Students were pulled from the roster, split into three equal groups for proctors, and logged as each English and Math diagnostic was finished. Rushed or interrupted tests were reset and retaken so every score was valid.</p></div>
+<div class="bars">
+  <div class="bar"><div class="row"><span>Week 1 · completed both diagnostics</span><span class="mono">59 of 70 · 84%</span></div><div class="track"><div class="fill" style="width:84%"></div></div></div>
+  <div class="bar"><div class="row"><span>Week 2 · completed both diagnostics</span><span class="mono">69 of 74 · 93%</span></div><div class="track"><div class="fill" style="width:93%"></div></div></div>
+  <p class="note">Week 1 absences were invited back for Week 2. Students who missed both weeks test in August.</p>
+</div>
+<details class="how"><summary>See the diagnostic tracker (sample data)</summary>
+<div class="tbl"><table><thead><tr><th rowspan="2">Student</th><th rowspan="2">Grade</th><th rowspan="2">Group</th><th colspan="3">English diagnostic</th><th colspan="3">Math diagnostic</th></tr><tr><th>Score</th><th>Placement</th><th>vs. grade</th><th>Score</th><th>Placement</th><th>vs. grade</th></tr></thead><tbody><tr><td>S-001</td><td>8</td><td>Group A</td><td>667</td><td>Grade 8</td><td><span class='pv g0'>On/above grade</span></td><td>582</td><td>Grade 6</td><td><span class='pv g2'>2 grades below</span></td></tr><tr><td>S-002</td><td>5</td><td>Group A</td><td>566</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td><td>432</td><td>Grade 2</td><td><span class='pv g3'>3+ grades below</span></td></tr><tr><td>S-003</td><td>8</td><td>Group A</td><td>622</td><td>Grade 7</td><td><span class='pv g1'>1 grade below</span></td><td colspan='3' class='abs'>Absent</td></tr><tr><td>S-006</td><td>5</td><td>Group A</td><td>504</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td><td>537</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-009</td><td>5</td><td>Group A</td><td>536</td><td>Grade 4</td><td><span class='pv g1'>1 grade below</span></td><td>564</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr><tr><td>S-011</td><td>5</td><td>Group A</td><td>505</td><td>Grade 3</td><td><span class='pv g2'>2 grades below</span></td><td>569</td><td>Grade 5</td><td><span class='pv g0'>On/above grade</span></td></tr></tbody></table></div>
+<ul class="dots">
+<li><b>Week tabs:</b> INDEX and MATCH pull each week's students, and a formula splits them into three equal groups.</li>
+<li><b>Placement check:</b> a formula compares each placement with the student's grade and labels the gap, color coded.</li>
+<li><b>Attendance:</b> daily dropdowns for Present, Absent or Completed All make makeups easy to spot.</li>
+<li><b>Summary:</b> completion rates, average scores and placement counts update as results come in.</li>
+</ul>
+<p class="note">Rebuilt with fictional students. Real scores stay private.</p>
+</details>
+</section>
+
+<section id="results"><div class="section-head"><h2>Results</h2><span class="label">All grades, school-wide</span></div>
+<div class="prose"><p>In both subjects the largest group placed one grade level below, and about a third placed at or above grade level. Math had more students three or more grades behind, which shaped fall intervention staffing.</p></div>
+<div class="bars">
+  <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><b class="sub">Placement level, share of students tested</b><div class="key"><span><i style="background:var(--navy)"></i>English (126)</span><span><i style="background:var(--orange-bright)"></i>Math (125)</span></div></div>
+  <div class="gb"><span class="gl">Mid or above grade level</span><div class="gt"><div class="gf ela" style="width:50.5%"></div><span class="mono">24% (31)</span></div><div class="gt"><div class="gf math" style="width:23.2%"></div><span class="mono">11% (14)</span></div></div><div class="gb"><span class="gl">Early on grade level</span><div class="gt"><div class="gf ela" style="width:31.6%"></div><span class="mono">15% (19)</span></div><div class="gt"><div class="gf math" style="width:46.3%"></div><span class="mono">22% (28)</span></div></div><div class="gb"><span class="gl">1 grade level below</span><div class="gt"><div class="gf ela" style="width:75.8%"></div><span class="mono">36% (46)</span></div><div class="gt"><div class="gf math" style="width:80.0%"></div><span class="mono">38% (48)</span></div></div><div class="gb"><span class="gl">2 grade levels below</span><div class="gt"><div class="gf ela" style="width:18.9%"></div><span class="mono">9% (12)</span></div><div class="gt"><div class="gf math" style="width:25.3%"></div><span class="mono">12% (15)</span></div></div><div class="gb"><span class="gl">3+ grade levels below</span><div class="gt"><div class="gf ela" style="width:29.5%"></div><span class="mono">14% (18)</span></div><div class="gt"><div class="gf math" style="width:33.7%"></div><span class="mono">16% (20)</span></div></div>
+</div>
+<div class="kpis two-up">
+  <div><b>28</b><span>5th graders flagged for math support</span></div>
+  <div><b>20</b><span>5th graders flagged for reading support</span></div>
+</div>
+</section>
+
+<section id="cohorts"><div class="section-head"><h2>Step 3 · Building balanced cohorts</h2></div>
+<div class="prose"><p>The results fed a cohort tracker for the 113 incoming 5th graders. The goal was four classes with no cohort stronger or weaker than another, and a similar mix of girls and boys, students with IEPs and 504 plans, Black, Hispanic, White and Asian students, and English learners and English speakers. The sheet compared every cohort side by side and updated as students were moved.</p></div>
+<div class="tbl"><table><thead><tr><th>Measure</th><th>5A</th><th>5B</th><th>5C</th><th>5D</th><th>Spread</th><th>If split randomly</th></tr></thead><tbody><tr><td>Students</td><td>28</td><td>28</td><td>28</td><td>28</td><td><span class='sp ok'>0</span></td><td><span class='sp ok'>0</span></td></tr><tr><td>Avg reading score</td><td>499</td><td>499</td><td>499</td><td>499</td><td><span class='sp ok'>0.2</span></td><td><span class='sp bad'>17.1</span></td></tr><tr><td>Avg math score</td><td>503</td><td>503</td><td>504</td><td>504</td><td><span class='sp ok'>1.2</span></td><td><span class='sp bad'>28.1</span></td></tr><tr><td>Girls</td><td>14</td><td>14</td><td>15</td><td>15</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>3</span></td></tr><tr><td>Boys</td><td>14</td><td>14</td><td>13</td><td>13</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>3</span></td></tr><tr><td>IEP</td><td>3</td><td>4</td><td>3</td><td>3</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>4</span></td></tr><tr><td>504</td><td>2</td><td>2</td><td>2</td><td>2</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>2</span></td></tr><tr><td>Black</td><td>6</td><td>6</td><td>6</td><td>6</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>7</span></td></tr><tr><td>Hispanic/Latino</td><td>13</td><td>13</td><td>13</td><td>13</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>11</span></td></tr><tr><td>White</td><td>3</td><td>3</td><td>4</td><td>4</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>5</span></td></tr><tr><td>Asian</td><td>6</td><td>6</td><td>5</td><td>5</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>7</span></td></tr><tr><td>English learners</td><td>8</td><td>7</td><td>8</td><td>8</td><td><span class='sp ok'>1</span></td><td><span class='sp ok'>1</span></td></tr><tr><td>English speakers</td><td>20</td><td>21</td><td>20</td><td>20</td><td><span class='sp ok'>1</span></td><td><span class='sp ok'>1</span></td></tr></tbody></table></div>
+<p class="note">Sample data: 112 fictional students. Spread is the highest cohort minus the lowest. Split at random, the same students' average scores differed by up to 28 points.</p>
+<details class="how"><summary>How the cohort tracker works</summary>
+<ul class="dots">
+<li><b>Students:</b> scores, placements and balancing details, with a dropdown to set each student's cohort.</li>
+<li><b>Balance:</b> COUNTIFS and AVERAGEIF compare the four cohorts, and each spread turns green when cohorts are within 1 student or 10 points.</li>
+<li><b>Cohort lists:</b> each class list fills in automatically for its teacher.</li>
+</ul>
+</details>
+</section>
+
+<section id="outcome"><div class="section-head"><h2>Outcome</h2></div>
+<div class="result"><span class="label">Result</span><b class="big">125 of 146</b><p>students completed both diagnostics (86%). I wrote the program summary report on July 17, giving leadership the placement data to finalize 2026–27 cohorts and plan fall intervention groups.</p></div>
+<div class="prose"><p>Staff also saw students get an easy first look at campus, some early finishers asked to keep coming, and older students stepped in as peer helpers.</p></div>
+</section>
 
 <a class="back" href="index.html">Back to all projects</a>
 </div></article>

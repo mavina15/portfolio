@@ -156,6 +156,34 @@ a.dl:hover{background:var(--orange)}
 .gt .gf{height:.65rem; border-radius:999px} .gf.ela{background:var(--navy)} .gf.math{background:var(--orange-bright)}
 .gt span{font-size:.8rem; color:var(--muted)}
 @media (max-width:520px){.gb{grid-template-columns:minmax(0,1fr)} .gb .gl{grid-row:auto}}
+
+.sp{display:inline-block; min-width:2.2rem; text-align:center; font-size:.78rem; font-weight:700; padding:.12rem .5rem; border-radius:999px}
+.sp.ok{background:#dcfce7; color:#166534} .sp.bad{background:#fee2e2; color:#991b1b}
+
+.kpis{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:.8rem; overflow:hidden}
+.kpis div{background:#fff; padding:1rem 1.1rem; display:grid; gap:.2rem; min-width:0}
+.kpis b{font:700 1.7rem/1 var(--sans); font-variant-numeric:tabular-nums; color:var(--ink)}
+.kpis span{font-size:.82rem; color:var(--muted); line-height:1.35}
+.kpis.two-up{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.jump{display:flex; flex-wrap:wrap; gap:.4rem; position:sticky; top:calc(env(safe-area-inset-top,0px) + 3.6rem); z-index:5; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); padding:.6rem 0; border-bottom:1px solid var(--line)}
+.jump a{font-size:.8rem; font-weight:600; color:#374151; text-decoration:none; border:1px solid var(--line); background:#fff; padding:.3rem .75rem; border-radius:999px; white-space:nowrap}
+.jump a:hover{background:var(--ink); color:#fff; border-color:var(--ink)}
+section[id]{scroll-margin-top:8rem}
+.tl{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem}
+.tl div{border-top:3px solid var(--orange-bright); background:var(--soft); border-radius:0 0 .6rem .6rem; padding:.9rem 1rem; display:grid; gap:.3rem; min-width:0}
+.tl b{font-size:1rem} .tl p{font-size:.88rem; color:var(--muted)}
+@media (max-width:640px){.tl{grid-template-columns:minmax(0,1fr)}}
+.two{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+.sub{font-size:.92rem; color:var(--ink)}
+details.how{border:1px solid var(--line); border-radius:.8rem; padding:.2rem 1rem; background:#fff}
+details.how[open]{padding-bottom:1rem}
+details.how summary{cursor:pointer; font-weight:600; font-size:.92rem; color:var(--ink); padding:.7rem 0; list-style-position:outside}
+details.how summary:hover{color:var(--orange)}
+details.how > *:not(summary){margin-top:.8rem}
+ul.dots{margin:0; padding-left:1.1rem; display:grid; gap:.45rem; color:#374151; font-size:.92rem}
+.gb .gl{font-size:.86rem}
 </style>
 </head><body>
 <nav class="top"><div class="in">
