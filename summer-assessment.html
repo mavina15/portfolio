@@ -135,6 +135,16 @@ figcaption{font-size:.84rem; color:var(--muted)}
   #projects{height:0; min-height:100%; display:flex!important; flex-direction:column}
   #projects .plist{flex:1 1 auto; min-height:0; overflow-y:auto; padding-right:.4rem; margin-right:-.4rem; scrollbar-width:thin}
 }
+
+.tbl{overflow-x:auto; border:1px solid var(--line); border-radius:.8rem}
+.tbl table{border-collapse:collapse; width:100%; min-width:40rem; font-size:.85rem}
+.tbl th{background:var(--navy); color:#fff; text-align:left; font-weight:600; padding:.55rem .7rem; white-space:nowrap}
+.tbl td{padding:.5rem .7rem; border-top:1px solid var(--line); color:#374151; font-variant-numeric:tabular-nums}
+.tbl tr.fu td{background:#fff8e6}
+.st{display:inline-block; font-size:.72rem; font-weight:700; padding:.15rem .55rem; border-radius:999px; white-space:nowrap}
+.st.ok{background:#e7f0ff; color:var(--navy)} .st.fu{background:#ffe2a8; color:#6b4200}
+a.dl{display:inline-block; background:var(--ink); color:#fff; text-decoration:none; font-weight:700; font-size:.9rem; padding:.6rem 1.1rem; border-radius:.6rem}
+a.dl:hover{background:var(--orange)}
 </style>
 </head><body>
 <nav class="top"><div class="in">
@@ -176,6 +186,17 @@ figcaption{font-size:.84rem; color:var(--muted)}
   <p class="note">Almost half of families got notices in a language other than English. Students with IEPs and 504 plans got tailored versions.</p>
 </div></section>
 
+<section><div class="section-head"><h2>The tracker, rebuilt with sample data</h2><span class="label">Fictional families</span></div>
+<div class="prose"><p>The real roster holds student and family information, so it stays private. This is a rebuilt version of the same tracker filled with made-up families, so you can see how it works.</p></div>
+<div class="tbl"><table><thead><tr><th>Family</th><th>Week</th><th>Language</th><th>Confirmed</th><th>Email sent</th><th>Notes</th><th>Status</th></tr></thead><tbody><tr class='ok'><td>F-001</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td>Confirmed by email</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-002</td><td>Week 2</td><td>Spanish</td><td>Jul 14</td><td>Yes</td><td>Prefers morning slot</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-003</td><td>Week 1</td><td>English</td><td>Jul 9</td><td>Yes</td><td>Sibling testing same day</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-004</td><td>Week 3</td><td>English</td><td>Jul 20</td><td>Yes</td><td></td><td><span class='st ok'>Confirmed</span></td></tr><tr class='fu'><td>F-005</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>Yes</td><td>Left voicemail</td><td><span class='st fu'>Follow up</span></td></tr><tr class='fu'><td>F-006</td><td>Week 1</td><td>English</td><td>&mdash;</td><td>No</td><td>Email bounced, calling</td><td><span class='st fu'>Follow up</span></td></tr><tr class='ok'><td>F-007</td><td>Week 3</td><td>English</td><td>Jul 23</td><td>Yes</td><td>Prefers morning slot</td><td><span class='st ok'>Confirmed</span></td></tr><tr class='ok'><td>F-008</td><td>Week 1</td><td>Spanish</td><td>Jul 7</td><td>Yes</td><td></td><td><span class='st ok'>Confirmed</span></td></tr></tbody></table></div>
+<p class="note">First 8 of 147 sample rows. Every family ID, date and note is invented.</p>
+<ol class="steps">
+<li><div><b>Roster tab.</b> One row per family. Status fills itself in: a confirmed date means Confirmed, a blank means Follow up, and follow-up rows are highlighted.</div></li>
+<li><div><b>Summary tab.</b> COUNTIF and COUNTIFS formulas total families, confirmations and follow-ups by testing week and by language, with a confirmation rate for each.</div></li>
+<li><div><b>Follow-up List tab.</b> INDEX and MATCH pull every family still needing a call into one list, so the next round of outreach is ready without filtering by hand.</div></li>
+</ol>
+<p><a class="dl" href="summer-assessment-sample-tracker.xlsx">Download the sample tracker (.xlsx)</a></p>
+</section>
 <section><div class="section-head"><h2>What I did</h2></div>
 <ol class="steps"><li><div><b>Built the roster.</b> One sheet tracked every family: testing week, preferred language, confirmed date, whether the confirmation email went out, and notes.</div></li><li><div><b>Confirmed dates.</b> Reached 131 families directly, then followed up with the rest by phone and email.</div></li><li><div><b>Coordinated the teams.</b> Worked with leadership, IT, operations and food services so rooms, devices and meals were ready on each fixed test date.</div></li><li><div><b>Reported the results.</b> Wrote a summary report with placement results and recommended student groupings. Leadership used it to finalize the 2026–27 cohorts.</div></li></ol></section>
 <div class="result"><span class="label">Outcome</span><b class="big">86%</b><p>completion, 125 of 146 students tested on a fixed schedule, with results delivered in time to set next year's cohorts.</p></div>
