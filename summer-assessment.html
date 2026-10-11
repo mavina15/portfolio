@@ -156,6 +156,9 @@ a.dl:hover{background:var(--orange)}
 .gt .gf{height:.65rem; border-radius:999px} .gf.ela{background:var(--navy)} .gf.math{background:var(--orange-bright)}
 .gt span{font-size:.8rem; color:var(--muted)}
 @media (max-width:520px){.gb{grid-template-columns:minmax(0,1fr)} .gb .gl{grid-row:auto}}
+
+.sp{display:inline-block; min-width:2.2rem; text-align:center; font-size:.78rem; font-weight:700; padding:.12rem .5rem; border-radius:999px}
+.sp.ok{background:#dcfce7; color:#166534} .sp.bad{background:#fee2e2; color:#991b1b}
 </style>
 </head><body>
 <nav class="top"><div class="in">
@@ -224,6 +227,17 @@ a.dl:hover{background:var(--orange)}
 <li><div><b>Summary tab.</b> Completion rates, average scores and placement counts by subject, updated as results come in.</div></li>
 </ol>
 <p><a class="dl" href="summer-diagnostic-tracker-sample.xlsx">Download the diagnostic tracker (.xlsx)</a></p>
+</section>
+<section><div class="section-head"><h2>Step 3 tracker: balanced cohorts</h2><span class="label">Fictional students</span></div>
+<div class="prose"><p>With every diagnostic logged, the last step was splitting the incoming class into four cohorts that were as even as possible. No cohort should be stronger or weaker than another, and each should have a similar mix of girls and boys, students with IEPs and 504 plans, Black, Hispanic, White and Asian students, and English learners and English speakers.</p><p>The sheet shows every cohort's makeup side by side and updates the moment a student is moved, so we could adjust placements until every measure lined up.</p></div>
+<div class="tbl"><table><thead><tr><th>Measure</th><th>5A</th><th>5B</th><th>5C</th><th>5D</th><th>Spread</th><th>Spread if split randomly</th></tr></thead><tbody><tr><td>Students</td><td>28</td><td>28</td><td>28</td><td>28</td><td><span class='sp ok'>0</span></td><td><span class='sp ok'>0</span></td></tr><tr><td>Avg reading score</td><td>499</td><td>499</td><td>499</td><td>499</td><td><span class='sp ok'>0.2</span></td><td><span class='sp bad'>17.1</span></td></tr><tr><td>Avg math score</td><td>503</td><td>503</td><td>504</td><td>504</td><td><span class='sp ok'>1.2</span></td><td><span class='sp bad'>28.1</span></td></tr><tr><td>Girls</td><td>14</td><td>14</td><td>15</td><td>15</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>3</span></td></tr><tr><td>Boys</td><td>14</td><td>14</td><td>13</td><td>13</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>3</span></td></tr><tr><td>IEP</td><td>3</td><td>4</td><td>3</td><td>3</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>4</span></td></tr><tr><td>504</td><td>2</td><td>2</td><td>2</td><td>2</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>2</span></td></tr><tr><td>Black</td><td>6</td><td>6</td><td>6</td><td>6</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>7</span></td></tr><tr><td>Hispanic/Latino</td><td>13</td><td>13</td><td>13</td><td>13</td><td><span class='sp ok'>0</span></td><td><span class='sp bad'>11</span></td></tr><tr><td>White</td><td>3</td><td>3</td><td>4</td><td>4</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>5</span></td></tr><tr><td>Asian</td><td>6</td><td>6</td><td>5</td><td>5</td><td><span class='sp ok'>1</span></td><td><span class='sp bad'>7</span></td></tr><tr><td>English learners</td><td>8</td><td>7</td><td>8</td><td>8</td><td><span class='sp ok'>1</span></td><td><span class='sp ok'>1</span></td></tr><tr><td>English speakers</td><td>20</td><td>21</td><td>20</td><td>20</td><td><span class='sp ok'>1</span></td><td><span class='sp ok'>1</span></td></tr></tbody></table></div>
+<p class="note">Sample of 112 fictional students. Spread is the highest cohort minus the lowest. The last column shows the same students split at random, for comparison: average scores differed by up to 28 points, and some groups by as many as 7 students.</p>
+<ol class="steps">
+<li><div><b>Students tab.</b> One row per student with reading and math scores and placements, plus the details used for balancing. The cohort column is a dropdown.</div></li>
+<li><div><b>Balance tab.</b> COUNTIFS and AVERAGEIF formulas build the side-by-side comparison, and each spread turns green when cohorts are within 1 student (or 10 points for average scores) and red when they are not.</div></li>
+<li><div><b>Cohort tabs.</b> Each cohort's class list fills in automatically, ready to share with its teacher.</div></li>
+</ol>
+<p><a class="dl" href="cohort-balancer-sample.xlsx">Download the cohort balancer (.xlsx)</a></p>
 </section>
 <section><div class="section-head"><h2>What I did</h2></div>
 <ol class="steps"><li><div><b>Built the roster.</b> One sheet tracked every family: testing week, preferred language, confirmed date, whether the confirmation email went out, and notes.</div></li><li><div><b>Confirmed dates.</b> Reached 131 families directly, then followed up with the rest by phone and email.</div></li><li><div><b>Coordinated the teams.</b> Worked with leadership, IT, operations and food services so rooms, devices and meals were ready on each fixed test date.</div></li><li><div><b>Reported the results.</b> Wrote a summary report with placement results and recommended student groupings. Leadership used it to finalize the 2026–27 cohorts.</div></li></ol></section>
