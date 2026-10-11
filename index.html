@@ -130,41 +130,6 @@ figcaption{font-size:.84rem; color:var(--muted)}
 .note{font-size:.82rem; color:var(--muted)}
 .mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-
-/* Decluttered home: one 44rem column, quiet sections, only project rows are boxed */
-.home{max-width:44rem; margin:0 auto; padding-inline:clamp(16px,4vw,24px); padding-block:3.5rem 4rem; display:grid; gap:3.5rem}
-.hero{display:grid; grid-template-columns:6.5rem minmax(0,1fr); gap:1.5rem; align-items:center}
-.hero img{width:6.5rem; height:6.5rem; border-radius:50%; object-fit:cover}
-.hero h1{font-size:clamp(1.9rem,5vw,2.4rem)}
-.hero .role{color:var(--orange); font-weight:600; margin-top:.2rem}
-.intro{font-size:1.1rem; color:#374151; max-width:60ch}
-.tlinks{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; font-weight:600; font-size:.95rem}
-.tlinks a{color:var(--ink); text-decoration:none; border-bottom:2px solid var(--orange-bright)}
-.tlinks a:hover{color:var(--orange)}
-@media (max-width:520px){.hero{grid-template-columns:minmax(0,1fr)} .hero img{width:5.5rem;height:5.5rem}}
-.sec{display:grid; gap:1.1rem}
-.sec > h2{font-size:.78rem; text-transform:uppercase; letter-spacing:.18em; color:var(--faint); font-weight:700}
-.rows{display:grid; gap:.75rem}
-a.row{display:grid; grid-template-columns:6.5rem minmax(0,1fr) auto; gap:1.25rem; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:.9rem; padding:1.1rem 1.25rem; text-decoration:none; color:inherit; transition:border-color .2s, box-shadow .2s}
-a.row:hover{border-color:#d1d5db; box-shadow:0 10px 24px -14px rgba(17,24,39,.25)}
-a.row:hover h3{color:var(--orange)}
-.stat{display:grid; gap:.1rem}
-.stat b{font:700 1.6rem/1 var(--sans); font-variant-numeric:tabular-nums; color:var(--ink)}
-.stat span{font-size:.72rem; color:var(--faint); text-transform:uppercase; letter-spacing:.1em; font-weight:600}
-a.row h3{font-size:1.08rem}
-a.row p{color:var(--muted); font-size:.92rem; margin-top:.15rem}
-a.row .arrow{color:var(--faint); font-size:1.2rem}
-@media (max-width:520px){a.row{grid-template-columns:minmax(0,1fr) auto} .stat{grid-column:1/-1; display:flex; gap:.5rem; align-items:baseline} .stat b{font-size:1.3rem}}
-.xp{list-style:none; margin:0; padding:0; display:grid}
-.xp li{display:flex; justify-content:space-between; gap:.25rem 1rem; flex-wrap:wrap; padding:.8rem 0; border-bottom:1px solid var(--line)}
-.xp li:first-child{border-top:1px solid var(--line)}
-.xp b{font-weight:600}
-.xp span{color:var(--muted)}
-.xp time{color:var(--faint); font-size:.88rem; font-variant-numeric:tabular-nums}
-.toolline{color:#374151}
-.end{display:flex; flex-wrap:wrap; align-items:center; gap:.75rem 1rem; padding-top:1.5rem; border-top:1px solid var(--line)}
-.end .mail{font:600 1rem var(--mono); color:var(--ink); overflow-wrap:anywhere}
-.end .copy{margin-left:auto}
 </style>
 </head><body>
 
@@ -173,67 +138,130 @@ a.row .arrow{color:var(--faint); font-size:1.2rem}
 <nav class="top"><div class="in">
   <a class="brand" href="#top">Mel Avina&#8209;Beltran</a>
   <div class="menu">
-    <a class="plain" href="#projects" style="display:inline">Projects</a>
-    <a class="plain" href="#contact" style="display:inline">Contact</a>
+    <a class="plain" href="#projects">Projects</a>
+    <a class="btn btn-orange" href="https://www.linkedin.com/in/mavinabeltran">LinkedIn</a>
+    <a class="btn btn-ghost" href="#contact">Contact</a>
   </div>
 </div></nav>
-<div class="home">
-<header class="sec" style="gap:1.4rem">
-  <div class="hero">
-    <img src="mel.jpg" alt="Mel Avina-Beltran outdoors by a lake">
-    <div><h1>Mel Avina&#8209;Beltran</h1><p class="role">Data &amp; Operations Analyst</p></div>
+<main>
+<div class="grid">
+  <aside class="card profile">
+    <img class="me" src="mel.jpg" alt="Mel Avina-Beltran outdoors by a lake">
+    <div>
+      <h1>Mel Avina&#8209;Beltran</h1>
+      <p class="role">Data &amp; Operations Analyst</p>
+    </div>
+    <p class="blurb">I build the trackers, dashboards and reports that help teams make decisions, and I run programs on deadline from scheduling through the final report.</p>
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/mavinabeltran">LinkedIn</a>
+      <a href="https://github.com/mavina15">GitHub</a>
+      <a href="#contact">Email</a>
+    </div>
+    <div style="display:grid;gap:1rem;text-align:left">
+      <span class="eyebrow">Background</span>
+      <ul class="bg-list">
+        <li><span class="dot">B.S.</span><div><b>UC Davis, Dec 2023</b><span>B.S. Applied Mathematics</span></div></li>
+        <li><span class="dot">NOW</span><div><b>Making Waves Academy</b><span>Teacher and Summer Assessment Administrator</span></div></li>
+        <li><span class="dot">&lt;/&gt;</span><div><b>Tools</b><span>Google Sheets / Excel, Python, R, SQL, Apps Script</span></div></li>
+        <li><span class="dot">86%</span><div><b>Summer 2026</b><span>Testing completion across a 147-student program</span></div></li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="card" id="projects" style="display:block">
+    <div class="head"><h2>Projects</h2><span class="tag">Selected work</span></div>
+    <div class="plist">
+      <article class="proj">
+  <div>
+    <h3>Summer Assessment Program</h3>
+    <p class="impact">147 students · 86% completion</p>
+    <p>Scheduled and ran testing for 147 students across four home languages, then wrote the placement report used to set next year's cohorts.</p>
+    <div class="pills"><span>Google Sheets</span><span>Reporting</span><span>Operations</span></div>
   </div>
-  <p class="intro">I build the trackers, dashboards and reports that help teams make decisions. Applied Mathematics graduate from UC Davis, now working in education operations in the Bay Area.</p>
-  <div class="tlinks"><a href="https://www.linkedin.com/in/mavinabeltran">LinkedIn</a><a href="https://github.com/mavina15">GitHub</a><a href="#contact">Email</a></div>
-</header>
-
-<section class="sec" id="projects">
-  <h2>Projects</h2>
-  <div class="rows">
-    <a class="row" href="summer-assessment.html">
-  <div class="stat"><b>86%</b><span>completion</span></div>
-  <div><h3>Summer Assessment Program</h3><p>Ran placement testing for a 147-student summer program, from scheduling to the final report.</p></div>
-  <span class="arrow" aria-hidden="true">→</span>
-</a><a class="row" href="wnba-prediction.html">
-  <div class="stat"><b>70.4%</b><span>accuracy</span></div>
-  <div><h3>WNBA Game Outcome Prediction</h3><p>Predicted WNBA game winners from team statistics with logistic regression.</p></div>
-  <span class="arrow" aria-hidden="true">→</span>
-</a><a class="row" href="census-visualization.html">
-  <div class="stat"><b>140</b><span>years</span></div>
-  <div><h3>Visualizing 140 Years of Census Data</h3><p>Mapped U.S. demographic change from 1870 to 2010 in R.</p></div>
-  <span class="arrow" aria-hidden="true">→</span>
-</a><a class="row" href="breast-cancer-models.html">
-  <div class="stat"><b>98%</b><span>accuracy</span></div>
-  <div><h3>Comparing 10 Classifiers</h3><p>Compared ten models for classifying tumors as malignant or benign.</p></div>
-  <span class="arrow" aria-hidden="true">→</span>
-</a><a class="row" href="network-anomaly.html">
-  <div class="stat"><b>19.5k</b><span>samples</span></div>
-  <div><h3>Network Anomaly Detection</h3><p>Flagged unusual network traffic with a deep autoencoder.</p></div>
-  <span class="arrow" aria-hidden="true">→</span>
-</a>
+  <div class="acts">
+    <a class="btn btn-dark" href="summer-assessment.html">Read case study</a>
+    
   </div>
-</section>
-
-<section class="sec">
-  <h2>Experience</h2>
-  <ul class="xp">
-    <li><div><b>Summer Assessment Administrator</b> <span>· Making Waves Academy</span></div><time>2026</time></li>
-    <li><div><b>5th Grade Teacher</b> <span>· Making Waves Academy</span></div><time>2024 – now</time></li>
-    <li><div><b>Senior Developer</b> <span>· UC Davis CodeLab</span></div><time>2023</time></li>
-    <li><div><b>Software Developer</b> <span>· UC Davis Mathematics</span></div><time>2022</time></li>
-  </ul>
-</section>
-
-<section class="sec">
-  <h2>Tools</h2>
-  <p class="toolline">Google Sheets &amp; Excel · Python (pandas, scikit-learn) · R (tidyverse, ggplot2) · SQL · Apps Script</p>
-</section>
-
-<footer class="end" id="contact">
-  <span class="mail" id="em">melavinabeltran@gmail.com</span>
-  <button class="copy" type="button" data-copy="melavinabeltran@gmail.com" data-target="em">Copy email</button>
-</footer>
+</article><article class="proj">
+  <div>
+    <h3>WNBA Game Outcome Prediction</h3>
+    <p class="impact">70.4% accuracy</p>
+    <p>Logistic regression on merged schedule and advanced-stats data, with predictors chosen by sequential feature selection. 70.4% accuracy.</p>
+    <div class="pills"><span>Python</span><span>pandas</span><span>scikit-learn</span></div>
+  </div>
+  <div class="acts">
+    <a class="btn btn-dark" href="wnba-prediction.html">Read case study</a>
+    
+  </div>
+</article><article class="proj">
+  <div>
+    <h3>Visualizing 140 Years of Census Data</h3>
+    <p class="impact">140 years of Census data</p>
+    <p>Mapped demographic change in the U.S. from 1870 to 2010, including the Great Migration, using R.</p>
+    <div class="pills"><span>R</span><span>tidyverse</span><span>ggplot2</span></div>
+  </div>
+  <div class="acts">
+    <a class="btn btn-dark" href="census-visualization.html">Read case study</a>
+    <a class="btn btn-line" href="https://github.com/mavina15/STS112-Visualizing-Society-w-Data">Source code</a>
+  </div>
+</article><article class="proj">
+  <div>
+    <h3>Comparing 10 Classifiers</h3>
+    <p class="impact">10 models · 98% accuracy</p>
+    <p>Benchmarked ten models on the Wisconsin breast cancer dataset by precision, recall, F1 and ROC-AUC. Logistic regression reached 98% accuracy.</p>
+    <div class="pills"><span>Python</span><span>scikit-learn</span><span>XGBoost</span></div>
+  </div>
+  <div class="acts">
+    <a class="btn btn-dark" href="breast-cancer-models.html">Read case study</a>
+    <a class="btn btn-line" href="https://github.com/mavina15/Model-Madness">Source code</a>
+  </div>
+</article><article class="proj">
+  <div>
+    <h3>Network Anomaly Detection</h3>
+    <p class="impact">19,528 traffic samples</p>
+    <p>Trained a deep autoencoder on 19,528 network traffic samples to flag unusual traffic.</p>
+    <div class="pills"><span>Python</span><span>TensorFlow</span><span>Keras</span></div>
+  </div>
+  <div class="acts">
+    <a class="btn btn-dark" href="network-anomaly.html">Read case study</a>
+    <a class="btn btn-line" href="https://github.com/mavina15/ECS170-Intro-to-AI">Source code</a>
+  </div>
+</article>
+    </div>
+  </section>
 </div>
+
+<div class="card">
+  <div class="cols">
+    <div>
+      <div class="head"><h2>Experience</h2></div>
+      <div class="jobs">
+        <div class="job"><span class="when">Summer 2026</span><h3>Summer Compliance &amp; Assessment Administrator</h3><p>Making Waves Academy. Ran scheduling, family outreach and reporting for a 147-student assessment program.</p></div>
+        <div class="job"><span class="when">Aug 2024 – now</span><h3>5th Grade Teacher</h3><p>Making Waves Academy. Built Google Sheets trackers and unit dashboards, managed compliance reporting for a $2.5M program budget, and presented data to school leadership.</p></div>
+        <div class="job"><span class="when">Jan – Jun 2023</span><h3>Senior Developer, UC Davis CodeLab</h3><p>Led a team of 4 through a 15-week redesign of a React.js course-planning app.</p></div>
+        <div class="job"><span class="when">Jan – Jun 2022</span><h3>Software Developer, UC Davis Mathematics</h3><p>Built a Google Sheets add-on that replaced Excel for simulation work in math courses.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="head"><h2>Skills</h2></div>
+      <div class="skills">
+        <div><b>Data &amp; analysis</b><p>Google Sheets / Excel (FILTER, SORT, LET, IFERROR), Python (pandas, NumPy, scikit-learn), R (tidyverse, ggplot2), SQL, regression, Monte Carlo simulation</p></div>
+        <div><b>Operations</b><p>Program coordination, compliance reporting, roster and outreach tracking, deadline-driven work across departments, multilingual family communication</p></div>
+        <div><b>Reporting</b><p>Dashboards, summary reports, presentations for leadership, Matplotlib, Seaborn, ggplot2</p></div>
+        <div><b>Education</b><p>B.S. Applied Mathematics, UC Davis, 2023 · M.A. Teaching, Secondary Math, WGU, expected 2027</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="contact">
+  <div class="contact">
+    <div><span class="eyebrow">Contact</span><p class="mail" id="em">melavinabeltran@gmail.com</p></div>
+    <button class="copy" type="button" data-copy="melavinabeltran@gmail.com" data-target="em">Copy email</button>
+  </div>
+  <div class="foot"><span>B.S. Applied Mathematics, UC Davis</span><span>Based in the Bay Area · Open to remote</span></div>
+</div>
+</main>
 <script>
 document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
   var t=b.getAttribute('data-copy');

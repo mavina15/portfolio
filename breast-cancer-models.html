@@ -129,48 +129,14 @@ figcaption{font-size:.84rem; color:var(--muted)}
 .note{font-size:.82rem; color:var(--muted)}
 .mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-
-/* Decluttered home: one 44rem column, quiet sections, only project rows are boxed */
-.home{max-width:44rem; margin:0 auto; padding-inline:clamp(16px,4vw,24px); padding-block:3.5rem 4rem; display:grid; gap:3.5rem}
-.hero{display:grid; grid-template-columns:6.5rem minmax(0,1fr); gap:1.5rem; align-items:center}
-.hero img{width:6.5rem; height:6.5rem; border-radius:50%; object-fit:cover}
-.hero h1{font-size:clamp(1.9rem,5vw,2.4rem)}
-.hero .role{color:var(--orange); font-weight:600; margin-top:.2rem}
-.intro{font-size:1.1rem; color:#374151; max-width:60ch}
-.tlinks{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; font-weight:600; font-size:.95rem}
-.tlinks a{color:var(--ink); text-decoration:none; border-bottom:2px solid var(--orange-bright)}
-.tlinks a:hover{color:var(--orange)}
-@media (max-width:520px){.hero{grid-template-columns:minmax(0,1fr)} .hero img{width:5.5rem;height:5.5rem}}
-.sec{display:grid; gap:1.1rem}
-.sec > h2{font-size:.78rem; text-transform:uppercase; letter-spacing:.18em; color:var(--faint); font-weight:700}
-.rows{display:grid; gap:.75rem}
-a.row{display:grid; grid-template-columns:6.5rem minmax(0,1fr) auto; gap:1.25rem; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:.9rem; padding:1.1rem 1.25rem; text-decoration:none; color:inherit; transition:border-color .2s, box-shadow .2s}
-a.row:hover{border-color:#d1d5db; box-shadow:0 10px 24px -14px rgba(17,24,39,.25)}
-a.row:hover h3{color:var(--orange)}
-.stat{display:grid; gap:.1rem}
-.stat b{font:700 1.6rem/1 var(--sans); font-variant-numeric:tabular-nums; color:var(--ink)}
-.stat span{font-size:.72rem; color:var(--faint); text-transform:uppercase; letter-spacing:.1em; font-weight:600}
-a.row h3{font-size:1.08rem}
-a.row p{color:var(--muted); font-size:.92rem; margin-top:.15rem}
-a.row .arrow{color:var(--faint); font-size:1.2rem}
-@media (max-width:520px){a.row{grid-template-columns:minmax(0,1fr) auto} .stat{grid-column:1/-1; display:flex; gap:.5rem; align-items:baseline} .stat b{font-size:1.3rem}}
-.xp{list-style:none; margin:0; padding:0; display:grid}
-.xp li{display:flex; justify-content:space-between; gap:.25rem 1rem; flex-wrap:wrap; padding:.8rem 0; border-bottom:1px solid var(--line)}
-.xp li:first-child{border-top:1px solid var(--line)}
-.xp b{font-weight:600}
-.xp span{color:var(--muted)}
-.xp time{color:var(--faint); font-size:.88rem; font-variant-numeric:tabular-nums}
-.toolline{color:#374151}
-.end{display:flex; flex-wrap:wrap; align-items:center; gap:.75rem 1rem; padding-top:1.5rem; border-top:1px solid var(--line)}
-.end .mail{font:600 1rem var(--mono); color:var(--ink); overflow-wrap:anywhere}
-.end .copy{margin-left:auto}
 </style>
 </head><body>
 <nav class="top"><div class="in">
   <a class="brand" href="index.html">Mel Avina&#8209;Beltran</a>
   <div class="menu">
-    <a class="plain" href="index.html#projects" style="display:inline">Projects</a>
-    <a class="plain" href="index.html#contact" style="display:inline">Contact</a>
+    <a class="plain" href="index.html#projects">Projects</a>
+    <a class="btn btn-orange" href="https://www.linkedin.com/in/mavinabeltran">LinkedIn</a>
+    <a class="btn btn-ghost" href="index.html#contact">Contact</a>
   </div>
 </div></nav>
 <main>
