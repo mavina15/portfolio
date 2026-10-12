@@ -224,13 +224,15 @@ figure.fig figcaption{font-size:.86rem; color:var(--muted)}
 <div class="meta">
   <div><span class="label">Context</span><p>Aggie Analytics, UC Davis, Oct 2023 · re-tested 2026</p></div>
   <div><span class="label">Tools</span><p>Python, pandas, scikit-learn, Jupyter</p></div>
-  <div><span class="label">Code</span><p><a href="https://github.com/mavina15/WNBA_Predict">View on GitHub</a></p></div>
+  <div><span class="label">Code</span><p><a href="https://github.com/mavina15/WNBA_Predict">GitHub</a> · <a href="https://wnbapredict.streamlit.app/">Live app</a></p></div>
 </div>
 <div class="story">
 <section><div class="prose">
 <p>In 2023 I wanted to know whether team statistics could predict who wins a WNBA game. I used the full 2023 regular season, 240 games across 12 teams, and built a model to predict whether the home team would win. It scored about 70%, and I built a small web app around it.</p>
 <p>Coming back to the project, I checked that number more carefully. It did not hold up, and figuring out why taught me more than the original model did.</p>
-</div></section>
+</div>
+<p><a class="dl" href="https://wnbapredict.streamlit.app/">Try the live app</a></p>
+</section>
 
 <section><div class="chap"><h2>The first model</h2></div>
 <div class="prose">
@@ -241,7 +243,6 @@ figure.fig figcaption{font-size:.86rem; color:var(--muted)}
   <div class="hist"><div class="hc"><div class="hb" style="height:1.7%"></div><span>50%</span></div><div class="hc"><div class="hb" style="height:7.7%"></div><span>55%</span></div><div class="hc"><div class="hb" style="height:53.0%"></div><span>60%</span></div><div class="hc"><div class="hb" style="height:70.2%"></div><span>65%</span></div><div class="hc"><div class="hb" style="height:100.0%"></div><span>70%</span></div><div class="hc"><div class="hb" style="height:31.5%"></div><span>75%</span></div><div class="hc"><div class="hb" style="height:9.9%"></div><span>80%</span></div><div class="hc"><div class="hb" style="height:2.2%"></div><span>85%</span></div></div>
   <figcaption>The average was 70%, but individual runs ranged from about 60% to 79%. A single number hid how much the result moved.</figcaption>
 </figure>
-<figure><img src="wnba-app.jpg" alt="WNBA prediction web app with a team picker and Predict button"><figcaption>The web app I built on the first model: pick two teams and get a predicted winner.</figcaption></figure>
 </section>
 
 <section><div class="chap"><h2>Finding the problem</h2></div>
@@ -262,6 +263,11 @@ figure.fig figcaption{font-size:.86rem; color:var(--muted)}
 <div class="prose">
 <p>The honest answer is that this season was about two-thirds predictable. A two-feature model and a simple Elo rating tied at 69%, and adding more features made the model worse, not better. With only one season of data, simple was best.</p>
 </div></section>
+
+<section><div class="chap"><h2>The app</h2></div>
+<div class="prose"><p>I rebuilt the web app in Streamlit on top of the new model. Pick a home and away team to get a win probability next to the Elo rating's view, see the walk-forward accuracy results, and browse every team's rating.</p></div>
+<figure><a href="https://wnbapredict.streamlit.app/"><img src="wnba-streamlit.png" alt="WNBA Matchup Predictor app showing Las Vegas Aces at home against New York Liberty with a 59% win probability"></a><figcaption>The live app. <a href="https://wnbapredict.streamlit.app/">Open it</a> to try any matchup.</figcaption></figure>
+</section>
 
 <section><div class="chap"><h2>The Finals</h2></div>
 <div class="prose">
