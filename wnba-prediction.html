@@ -192,6 +192,17 @@ ul.dots{margin:0; padding-left:1.1rem; display:grid; gap:.45rem; color:#374151; 
 figure.fig{margin:0; background:var(--soft); border:1px solid var(--line); border-radius:.8rem; padding:1.1rem 1.2rem; display:grid; gap:.85rem}
 figure.fig .tbl{background:#fff}
 figure.fig figcaption{font-size:.86rem; color:var(--muted)}
+
+.hist{display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:.4rem; align-items:end; height:9rem}
+.hc{display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; gap:.3rem}
+.hb{width:100%; background:var(--navy); border-radius:.3rem .3rem 0 0; min-height:2px}
+.hc span{font-size:.72rem; color:var(--muted); font-variant-numeric:tabular-nums}
+.cb{display:grid; grid-template-columns:15rem minmax(0,1fr); gap:1rem; align-items:center}
+.cl{font-size:.88rem; color:#374151}
+.ct{display:flex; align-items:center; gap:.5rem}
+.cf{height:.75rem; border-radius:999px} .cf.math{background:var(--navy)} .cf.base{background:#9ca3af}
+.ct span{font-size:.82rem; color:var(--muted)}
+@media (max-width:560px){.cb{grid-template-columns:minmax(0,1fr); gap:.25rem}}
 </style>
 </head><body>
 <nav class="top"><div class="in">
@@ -208,20 +219,62 @@ figure.fig figcaption{font-size:.86rem; color:var(--muted)}
 <header>
   <span class="label">Predictive model · 2023</span>
   <h1>WNBA Game Outcome Prediction</h1>
-  <p class="lede">Logistic regression on merged schedule and advanced-stats data, with predictors chosen by sequential feature selection. 70.4% accuracy.</p>
+  <p class="lede">Built a model to predict WNBA winners, then re-tested it: found a data leak, rebuilt it on pre-game data only, and compared it with simple baselines.</p>
 </header>
 <div class="meta">
-  <div><span class="label">Context</span><p>Aggie Analytics, UC Davis, Oct 2023</p></div>
-  <div><span class="label">Tools</span><p>Python, pandas, scikit-learn</p></div>
-  <div><span class="label">Code</span><p>Repository not yet public</p></div>
+  <div><span class="label">Context</span><p>Aggie Analytics, UC Davis, Oct 2023 · re-tested 2026</p></div>
+  <div><span class="label">Tools</span><p>Python, pandas, scikit-learn, Jupyter</p></div>
+  <div><span class="label">Code</span><p><a href="https://github.com/mavina15/WNBA_Predict">View on GitHub</a></p></div>
 </div>
-<section><div class="section-head"><h2>The question</h2></div>
-<div class="prose"><p>Can a simple, explainable model predict who wins a WNBA game from team statistics? I wanted a model I could explain line by line, so I chose logistic regression over a black box.</p></div></section>
-<section><div class="section-head"><h2>Approach</h2></div>
-<ol class="steps"><li><div><b>Clean and merge.</b> Imported season schedule data and advanced team statistics, cleaned both, joined them, and added a column marking whether the home team won.</div></li><li><div><b>Pick predictors.</b> Used a sequential feature selector to narrow the statistics down to the 10 most useful predictors.</div></li><li><div><b>Train and test.</b> Fit a logistic regression model and evaluated it with Monte Carlo simulation over repeated train/test splits.</div></li><li><div><b>Apply it.</b> Used the model to predict a finals matchup between the Las Vegas Aces and New York Liberty.</div></li></ol></section>
-<figure><img src="wnba-app.jpg" alt="WNBA prediction web app with a team picker and Predict button"><figcaption>The prediction web app: pick two teams and get a predicted winner.</figcaption></figure>
-<div class="result"><span class="label">Result</span><b class="big">70.4%</b><p>accuracy predicting game winners.</p></div>
-<div class="chips"><span>Data cleaning</span><span>Feature selection</span><span>Logistic regression</span><span>Monte Carlo evaluation</span></div>
+<div class="story">
+<section><div class="prose">
+<p>In 2023 I wanted to know whether team statistics could predict who wins a WNBA game. I used the full 2023 regular season, 240 games across 12 teams, and built a model to predict whether the home team would win. It scored about 70%, and I built a small web app around it.</p>
+<p>Coming back to the project, I checked that number more carefully. It did not hold up, and figuring out why taught me more than the original model did.</p>
+</div></section>
+
+<section><div class="chap"><h2>The first model</h2></div>
+<div class="prose">
+<p>I merged the game schedule with each team's advanced statistics, like offensive and defensive ratings, shooting efficiency and turnover rates. A feature selector narrowed about 46 statistics down to 10, and a logistic regression model learned which side of each game they favored. I tested it on 1,000 random train/test splits.</p>
+</div>
+<figure class="fig">
+  <b class="sub">Accuracy across 1,000 random test splits</b>
+  <div class="hist"><div class="hc"><div class="hb" style="height:1.7%"></div><span>50%</span></div><div class="hc"><div class="hb" style="height:7.7%"></div><span>55%</span></div><div class="hc"><div class="hb" style="height:53.0%"></div><span>60%</span></div><div class="hc"><div class="hb" style="height:70.2%"></div><span>65%</span></div><div class="hc"><div class="hb" style="height:100.0%"></div><span>70%</span></div><div class="hc"><div class="hb" style="height:31.5%"></div><span>75%</span></div><div class="hc"><div class="hb" style="height:9.9%"></div><span>80%</span></div><div class="hc"><div class="hb" style="height:2.2%"></div><span>85%</span></div></div>
+  <figcaption>The average was 70%, but individual runs ranged from about 60% to 79%. A single number hid how much the result moved.</figcaption>
+</figure>
+<figure><img src="wnba-app.jpg" alt="WNBA prediction web app with a team picker and Predict button"><figcaption>The web app I built on the first model: pick two teams and get a predicted winner.</figcaption></figure>
+</section>
+
+<section><div class="chap"><h2>Finding the problem</h2></div>
+<div class="prose">
+<p>The first test I should have run was a simple baseline. Just picking the team with the better final record was right 73% of the time, better than my model.</p>
+<p>That pointed to the real issue. My statistics were end-of-season totals, including each team's total losses, and I was using them to predict games from that same season. The totals already contained the results I was trying to predict. In practice, nobody has those numbers before a game is played.</p>
+</div></section>
+
+<section><div class="chap"><h2>Rebuilding it fairly</h2></div>
+<div class="prose">
+<p>I rebuilt every feature from earlier games only: each team's win percentage so far, average point margin, form over the last five games, days of rest, and an Elo rating that updates after every game. Then I tested walk-forward through the season. Each of the last 160 games was predicted by a model trained only on games played before it.</p>
+</div>
+<figure class="fig">
+  <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><b class="sub">Accuracy on 160 games, using only pre-game information</b><div class="key"><span><i style="background:var(--navy)"></i>My models</span><span><i style="background:#9ca3af"></i>Simple rules</span></div></div>
+  <div class="cb"><span class="cl">Model: record + margin so far</span><div class="ct"><div class="cf math" style="width:83.5%"></div><span class="mono">68.8%</span></div></div><div class="cb"><span class="cl">Elo rating favorite</span><div class="ct"><div class="cf base" style="width:83.5%"></div><span class="mono">68.8%</span></div></div><div class="cb"><span class="cl">Better point margin so far</span><div class="ct"><div class="cf base" style="width:81.2%"></div><span class="mono">66.9%</span></div></div><div class="cb"><span class="cl">Better record so far</span><div class="ct"><div class="cf base" style="width:80.4%"></div><span class="mono">66.2%</span></div></div><div class="cb"><span class="cl">Model: all 5 pre-game features</span><div class="ct"><div class="cf math" style="width:75.9%"></div><span class="mono">62.5%</span></div></div><div class="cb"><span class="cl">Always pick the home team</span><div class="ct"><div class="cf base" style="width:65.3%"></div><span class="mono">53.8%</span></div></div>
+  <figcaption>With 160 test games, a few points of difference is within noise. The full model's 90% range was 56% to 69%.</figcaption>
+</figure>
+<div class="prose">
+<p>The honest answer is that this season was about two-thirds predictable. A two-feature model and a simple Elo rating tied at 69%, and adding more features made the model worse, not better. With only one season of data, simple was best.</p>
+</div></section>
+
+<section><div class="chap"><h2>The Finals</h2></div>
+<div class="prose">
+<p>The rebuilt model favored the Las Vegas Aces over the New York Liberty wherever the game was played. The Aces won the 2023 Finals 3–1, so it would have called 3 of the 4 games, missing only Game 3 in New York.</p>
+</div></section>
+
+<section><div class="chap"><h2>What I learned</h2></div>
+<div class="prose">
+<p>Check for leakage before trusting a high score. Always compare against a simple baseline. Report a range, not a single number. Next, I would add earlier seasons and player availability, then test on 2024.</p>
+</div>
+<div class="result"><span class="label">In short</span><b class="big">70% → 69%</b><p>The first score was inflated by leaked data. The honest re-test lands at 69%, tied with a simple Elo rating, and the notebook shows every step.</p></div>
+</section>
+</div>
 
 <a class="back" href="index.html">Back to all projects</a>
 </div></article>
